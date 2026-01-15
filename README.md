@@ -1,4 +1,4 @@
-# KGPT - AI Keyboard Integration
+# KGPT
 
 Integrate your favorite AI models directly into your keyboard for seamless use across all apps and tasks.
 
