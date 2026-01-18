@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2025 Amr Aldeeb @Eluea
+  ~ GitHub: https://github.com/Eluea
+  ~ Telegram: https://t.me/Eluea
+  ~
+  ~ Licensed under the GPLv3.
+  -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/primary" android:state_checked="true" />
+    <item android:color="@color/surface_variant_dark" />
+</selector>

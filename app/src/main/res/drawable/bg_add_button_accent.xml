@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2025 Amr Aldeeb @Eluea
+  ~ GitHub: https://github.com/Eluea
+  ~ Telegram: https://t.me/Eluea
+  ~
+  ~ Licensed under the GPLv3.
+  -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/accent">
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="2dp"
+                android:color="@color/accent"
+                android:dashWidth="8dp"
+                android:dashGap="4dp" />
+            <corners android:radius="16dp" />
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+</ripple>

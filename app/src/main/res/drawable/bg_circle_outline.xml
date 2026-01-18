@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2025 Amr Aldeeb @Eluea
+  ~ GitHub: https://github.com/Eluea
+  ~ Telegram: https://t.me/Eluea
+  ~
+  ~ Licensed under the GPLv3.
+  -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <stroke
+        android:width="2dp"
+        android:color="?attr/colorOutline" />
+    <solid android:color="@android:color/transparent" />
+</shape>

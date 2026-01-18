@@ -1,0 +1,12 @@
+﻿<!--
+  ~ Copyright (c) 2025 Amr Aldeeb @Eluea
+  ~ GitHub: https://github.com/Eluea
+  ~ Telegram: https://t.me/Eluea
+  ~
+  ~ Licensed under the GPLv3.
+  -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background_white"/>
+    <foreground android:drawable="@drawable/ic_launcher_monochrome"/>
+    <monochrome android:drawable="@drawable/ic_launcher_monochrome"/>
+</adaptive-icon>

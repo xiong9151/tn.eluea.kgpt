@@ -1,0 +1,117 @@
+﻿.\gradlew : WARNING: A restricted method in java.lang.System has been called
+At line:1 char:1
++ .\gradlew lintDebug --no-daemon 2>&1 | Out-File -FilePath lint-output ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A rest...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an 
+unnamed module (file:/C:/Users/Classic/.gradle/wrapper/dists/gradle-8.14.2-bin/2pb3mgt1p815evrl3weanttgr/gradle-8.14.2/
+lib/native-platform-0.22-milestone-28.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugBuildConfig
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:mergeDebugResources
+> Task :app:extractDeepLinksDebug
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:javaPreCompileDebug
+> Task :app:generateDebugAndroidTestResValues
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugResources
+> Task :app:compileDebugKotlin NO-SOURCE
+
+> Task :app:compileDebugJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: C:\Users\Classic\Downloads\KGPT-main 
+(2)\KGPT-main\app\src\main\java\tn\eluea\kgpt\core\network\InternetService.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :app:generateDebugLintReportModel
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :app:lintAnalyzeDebug
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///C:/Users/Classic/Downloads/KGPT-main%20(2)/KGPT-main/app/build/reports/lint-results-debug.html
+Lint found 3 errors and 840 warnings. First failure:
+C:\Users\Classic\Downloads\KGPT-main (2)\KGPT-main\app\src\main\java\tn\eluea\kgpt\features\textactions\SelectionHandler.java:149: Error: resultReceiver is missing RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED flag for unprotected broadcasts registered for tn.eluea.kgpt.ACTION_COMMIT_TEXT [UnspecifiedRegisterReceiverFlag]
+            context.registerReceiver(resultReceiver, filter);
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+> Task :app:lintDebug FAILED
+Lint found 3 errors, 840 warnings. First failure:
+
+C:\Users\Classic\Downloads\KGPT-main (2)\KGPT-main\app\src\main\java\tn\eluea\kgpt\features\textactions\SelectionHandler.java:149: Error: resultReceiver is missing RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED flag for unprotected broadcasts registered for tn.eluea.kgpt.ACTION_COMMIT_TEXT [UnspecifiedRegisterReceiverFlag]
+            context.registerReceiver(resultReceiver, filter);
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The full lint text report is located at:
+  C:\Users\Classic\Downloads\KGPT-main (2)\KGPT-main\app\build\intermediates\lint_intermediate_text_report\debug\lintReportDebug\lint-results-debug.txt
+
+[Incubating] Problems report is available at: file:///C:/Users/Classic/Downloads/KGPT-main%20(2)/KGPT-main/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:lintDebug'.
+> Lint found errors in the project; aborting build.
+  
+  Fix the issues identified by lint, or create a baseline to see only new errors.
+  To create a baseline, run `gradlew updateLintBaseline` after adding the following to the module's build.gradle file:
+  ```
+  android {
+      lint {
+          baseline = file("lint-baseline.xml")
+      }
+  }
+  ```
+  For more details, see https://developer.android.com/studio/write/lint#snapshot
+  
+  Lint found 3 errors, 840 warnings. First failure:
+  
+  C:\Users\Classic\Downloads\KGPT-main 
+(2)\KGPT-main\app\src\main\java\tn\eluea\kgpt\features\textactions\SelectionHandler.java:149: Error: resultReceiver is 
+missing RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED flag for unprotected broadcasts registered for 
+tn.eluea.kgpt.ACTION_COMMIT_TEXT [UnspecifiedRegisterReceiverFlag]
+              context.registerReceiver(resultReceiver, filter);
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  The full lint text report is located at:
+    C:\Users\Classic\Downloads\KGPT-main 
+(2)\KGPT-main\app\build\intermediates\lint_intermediate_text_report\debug\lintReportDebug\lint-results-debug.txt
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 2m 10s
+27 actionable tasks: 26 executed, 1 up-to-date

@@ -1,0 +1,393 @@
+﻿<!--
+  ~ Copyright (c) 2025 Amr Aldeeb @Eluea
+  ~ GitHub: https://github.com/Eluea
+  ~ Telegram: https://t.me/Eluea
+  ~
+  ~ Licensed under the GPLv3.
+  -->
+<resources>
+    <string name="app_name">KGPT</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_models">Models</string>
+    <string name="nav_api_keys">API Keys</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Home Screen -->
+    <string name="module_active">Module Active</string>
+    <string name="module_inactive">Module Not Active</string>
+    <string name="module_active_desc">KGPT is working</string>
+    <string name="module_inactive_desc">Enable in LSPosed Manager</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="current_model">Current Model</string>
+    <string name="ai_invocation">AI Invocation</string>
+    <string name="ai_invocation_desc">Configure commands and patterns</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="how_to_use_desc">Learn how to use KGPT</string>
+    
+    <!-- Models Screen -->
+    <string name="ai_models">AI Models</string>
+    <string name="select_model">Select your preferred AI model</string>
+    <string name="model_config">Model Configuration</string>
+    <string name="sub_model">Sub Model</string>
+    <string name="base_url">Base URL</string>
+    <string name="advanced_settings">Advanced Settings</string>
+    <string name="max_tokens">Max Tokens</string>
+    <string name="temperature">Temperature</string>
+    <string name="save_config">Save Configuration</string>
+    
+    <!-- API Keys Screen -->
+    <string name="api_keys">API Keys</string>
+    <string name="manage_api_keys">Manage your API keys for each provider</string>
+    <string name="enter_api_key">Enter API Key</string>
+    <string name="save">Save</string>
+    <string name="api_key_info">API keys are stored securely on your device and never shared.</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings">Settings</string>
+    <string name="appearance">Appearance</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="follow_system">Follow system theme</string>
+    <string name="amoled_dark">AMOLED Dark</string>
+    <string name="amoled_desc">Pure black for OLED screens</string>
+    <string name="blur_control">Blur Control</string>
+    <string name="blur_control_desc">Control of the app blur</string>
+    <string name="blur_enabled">Enable Window Blur</string>
+    <string name="blur_enabled_desc">Apply blur behind floating dialogs</string>
+    <string name="blur_intensity">Blur Intensity</string>
+    <string name="blur_tint_color">Blur Tint Color</string>
+    <string name="color_saturation">Color Saturation</string>
+    <string name="general">General</string>
+    <string name="enable_logging">Enable Logging</string>
+    <string name="logging_desc">Disable for better performance</string>
+    <string name="external_internet">External Internet Service</string>
+    <string name="external_internet_desc">Recommended for chat completion</string>
+    <string name="backup_restore">Backup &amp; Restore</string>
+    <string name="export_backup">Export Backup</string>
+    <string name="export_backup_desc">Save settings to file</string>
+    <string name="import_backup">Import Backup</string>
+    <string name="import_backup_desc">Restore settings from file</string>
+    <string name="about">About</string>
+    
+    <!-- Messages -->
+    <string name="config_saved">Configuration saved</string>
+    <string name="api_key_saved">API key saved</string>
+    <string name="api_key_removed">API key removed</string>
+    <string name="backup_exported">Backup exported successfully</string>
+    <string name="backup_imported">Backup imported successfully</string>
+    <string name="export_failed">Export failed</string>
+    <string name="import_failed">Import failed</string>
+    
+    <!-- Themed Icon -->
+    <string name="themed_icon_title">Themed App Icon</string>
+    <string name="themed_icon_desc">Enable in launcher settings to apply Material You colors</string>
+    
+    <!-- About Home (Encoding Fix) -->
+    <string name="about_home_title">About Home</string>
+    <string name="about_home_description">Welcome to KGPT! This is your main dashboard.\n\n\u2022 Module Status: Shows whether the Xposed module is active. Enable it in LSPosed Manager.\n\n\u2022 Current Model: Displays your selected AI model. Tap to change it.\n\n\u2022 AI Invocation: Configure commands and patterns to trigger AI.\n\n\u2022 How to Use: Learn how to use KGPT effectively.</string>
+
+    <!-- Commands Adapter (Encoding Fix) -->
+    <string name="built_in_indicator">  \u2022  Built-in</string>
+    <string name="ask_command_description">Keeps your text intact - AI response appears after your text</string>
+    <string name="ask_command_example">e.g. Hello, /ask how are you? \u2192 Hello, I\'m fine!</string>
+
+    <!-- AI Response Manager -->
+    <string name="generating_content">&lt;Generating Content...&gt;</string>
+    <string name="choose_model_message">Chose and configure your language model</string>
+    <string name="missing_api_key_message">%1$s is Missing API Key</string>
+    <string name="unknown_error">Unknown error occurred</string>
+    <string name="error_format">[Error: %1$s]</string>
+
+    <!-- Text Actions -->
+    <string name="action_rephrase">Rephrase</string>
+    <string name="action_fix_errors">Fix Errors</string>
+    <string name="action_improve">Improve</string>
+    <string name="action_expand">Expand</string>
+    <string name="action_shorten">Shorten</string>
+    <string name="action_formal">Formal</string>
+    <string name="action_casual">Casual</string>
+    <string name="action_translate">Translate</string>
+
+    <!-- UI Messages -->
+    <string name="msg_copied">Copied</string>
+    <string name="msg_ai_error">AI Error: %1$s</string>
+    <string name="msg_no_text_selected">No text selected</string>
+    <string name="edit_prompt_title">Edit %1$s Prompt</string>
+    <string name="text_action_commands_title">Available Text Action Commands:</string>
+    <string name="text_action_commands_example">Example: \"hello world $rephrase\"</string>
+    <string name="missing_api_key_generic">Missing API Key. Please configure your API key in KGPT settings.</string>
+    <string name="action_add_custom">Add Custom Action</string>
+    <string name="label_custom_action">Custom Action</string>
+    <string name="error_missing_name_prompt">Please enter name and prompt</string>
+    <string name="dialog_title_add_custom_action">Add Custom Action</string>
+    <string name="dialog_subtitle_add_custom_action">Create your own AI text action</string>
+    <string name="label_action_name">Action Name</string>
+    <string name="label_system_prompt">System Prompt</string>
+    <string name="helper_system_prompt">Instructions on how the AI should process the text</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="reset">Reset</string>
+    <string name="dialog_title_edit_custom_action">Edit Custom Action</string>
+    <string name="dialog_subtitle_edit_custom_action">Edit your custom AI text action</string>
+    <string name="dialog_title_edit_prompt">Edit Prompt</string>
+    <string name="dialog_subtitle_edit_prompt">Customize the AI instruction</string>
+
+    <!-- System Prompts -->
+    <string name="prompt_rephrase">You are a text rephrasing assistant. Rephrase the given text while keeping the exact same meaning. Maintain the same language as the input. Only output the rephrased text, nothing else.</string>
+    <string name="prompt_fix_errors">You are a grammar and spelling correction assistant. Fix all grammar, spelling, and punctuation errors in the given text. Maintain the same language and meaning. Only output the corrected text, nothing else.</string>
+    <string name="prompt_improve">You are a writing improvement assistant. Improve the style, clarity, and flow of the given text while keeping the same meaning. Maintain the same language. Only output the improved text, nothing else.</string>
+    <string name="prompt_expand">You are a text expansion assistant. Expand the given text by adding more details, examples, or explanations while keeping the core meaning. Maintain the same language. Only output the expanded text, nothing else.</string>
+    <string name="prompt_shorten">You are a text summarization assistant. Shorten the given text while keeping the essential meaning and key points. Maintain the same language. Only output the shortened text, nothing else.</string>
+    <string name="prompt_formal">You are a tone adjustment assistant. Convert the given text to a formal, professional tone. Maintain the same language and meaning. Only output the formal version, nothing else.</string>
+    <string name="prompt_casual">You are a tone adjustment assistant. Convert the given text to a casual, friendly tone. Maintain the same language and meaning. Only output the casual version, nothing else.</string>
+    <string name="prompt_translate_auto">You are a translation assistant. Detect the language of the input text and translate it to the opposite language (if Arabic, translate to English; if English, translate to Arabic; for other languages, translate to English). Only output the translated text, nothing else.</string>
+    <string name="prompt_translate_target">You are a translation assistant. Translate the given text to %1$s. Only output the translated text, nothing else.</string>
+    <string name="prompt_default">Process the following text:</string>
+
+    <!-- Update Dialog -->
+    <string name="update_available">Update Available</string>
+    <string name="update_available_desc">A new version of KGPT is available.</string>
+    <string name="update_available_title">Update Available!</string>
+    <string name="update_app_desc">Version %1$s is now available.\nYou are currently using v%2$s.</string>
+    <string name="no_changelog">No changelog available.</string>
+    <string name="downloading">Downloading... %1$d%%</string>
+    <string name="starting_download">Starting download...</string>
+    <string name="download_title">Downloading Update</string>
+    <string name="download_complete">Download Complete</string>
+    <string name="ready_to_install">Ready to install!</string>
+    <string name="up_to_date_title">You\'re Up to Date!</string>
+    <string name="up_to_date_desc">You are running the latest version (v%1$s).\nNo updates are available at this time.</string>
+    <string name="check_failed">Check Failed</string>
+    <string name="check_failed_desc">Sorry, we couldn\'t check for updates right now.\n\n%1$s\n\nPlease check your internet connection and try again.</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="no_internet_desc">Unable to check for updates.\n\nPlease connect to the internet and try again.</string>
+
+    <!-- Update Actions -->
+    <string name="btn_download">Download</string>
+    <string name="btn_later">Later</string>
+    <string name="btn_install">Install</string>
+    <string name="btn_try_again">Try Again</string>
+    <string name="btn_close">Close</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_great">Great!</string>
+    <string name="btn_got_it">Got it</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_reset">Reset</string>
+    <string name="btn_proceed">Proceed</string>
+    <string name="btn_restart_now">Restart Now</string>
+    <string name="btn_save_color">Save Color</string>
+
+    <!-- How to Use -->
+    <string name="how_to_use_title">How to Use KGPT</string>
+    <string name="quick_guide">Quick Guide</string>
+    <string name="guide_step_1">Enable the module in LSPosed Manager</string>
+    <string name="guide_step_2">Select your preferred AI model</string>
+    <string name="guide_step_3">Enter your API key</string>
+    <string name="guide_step_4">Type your text, then add $ at the end</string>
+    <string name="guide_step_5">The AI will respond directly in the text field</string>
+    <string name="example">Example</string>
+    <string name="guide_example_text">What is the capital of France?$</string>
+
+    <!-- Backup & Restore Dialogs -->
+    <string name="backup_settings_title">Backup Settings</string>
+    <string name="restore_settings_title">Restore Settings</string>
+    <string name="backup_settings_desc">Select what you want to backup</string>
+    <string name="restore_settings_desc">Select what you want to restore</string>
+    <string name="action_backup">Backup</string>
+    <string name="action_restore">Restore</string>
+    <string name="select_all">Select All</string>
+
+    <!-- Backup Options -->
+    <string name="option_ai_commands">AI Commands</string>
+    <string name="option_ai_commands_desc">Custom AI commands and prompts</string>
+    <string name="option_trigger_patterns">Trigger Patterns</string>
+    <string name="option_trigger_patterns_desc">Keyboard trigger patterns</string>
+    <string name="option_ai_model">AI Model Settings</string>
+    <string name="option_ai_model_desc">Selected model and sub-models</string>
+    <string name="option_appearance">Appearance</string>
+    <string name="option_appearance_desc">Theme, AMOLED, Material You</string>
+    <string name="option_blur">Blur Settings</string>
+    <string name="option_blur_desc">Blur intensity and tint color</string>
+    <string name="option_general">General Settings</string>
+    <string name="option_general_desc">Logging, internet, search engine</string>
+    <string name="option_app_triggers">App Triggers (LAB)</string>
+    <string name="option_app_triggers_desc">Per-app AI trigger configs</string>
+    <string name="option_text_actions">Text Actions (LAB)</string>
+    <string name="option_text_actions_desc">AI text actions and prompts</string>
+    <string name="option_sensitive_data">API Keys &amp; Credentials</string>
+    <string name="option_sensitive_data_desc">Warning: Files with keys are risky to share</string>
+
+    <!-- Backup Warning Dialog -->
+    <string name="backup_warning_title">Security Warning</string>
+    <string name="backup_warning_keys">This backup contains private API keys.</string>
+    <string name="backup_warning_risk">Sharing it risks financial loss from unauthorized use.\nThe developer is not liable for any damages.</string>
+    <string name="backup_warning_confirm">Are you fully aware of the risks and agree to proceed?</string>
+    <string name="backup_warning_hint">YES</string>
+
+    <!-- Info Dialog -->
+    <string name="info_title">About This Page</string>
+    <string name="info_chip">Info</string>
+    <string name="info_default_desc">Information about this page.</string>
+
+    <!-- Restart Dialog -->
+    <string name="restart_required_title">Restart Required</string>
+    <string name="restart_required_desc">To apply AI Text Actions changes, the app needs to restart.</string>
+
+    <!-- Delete Confirmation -->
+    <string name="delete_title">Delete Command</string>
+    <string name="delete_message">Are you sure you want to delete this item?</string>
+    <string name="item_name_placeholder">Item Name</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Web Search Dialog -->
+    <string name="web_search_title">Web Search</string>
+
+    <!-- Search Engine Selection -->
+    <string name="select_search_engine_title">Select Search Engine</string>
+    <string name="select_search_engine_desc">Choose your preferred search engine</string>
+
+    <!-- Log Export Success -->
+    <string name="logs_exported_title">Logs Exported Successfully</string>
+    <string name="root_access_granted">Root Access Granted</string>
+    <string name="logs_exported_desc">The following logs have been exported:</string>
+    <string name="log_device_info">• Device Information</string>
+    <string name="log_xposed">• Xposed/LSPosed Logs</string>
+    <string name="log_kgpt">• KGPT Module Logs</string>
+    <string name="log_boot">• Boot/Kernel Logs (dmesg)</string>
+    <string name="log_system">• System Logs (logcat)</string>
+    <string name="log_crash">• Crash &amp; ANR Logs</string>
+    <string name="root_explanation">Root access was used to collect kernel logs (dmesg) which require elevated permissions on Android.</string>
+    <string name="btn_done">Done</string>
+
+    <!-- Delete Custom Action / Trigger -->
+    <string name="delete_action_title">Delete Action</string>
+    <string name="delete_action_desc">Are you sure you want to delete this custom action? This action cannot be undone.</string>
+    <string name="delete_trigger_title">Delete Trigger</string>
+    <string name="delete_trigger_desc">Are you sure you want to delete this app trigger? This action cannot be undone.</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- Color Picker -->
+    <string name="title_choose_color">Choose Color</string>
+    <string name="label_color_code">COLOR CODE</string>
+
+    <!-- AI Usage / Quick Guide (Duplicate?) - Reusing or adding new keys -->
+    <string name="quick_guide_title">Quick Guide</string>
+    <string name="quick_guide_subtitle">Type text + trigger symbol at end</string>
+    <string name="guide_ai_trigger_title">AI Trigger</string>
+    <string name="guide_ai_trigger_example">What is AI?$</string>
+    <string name="guide_inline_ask_title">/ask (Keep text)</string>
+    <string name="guide_inline_ask_example">Note. /ask time?$ → keeps Note.</string>
+    <string name="guide_commands_title">Commands</string>
+    <string name="guide_commands_example">Hello /translate$</string>
+    <string name="guide_formatting_title">Formatting</string>
+    <string name="guide_formatting_example">text| text@ text~ text_</string>
+
+    <!-- Changelog -->
+    <string name="title_changelog">Changelog</string>
+
+    <!-- App Selection -->
+    <string name="title_select_app">Select App</string>
+    <string name="chip_all">All</string>
+    <string name="chip_user">User</string>
+    <string name="chip_system">System</string>
+    <string name="hint_search_apps">Search apps...</string>
+    <string name="msg_loading_apps">Loading apps...</string>
+
+    <!-- API Key Dialog -->
+    <string name="title_add_api_key">Add API Key</string>
+    <string name="desc_add_api_key">Select an AI provider to add a new API key.</string>
+
+    <!-- Action Picker Dialog -->
+    <string name="title_add_actions">Add Actions</string>
+    <string name="desc_add_actions">Select actions to add to your scenario</string>
+
+    <!-- Logging Warning Dialog -->
+    <string name="title_logging_disabled">Logging Disabled</string>
+    <string name="desc_logging_disabled">Enable Logging is currently disabled. You must enable it first to export logs.\n\nGo to Settings → Enable Logging and turn it on, then try again.</string>
+    <string name="btn_enable_logging">Enable Logging</string>
+
+    <!-- Update Interval Dialog -->
+    <string name="title_check_frequency">Check Frequency</string>
+    <string name="desc_check_frequency">How often should we check for updates?</string>
+
+    <!-- Dialog Titles & Labels -->
+    <string name="title_choose_model">Choose Model</string>
+    <string name="label_select_provider_hint">Select the AI provider for this key</string>
+    <string name="hint_select_provider">Select Provider</string>
+
+    <!-- Placeholders (for layout preview) -->
+    <string name="placeholder_search_engine">Search Engine</string>
+    <string name="placeholder_model_name">Gemini</string>
+    <string name="placeholder_item_name">Item Name</string>
+    <string name="placeholder_changelog_desc">Change description</string>
+    <string name="tag_add">ADD</string>
+
+    <!-- Configure Model Strings -->
+    <string name="configure_model_title">Configure Model</string>
+    <string name="advanced_settings_title">Advanced</string>
+
+    <!-- Edit Command Dialog -->
+    <string name="edit_command_title">Edit Command</string>
+    <string name="hint_command_prefix">Command (e.g. /ask)</string>
+    <string name="hint_prompt">Prompt</string>
+
+    <!-- Edit Trigger Symbol Dialog -->
+    <string name="title_edit_trigger_symbol">Edit Trigger Symbol</string>
+    <string name="desc_edit_trigger_symbol">Change the symbol that triggers this action</string>
+    <string name="label_enable_trigger">Enable Trigger</string>
+    <string name="desc_enable_trigger">Turn on to activate this trigger</string>
+    <string name="hint_trigger_symbol">Trigger Symbol</string>
+    <string name="label_preview">Preview</string>
+
+    <!-- App Trigger Dialog -->
+    <string name="hint_trigger_word">Trigger Word</string>
+    <string name="helper_trigger_word">Type this word to open the app</string>
+    <string name="example_trigger_word">Example: Type \'chrome\' → Opens Chrome</string>
+
+    <!-- Dialog List -->
+    <string name="msg_no_items">No items</string>
+
+    <!-- Dialog Add Trigger -->
+    <string name="title_add_trigger_symbol">Add Trigger Symbol</string>
+    <string name="desc_add_trigger_symbol">Enter 1-3 characters that will trigger text capture</string>
+    <string name="hint_trigger_example">e.g. @@ or ## or $$</string>
+    
+    <!-- API Key Items -->
+    <string name="status_free">Free</string>
+    <string name="btn_save_key">Save Key</string>
+    <string name="btn_get_key">Get Key</string>
+    <string name="placeholder_provider_chatgpt">ChatGPT</string>
+    <string name="placeholder_action_name">Action Name</string>
+    <string name="placeholder_description">Description</string>
+    <string name="placeholder_action">Action</string>
+
+    <!-- Home Fragment -->
+    <string name="version_placeholder">v4.0.0</string>
+    <string name="tag_stable">STABLE</string>
+    <string name="commands_patterns_desc">Commands &amp; patterns</string>
+    <string name="section_information">Information</string>
+
+    <!-- Fragment Models -->
+    <string name="sub_model_desc">Select a preset or enter custom</string>
+    <string name="hint_custom_model">Or enter custom model name</string>
+    
+    <!-- Languages -->
+    <string-array name="languages_list">
+        <item>Arabic</item>
+        <item>English</item>
+        <item>French</item>
+        <item>Spanish</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Russian</item>
+        <item>Turkish</item>
+        <item>Chinese</item>
+        <item>Japanese</item>
+        <item>Korean</item>
+        <item>Hindi</item>
+        <item>Portuguese</item>
+        <item>Indonesian</item>
+    </string-array>
+</resources>
