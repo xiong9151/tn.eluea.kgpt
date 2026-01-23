@@ -132,8 +132,12 @@ public class TextParser implements ConfigChangeListener {
             // because they matched the whole string pattern. /ask now properly delimits the
             // scope.
             String prefix = tn.eluea.kgpt.instruction.command.InlineAskCommand.getPrefix();
-            String askPatternStr = "/" + java.util.regex.Pattern.quote(prefix) + "\\s+";
-            java.util.regex.Pattern askPattern = java.util.regex.Pattern.compile(askPatternStr);
+            // Regex: Whitespace OR start of line, optional slash, then 'ask', then
+            // whitespace
+            // This is safer than previous slash-enforced logic
+            String askPatternStr = "(?:/|\\s+|^)" + java.util.regex.Pattern.quote(prefix) + "\\s+";
+            java.util.regex.Pattern askPattern = java.util.regex.Pattern.compile(askPatternStr,
+                    java.util.regex.Pattern.CASE_INSENSITIVE);
             java.util.regex.Matcher askMatcher = askPattern.matcher(textBeforeCursor);
 
             int lastAskIndex = -1;

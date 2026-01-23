@@ -484,9 +484,15 @@
     <string name="tag_added">AJOUT</string>
     <string name="tag_improved">AMÉLIORÉ</string>
     <string name="tag_fixed">CORRECTION</string>
-    <string name="changelog_4_0_6_item1">Ajout d\'un système de classification des clés API payantes/gratuites pour faciliter la gestion</string>
-    <string name="changelog_4_0_6_item2">Ajout du bouton \'Obtenir une clé\' dans Paramètres IA / Clés API pour un accès rapide</string>
-    <string name="changelog_4_0_6_item3">Amélioration du design de la carte de clé secondaire pour correspondre à la carte principale pour une meilleure cohérence visuelle</string>
+    <string name="changelog_1_0_0_item1">Ajout du mode Google AI Mode aux options de recherche web</string>
+    <string name="changelog_1_0_0_item2">Ajout de la fonction de sélection de langue avec support pour toutes les langues disponibles</string>
+    <string name="changelog_1_0_0_item3">Amélioration des mises en page d\'écran pour une utilisation à une main et des doigts plus grands</string>
+    <string name="changelog_1_0_0_item4">Correction de nombreux problèmes de stabilité et amélioration des performances</string>
+    <string name="changelog_1_0_0_item5">Testé et ajouté le support du clavier FUTO</string>
+    <string name="changelog_1_0_0_item6">Correction du problème de connexion avec Chutes API</string>
+    <string name="changelog_1_0_0_item7">Ajout du nouveau modèle Perplexity et support de l\'API Perplexity</string>
+    <string name="changelog_1_0_0_item8">Suppression de la restriction d\'utilisation de \"/\" pour les commandes</string>
+    <string name="changelog_1_0_0_note">Veuillez être patient car d\'autres problèmes ont été signalés au développeur, mais ils seront résolus par lots de mises à jour car il s\'agit d\'un projet d\'une seule personne. Merci de votre compréhension.</string>
     <string name="module_restart_required_desc">Redémarrez l\'appareil pour activer le module</string>
 
 
@@ -548,4 +554,65 @@
     <string name="msg_pattern_create_symbol_failed">Impossible de créer un modèle pour ce symbole</string>
     <string name="msg_pattern_generated_invalid">Modèle généré invalide</string>
     <string name="msg_symbol_already_used">Ce symbole est déjà utilisé</string>
+    
+    <!-- New Settings Dialog Strings -->
+    <string name="settings_option_choose_model">Choisir et configurer le modèle</string>
+    <string name="dialog_title_commands_list">Liste des commandes</string>
+    <string name="settings_option_patterns_list">Liste des motifs</string>
+    <string name="dialog_title_config_model">Configuration de %1$s</string>
+
+    
+    <!-- Other Settings -->
+    <string name="setting_enable_logging">Activer la journalisation</string>
+    <string name="setting_desc_enable_logging">Désactiver pour les performances. Vous ne pourrez pas signaler les erreurs.</string>
+    <string name="setting_external_internet">Utiliser un service Internet externe</string>
+    <string name="setting_desc_external_internet">Recommandé sauf si la complétion ne fonctionne pas.</string>
+    <string name="setting_search_engine">Moteur de recherche</string>
+    <string name="setting_desc_search_engine">Moteur de recherche par défaut.</string>
+    <string name="setting_material_you">Activer Material You</string>
+    <string name="setting_desc_material_you">Couleurs dynamiques basées sur le fond d\'écran.</string>
+    <string name="setting_wallpaper_colors">Utiliser les couleurs du fond</string>
+    <string name="setting_desc_wallpaper_colors">Extraire les couleurs du fond (Android 12+).</string>
+    <string name="setting_seed_color">Couleur de base</string>
+    <string name="setting_desc_seed_color">Couleur personnalisée pour le thème.</string>
+    <string name="setting_single_tone">Utiliser une seule teinte</string>
+    <string name="setting_desc_single_tone">Utiliser une seule teinte pour le thème.</string>
+    <string name="setting_check_updates">Vérifier les mises à jour</string>
+    <string name="setting_desc_check_updates">Vérifier automatiquement les nouvelles versions.</string>
+    <string name="setting_update_interval">Intervalle de vérification</string>
+    <string name="setting_desc_update_interval">Fréquence de vérification (en heures).</string>
+    <string name="setting_download_path">Chemin de téléchargement</string>
+    <string name="setting_desc_download_path">Chemin personnalisé pour les téléchargements.</string>
+    
+    <!-- Pattern List & Edit -->
+    <string name="dialog_title_trigger_symbols">Symboles déclencheurs</string>
+    <string name="no_patterns">Aucun motif</string>
+    <string name="dialog_title_edit_pattern">Modifier %1$s</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 Ouvre les paramètres</string>
+    <string name="example_ai_responds">\u0022Bonjour, comment ça va?%1$s\u0022 \u2192 L\'IA répond</string>
+    <string name="example_translates">\u0022Bonjour%1$straduire%1$s\u0022 \u2192 Traduit</string>
+    <string name="example_format_italic">\u0022texte%1$s\u0022 \u2192 texte italique</string>
+    <string name="example_format_bold">\u0022texte%1$s\u0022 \u2192 texte gras</string>
+    <string name="example_format_crossout">\u0022texte%1$s\u0022 \u2192 barré</string>
+    <string name="example_format_underline">\u0022texte%1$s\u0022 \u2192 souligné</string>
+    <string name="example_default">Tapez le texte, puis ajoutez \u0022%1$s\u0022 à la fin</string>
+    <string name="pattern_subtitle_trigger">Déclencheur: %1$s</string>
+    
+    <!-- PatternType Titles -->
+    <string name="title_settings_trigger">Paramètres</string>
+    <string name="title_ai_trigger">Déclencheur IA</string>
+    <string name="title_custom_command">Commande personnalisée</string>
+    <string name="title_italic">Italique</string>
+    <string name="title_bold">Gras</string>
+    <string name="title_crossout">Barré</string>
+    <string name="title_underline">Souligné</string>
+    <string name="title_web_search">Recherche web</string>
+    <string name="btn_reset_pattern">Réinitialiser le motif</string>
+    <string name="msg_reset_pattern_confirm">Réinitialiser \'%1$s\' au symbole par défaut \"%2$s\"?</string>
+    <string name="field_api_key">Clé API</string>
+    <string name="field_sub_model">Sous-modèle</string>
+    <string name="field_base_url">URL de base</string>
+    <string name="field_max_tokens">Tokens maximum</string>
+    <string name="field_temperature">Température</string>
+    <string name="field_top_p">Top P</string>
 </resources>

@@ -119,7 +119,7 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
 
             // Show description
             if (tvPatternDescription != null) {
-                tvPatternDescription.setText(getLocalizedDescription(context, pattern.getType()));
+                tvPatternDescription.setText(getLocalizedDescription(context, pattern.getType(), displaySymbol));
                 tvPatternDescription.setVisibility(View.VISIBLE);
             }
 
@@ -214,30 +214,30 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
                 case WebSearch:
                     return context.getString(R.string.pattern_web_search);
                 default:
-                    return type.title;
+                    return context.getString(type.titleResId);
             }
         }
 
-        private String getLocalizedDescription(Context context, PatternType type) {
+        private String getLocalizedDescription(Context context, PatternType type, String symbol) {
             switch (type) {
                 case Settings:
                     return context.getString(R.string.pattern_desc_settings);
                 case CommandAI:
-                    return context.getString(R.string.pattern_desc_ai_trigger);
+                    return context.getString(R.string.pattern_desc_ai_trigger, symbol);
                 case CommandCustom:
-                    return context.getString(R.string.pattern_desc_custom_command);
+                    return context.getString(R.string.pattern_desc_custom_command, symbol);
                 case FormatItalic:
-                    return context.getString(R.string.pattern_desc_italic);
+                    return context.getString(R.string.pattern_desc_italic, symbol);
                 case FormatBold:
-                    return context.getString(R.string.pattern_desc_bold);
+                    return context.getString(R.string.pattern_desc_bold, symbol);
                 case FormatCrossout:
-                    return context.getString(R.string.pattern_desc_crossout);
+                    return context.getString(R.string.pattern_desc_crossout, symbol);
                 case FormatUnderline:
-                    return context.getString(R.string.pattern_desc_underline);
+                    return context.getString(R.string.pattern_desc_underline, symbol);
                 case WebSearch:
-                    return context.getString(R.string.pattern_desc_web_search);
+                    return context.getString(R.string.pattern_desc_web_search, symbol);
                 default:
-                    return type.description;
+                    return context.getString(type.exampleResId, symbol);
             }
         }
     }

@@ -23,8 +23,11 @@ public enum LanguageModel {
                         "https://console.anthropic.com/settings/keys"),
         Mistral("Mistral", "mistral-small-latest", "https://api.mistral.ai/v1", false,
                         "https://console.mistral.ai/api-keys"),
-        Chutes("Chutes", "deepseek-ai/DeepSeek-R1", "https://api.chutes.ai/v1", false, "https://chutes.ai"),
-        ;
+        Chutes("Chutes", "deepseek-ai/DeepSeek-R1-Distill-Llama-70B", "https://api.chutes.ai/v1", false,
+                        "https://chutes.ai"),
+        Perplexity("Perplexity", "sonar-pro", "https://api.perplexity.ai", false,
+                        "https://www.perplexity.ai/settings/api"),
+                        ;
 
         public final String label;
         public final boolean isFree;

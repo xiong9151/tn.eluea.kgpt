@@ -94,6 +94,8 @@ public abstract class LanguageModelClient {
                 return new MistralClient();
             case Chutes:
                 return new ChutesClient();
+            case Perplexity:
+                return new PerplexityClient();
             case ChatGPT:
             default:
                 return new ChatGPTClient();

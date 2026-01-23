@@ -753,18 +753,47 @@ public class SettingsFragment extends Fragment {
         // Add changelog entries
         LinearLayout changelogContent = sheetView.findViewById(R.id.changelog_content);
 
-        // Version 4.0.6 Changes
+        // Version 1.0.0 Changes
         addChangelogEntry(changelogContent, getString(R.string.tag_added),
-                getString(R.string.changelog_4_0_6_item1),
+                getString(R.string.changelog_1_0_0_item1),
                 colorPrimary, colorOnPrimary);
 
         addChangelogEntry(changelogContent, getString(R.string.tag_added),
-                getString(R.string.changelog_4_0_6_item2),
+                getString(R.string.changelog_1_0_0_item2),
                 colorPrimary, colorOnPrimary);
 
         addChangelogEntry(changelogContent, getString(R.string.tag_improved),
-                getString(R.string.changelog_4_0_6_item3),
+                getString(R.string.changelog_1_0_0_item3),
                 colorPrimary, colorOnPrimary);
+
+        addChangelogEntry(changelogContent, getString(R.string.tag_fixed),
+                getString(R.string.changelog_1_0_0_item4),
+                colorPrimary, colorOnPrimary);
+
+        addChangelogEntry(changelogContent, getString(R.string.tag_added),
+                getString(R.string.changelog_1_0_0_item5),
+                colorPrimary, colorOnPrimary);
+
+        addChangelogEntry(changelogContent, getString(R.string.tag_fixed),
+                getString(R.string.changelog_1_0_0_item6),
+                colorPrimary, colorOnPrimary);
+
+        addChangelogEntry(changelogContent, getString(R.string.tag_added),
+                getString(R.string.changelog_1_0_0_item7),
+                colorPrimary, colorOnPrimary);
+
+        addChangelogEntry(changelogContent, getString(R.string.tag_improved),
+                getString(R.string.changelog_1_0_0_item8),
+                colorPrimary, colorOnPrimary);
+
+        // Add note at the end
+        TextView tvNote = new TextView(requireContext());
+        tvNote.setText(getString(R.string.changelog_1_0_0_note));
+        tvNote.setTextSize(12);
+        tvNote.setTextColor(colorOnPrimaryContainer);
+        tvNote.setAlpha(0.7f);
+        tvNote.setPadding(dpToPx(16), dpToPx(16), dpToPx(16), dpToPx(8));
+        changelogContent.addView(tvNote);
 
         MaterialButton btnClose = sheetView.findViewById(R.id.btn_close);
         btnClose.setOnClickListener(v -> dialog.dismiss());

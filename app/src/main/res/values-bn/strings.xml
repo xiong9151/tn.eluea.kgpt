@@ -338,7 +338,7 @@
     <string name="desc_edit_trigger_symbol">Change the symbol that triggers this action</string>
     <string name="label_enable_trigger">Enable Trigger</string>
     <string name="desc_enable_trigger">Turn on to activate this trigger</string>
-    <string name="hint_trigger_symbol">Trigger Symbol</string>
+
     <string name="label_preview">Preview</string>
 
     <!-- App Trigger Dialog -->
@@ -472,7 +472,6 @@
     <string name="hint_description">Description...</string>
     <string name="reset_default">Reset to default</string>
     <string name="hint_example">Example...</string>
-    <string name="no_commands">No commands yet</string>
 
     <!-- Settings Fragment Extras -->
     <string name="winter_mode">Winter Mode</string>
@@ -605,9 +604,15 @@
     <string name="tag_added">ADD</string>
     <string name="tag_improved">IMPROVE</string>
     <string name="tag_fixed">FIX</string>
-    <string name="changelog_4_0_6_item1">কী পরিচালনার সুবিধার্থে প্রদানকৃত/বিনামূল্যে API কী শ্রেণীবিন্যাস সিস্টেম যোগ করা হয়েছে</string>
-    <string name="changelog_4_0_6_item2">দ্রুত অ্যাক্সেসের জন্য AI সেটিংস / API কী-তে \'Get Key\' বোতাম যোগ করা হয়েছে</string>
-    <string name="changelog_4_0_6_item3">ভিজ্যুয়াল সামঞ্জস্যের জন্য প্রাথমিক কার্ডের সাথে মিল রেখে সেকেন্ডারি কী কার্ডের ডিজাইন উন্নত করা হয়েছে</string>
+    <string name="changelog_1_0_0_item1">ওয়েব সার্চ অপশনে Google AI Mode যোগ করা হয়েছে</string>
+    <string name="changelog_1_0_0_item2">সমস্ত উপলব্ধ ভাষার সমর্থন সহ ভাষা নির্বাচন বৈশিষ্ট্য যোগ করা হয়েছে</string>
+    <string name="changelog_1_0_0_item3">এক হাতে ব্যবহার এবং বড় আঙুলের জন্য স্ক্রিন লেআউট উন্নত করা হয়েছে</string>
+    <string name="changelog_1_0_0_item4">অনেক স্থিতিশীলতা সমস্যা সমাধান এবং কর্মক্ষমতা উন্নত করা হয়েছে</string>
+    <string name="changelog_1_0_0_item5">FUTO কীবোর্ড পরীক্ষা এবং সমর্থন যোগ করা হয়েছে</string>
+    <string name="changelog_1_0_0_item6">Chutes API এর সাথে সংযোগ সমস্যা সমাধান করা হয়েছে</string>
+    <string name="changelog_1_0_0_item7">নতুন Perplexity মডেল এবং Perplexity API সমর্থন যোগ করা হয়েছে</string>
+    <string name="changelog_1_0_0_item8">কমান্ডের জন্য \"/\" সীমাবদ্ধতা সরানো হয়েছে</string>
+    <string name="changelog_1_0_0_note">অনুগ্রহ করে ধৈর্য ধরুন কারণ ডেভেলপারকে আরও সমস্যা রিপোর্ট করা হয়েছে, কিন্তু এটি একজন ব্যক্তির প্রকল্প হওয়ায় আপডেটের ব্যাচে সমাধান করা হবে। আপনার বোঝার জন্য ধন্যবাদ।</string>
     <string name="module_restart_required_desc">মডিউল সক্রিয় করতে ডিভাইস রিবুট করুন</string>
     <string name="new_command_title">নতুন কমান্ড</string>
     <string name="error_prefix_empty">প্রিফিক্স খালি হতে পারে না</string>
@@ -650,7 +655,6 @@
     <string name="msg_pattern_create_failed">Could not create pattern</string>
     <string name="msg_pattern_invalid">Invalid pattern</string>
     <string name="msg_trigger_status_format">Trigger "%1$s" %2$s</string>
-    <string name="msg_pattern_reset">Pattern reset to default</string>
     <string name="msg_command_name_required">Command name is required</string>
     <string name="msg_command_exists">Command already exists</string>
     <string name="msg_command_builtin_conflict">Cannot use built-in command name</string>
@@ -666,5 +670,13 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">এই প্রতীকটি অন্য একটি প্যাটার্ন দ্বারা ইতিমধ্যে ব্যবহৃত</string>
+    
+    <!-- Dialog strings -->
+    <string name="dialog_title_edit_pattern">%1$s সম্পাদনা করুন</string>
+    <string name="hint_trigger_symbol">প্রতীক লিখুন</string>
+    <string name="btn_reset_pattern">প্যাটার্ন রিসেট করুন</string>
+    <string name="msg_reset_pattern_confirm">আপনি কি নিশ্চিত যে আপনি \'%1$s\' কে ডিফল্ট প্রতীক \"%2$s\"-এ রিসেট করতে চান?</string>
+    <string name="msg_pattern_reset">প্যাটার্ন ডিফল্টভাবে রিসেট করা হয়েছে</string>
+    <string name="no_commands">এখনও কোনো কমান্ড নেই</string>
 </resources>

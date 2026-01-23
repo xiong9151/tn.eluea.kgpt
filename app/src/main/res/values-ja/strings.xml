@@ -466,9 +466,15 @@
     <string name="tag_added">追加</string>
     <string name="tag_improved">改善</string>
     <string name="tag_fixed">修正</string>
-    <string name="changelog_4_0_6_item1">キー管理を容易にするための有料/無料APIキー分類システムを追加</string>
-    <string name="changelog_4_0_6_item2">AI設定 / APIキーに素早くアクセスするための「キーを取得」ボタンを追加</string>
-    <string name="changelog_4_0_6_item3">視覚的な一貫性を高めるため、セカンダリキーカードのデザインをプライマリカードに合わせて改善</string>
+    <string name="changelog_1_0_0_item1">ウェブ検索オプションにGoogle AI Modeを追加</string>
+    <string name="changelog_1_0_0_item2">すべての利用可能な言語をサポートする言語選択機能を追加</string>
+    <string name="changelog_1_0_0_item3">片手操作と大きな指に対応するため画面レイアウトを改善</string>
+    <string name="changelog_1_0_0_item4">多くの安定性の問題を修正し、パフォーマンスを改善</string>
+    <string name="changelog_1_0_0_item5">FUTOキーボードをテストしサポートを追加</string>
+    <string name="changelog_1_0_0_item6">Chutes APIとの接続問題を修正</string>
+    <string name="changelog_1_0_0_item7">新しいPerplexityモデルとPerplexity APIサポートを追加</string>
+    <string name="changelog_1_0_0_item8">コマンド使用時の\"/\"制限を削除</string>
+    <string name="changelog_1_0_0_note">開発者にはさらに多くの問題が報告されていますが、これは一人のプロジェクトであるため、アップデートのバッチで解決されます。ご理解いただきありがとうございます。</string>
     <string name="module_restart_required_desc">モジュールを有効にするにはデバイスを再起動してください</string>
 
     <string name="new_command_title">新しいコマンド</string>
@@ -528,5 +534,48 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">このシンボルは既に使用されています</string>
+    
+    <!-- New Settings Dialog Strings -->
+    <string name="settings_option_choose_model">モデルを選択して設定</string>
+    <string name="dialog_title_commands_list">コマンド一覧</string>
+    <string name="settings_option_patterns_list">パターン一覧</string>
+    <string name="dialog_title_config_model">%1$s を設定</string>
+
+    <string name="setting_enable_logging">ログを有効にする</string>
+    <string name="setting_desc_enable_logging">パフォーマンスのため無効にしてください。エラー報告ができなくなります。</string>
+    <string name="setting_external_internet">外部インターネットサービスを使用</string>
+    <string name="setting_desc_external_internet">チャットが動作しない場合は推奨。</string>
+    <string name="setting_search_engine">検索エンジン</string>
+    <string name="setting_desc_search_engine">デフォルトの検索エンジン。</string>
+    <string name="setting_material_you">Material You を有効にする</string>
+    <string name="setting_desc_material_you">壁紙に基づくダイナミックカラー。</string>
+    <string name="dialog_title_trigger_symbols">トリガーシンボル</string>
+    <string name="no_patterns">パターンなし</string>
+    <string name="dialog_title_edit_pattern">%1$s を編集</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 設定を開く</string>
+    <string name="example_ai_responds">\u0022こんにちは、元気ですか？%1$s\u0022 \u2192 AIが応答</string>
+    <string name="example_translates">\u0022こんにちは%1$s翻訳%1$s\u0022 \u2192 翻訳する</string>
+    <string name="example_format_italic">\u0022テキスト%1$s\u0022 \u2192 イタリック</string>
+    <string name="example_format_bold">\u0022テキスト%1$s\u0022 \u2192 太字</string>
+    <string name="example_format_crossout">\u0022テキスト%1$s\u0022 \u2192 取り消し線</string>
+    <string name="example_format_underline">\u0022テキスト%1$s\u0022 \u2192 下線</string>
+    <string name="example_default">テキストを入力し、最後に \u0022%1$s\u0022 を追加</string>
+    <string name="pattern_subtitle_trigger">トリガー: %1$s</string>
+    <string name="title_settings_trigger">設定</string>
+    <string name="title_ai_trigger">AIトリガー</string>
+    <string name="title_custom_command">カスタムコマンド</string>
+    <string name="title_italic">イタリック</string>
+    <string name="title_bold">太字</string>
+    <string name="title_crossout">取り消し線</string>
+    <string name="title_underline">下線</string>
+    <string name="title_web_search">ウェブ検索</string>
+    <string name="btn_reset_pattern">パターンをリセット</string>
+    <string name="msg_reset_pattern_confirm">\'%1$s\' をデフォルトシンボル \"%2$s\" にリセットしますか？</string>
+    <string name="field_api_key">APIキー</string>
+    <string name="field_sub_model">サブモデル</string>
+    <string name="field_base_url">ベースURL</string>
+    <string name="field_max_tokens">最大トークン</string>
+    <string name="field_temperature">温度</string>
+    <string name="field_top_p">Top P</string>
 </resources>

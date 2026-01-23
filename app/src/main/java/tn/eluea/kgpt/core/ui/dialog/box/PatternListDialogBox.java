@@ -51,7 +51,7 @@ public class PatternListDialogBox extends DialogBox {
         View btnBack = layout.findViewById(R.id.btn_back);
         View btnNew = layout.findViewById(R.id.btn_new);
 
-        tvTitle.setText("Trigger Symbols");
+        tvTitle.setText(R.string.dialog_title_trigger_symbols);
         // Consistent icon with Settings
         ivIcon.setImageResource(R.drawable.ic_document_code_filled);
 
@@ -62,7 +62,7 @@ public class PatternListDialogBox extends DialogBox {
 
         if (getConfig().patterns.isEmpty()) {
             tvEmpty.setVisibility(View.VISIBLE);
-            tvEmpty.setText("No patterns");
+            tvEmpty.setText(R.string.no_patterns);
         } else {
             // ... existing loop ...
             for (int i = 0; i < getConfig().patterns.size(); i++) {
@@ -77,16 +77,16 @@ public class PatternListDialogBox extends DialogBox {
                 ImageView arrowIcon = itemView.findViewById(R.id.iv_arrow);
 
                 // Show enabled/disabled status in title
-                String title = pattern.getType().title;
+                String title = themedContext.getString(pattern.getType().titleResId);
                 if (!pattern.isEnabled()) {
-                    title += " (Disabled)";
+                    title += " (Disabled)"; // TODO: Localize this too?
                 }
                 tvName.setText(title);
 
                 // Show user-friendly symbol instead of regex
                 String symbol = getDisplaySymbol(pattern);
                 if (tvSubtitle != null) {
-                    tvSubtitle.setText("Trigger: " + symbol);
+                    tvSubtitle.setText(themedContext.getString(R.string.pattern_subtitle_trigger, symbol));
                     tvSubtitle.setVisibility(View.VISIBLE);
                 }
 

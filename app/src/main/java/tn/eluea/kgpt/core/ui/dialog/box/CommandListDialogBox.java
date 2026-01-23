@@ -53,7 +53,7 @@ public class CommandListDialogBox extends DialogBox {
         MaterialButton btnBack = layout.findViewById(R.id.btn_back);
         MaterialButton btnNew = layout.findViewById(R.id.btn_new);
 
-        tvTitle.setText("Commands List");
+        tvTitle.setText(R.string.dialog_title_commands_list);
         ivIcon.setImageResource(R.drawable.ic_command_filled);
 
         // Apply tint to header icon
@@ -64,7 +64,7 @@ public class CommandListDialogBox extends DialogBox {
 
         if (getConfig().commands.isEmpty()) {
             tvEmpty.setVisibility(View.VISIBLE);
-            tvEmpty.setText("No commands yet");
+            tvEmpty.setText(R.string.no_commands);
         } else {
             for (int i = 0; i < getConfig().commands.size(); i++) {
                 AbstractCommand command = getConfig().commands.get(i);

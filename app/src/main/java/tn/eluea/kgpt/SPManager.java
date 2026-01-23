@@ -304,6 +304,8 @@ public class SPManager implements ConfigInfoProvider {
         switch (engine) {
             case "google":
                 return "https://www.google.com/search?q=" + encodedQuery;
+            case "google_ai":
+                return "https://www.google.com/search?udm=50&q=" + encodedQuery;
             case "bing":
                 return "https://www.bing.com/search?q=" + encodedQuery;
             case "yahoo":

@@ -231,12 +231,8 @@ public class ConfigureModelDialogBox extends DialogBox {
                                         headerIconContainer);
                 }
 
-                tvTitle.setText(getConfig().selectedModel.label + " Config (v2)");
-
-                TextView debugView = new TextView(themedContext);
-                debugView.setText("DEBUG: Checking presets for " + getConfig().selectedModel.name());
-                debugView.setTextColor(android.graphics.Color.RED);
-                fieldsContainer.addView(debugView);
+                tvTitle.setText(themedContext.getString(R.string.dialog_title_config_model,
+                                getConfig().selectedModel.label));
 
                 Bundle tempModelConfig = new Bundle();
                 TextInputEditText subModelEditText = null;
@@ -248,7 +244,7 @@ public class ConfigureModelDialogBox extends DialogBox {
                         TextInputLayout inputLayout = fieldView.findViewById(R.id.field_layout);
                         TextInputEditText editText = fieldView.findViewById(R.id.field_edit);
 
-                        inputLayout.setHint(field.title);
+                        inputLayout.setHint(themedContext.getString(field.titleResId));
                         editText.setInputType(field.inputType);
 
                         String fieldValue = modelConfig.getString(field.name);
@@ -394,11 +390,10 @@ public class ConfigureModelDialogBox extends DialogBox {
                                 String suggested = getSuggestedModel(getConfig().selectedModel, subModelValue);
 
                                 new AlertDialog.Builder(themedContext)
-                                                .setTitle("Unknown Model Name")
-                                                .setMessage("The model \"" + subModelValue
-                                                                + "\" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: "
-                                                                + suggested + "?")
-                                                .setPositiveButton("Use Suggestion", (d, w) -> {
+                                                .setTitle(R.string.dialog_title_unknown_model)
+                                                .setMessage(themedContext.getString(R.string.dialog_msg_unknown_model,
+                                                                subModelValue, suggested))
+                                                .setPositiveButton(R.string.btn_use_suggestion, (d, w) -> {
                                                         tempModelConfig.putString(LanguageModelField.SubModel.name,
                                                                         suggested);
                                                         if (finalSubModelEditText != null) {
@@ -424,7 +419,7 @@ public class ConfigureModelDialogBox extends DialogBox {
                                                         sheet.dismiss();
                                                         switchToDialog(DialogType.ChoseModel);
                                                 })
-                                                .setNegativeButton("Use Anyway", (d, w) -> {
+                                                .setNegativeButton(R.string.btn_use_anyway, (d, w) -> {
                                                         modelConfig.putAll(tempModelConfig);
 
                                                         getConfig().saveToProvider();
@@ -442,7 +437,7 @@ public class ConfigureModelDialogBox extends DialogBox {
                                                         sheet.dismiss();
                                                         switchToDialog(DialogType.ChoseModel);
                                                 })
-                                                .setNeutralButton("Cancel", null)
+                                                .setNeutralButton(R.string.cancel, null)
                                                 .show();
                                 return;
                         }

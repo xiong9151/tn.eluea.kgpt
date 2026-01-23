@@ -51,11 +51,35 @@ public class InlineCommandParseResultFactory {
 
         String escapedSymbol = Pattern.quote(triggerSymbol);
 
-        // Pattern: (preserved text) /command (prompt)$
-        // We need to find /command where command is in availableCommands
-        Pattern pattern = Pattern.compile("(.*)\\s*/([a-zA-Z0-9_]+)\\s+(.+)" + escapedSymbol + "$");
+        // Sort commands by length (descending) to match longest triggers first
+        // e.g. match "fixer" before "fix"
+        List<String> sortedCommands = new java.util.ArrayList<>(availableCommands);
+        sortedCommands.sort((s1, s2) -> s2.length() - s1.length());
 
+        StringBuilder cmdPattern = new StringBuilder();
+        for (String cmd : sortedCommands) {
+            if (cmdPattern.length() > 0)
+                cmdPattern.append("|");
+            cmdPattern.append(Pattern.quote(cmd));
+        }
+
+        // Regex Explanation:
+        // (?si) : Dot matches newline, Case insensitive
+        // (.*) : Group 1 - Preserved text (Greedy, so it finds the last command match)
+        // (?:\\s+/|\\s+|(?<=^)/|(?<=^)) : Separator (Space+slash, Space, Start+slash,
+        // Start)
+        // (" + cmdPattern + ") : Group 2 - The Command
+        // \\s+ : Required whitespace after command
+        // (.+) : Group 3 - The Prompt
+        // escapedSymbol + "$" : End identifier
+
+        String separatorPattern = "(?:\\s+/|\\s+|(?<=^)/|(?<=^))";
+
+        String regex = "(?si)(.*)" + separatorPattern + "(" + cmdPattern.toString() + ")\\s+(.+)" + escapedSymbol + "$";
+
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
+
         if (matcher.find()) {
             String preservedText = matcher.group(1);
             String command = matcher.group(2);
@@ -66,49 +90,38 @@ public class InlineCommandParseResultFactory {
                 return null;
             }
 
-            // Check if command exists in available commands (case-insensitive)
-            boolean commandExists = false;
-            String matchedCommand = null;
+            // Identify the exact matched command string
+            String matchedCommand = command;
             for (String cmd : availableCommands) {
                 if (cmd.equalsIgnoreCase(command)) {
-                    commandExists = true;
                     matchedCommand = cmd;
                     break;
                 }
             }
 
-            if (!commandExists) {
-                return null;
+            // Calculate start index.
+            // We can check text between group 1 end and group 2 start to find if slash was
+            // used.
+            int g1End = matcher.end(1);
+            int g2Start = matcher.start(2);
+            String separator = text.substring(g1End, g2Start);
+
+            int commandStartPos = g2Start;
+            if (separator.contains("/")) {
+                commandStartPos = text.lastIndexOf("/", g2Start);
+                if (commandStartPos < g1End)
+                    commandStartPos = g2Start;
             }
 
-            // Find where /command starts
-            int commandStart = text.lastIndexOf("/" + command);
-            if (commandStart < 0) {
-                // Try case-insensitive search
-                String lowerText = text.toLowerCase(java.util.Locale.ROOT);
-                commandStart = lowerText.lastIndexOf("/" + command.toLowerCase(java.util.Locale.ROOT));
-            }
-
-            if (commandStart < 0) {
-                return null;
-            }
-
-            // Create groups list for compatibility
-            List<String> groups = List.of(
-                    matcher.group(0), // Full match
-                    command, // The command
-                    prompt // The prompt after /command
-            );
-
+            // Return result
             return new InlineCommandParseResult(
-                    groups,
-                    0, // Original indexStart (not used)
-                    text.length(), // indexEnd
-                    matchedCommand, // Use the matched command (preserves original case)
+                    List.of(matcher.group(0), command, prompt),
+                    0,
+                    text.length(),
+                    matchedCommand,
                     prompt.trim(),
                     preservedText != null ? preservedText : "",
-                    commandStart // Where /command starts
-            );
+                    commandStartPos);
         }
 
         return null;

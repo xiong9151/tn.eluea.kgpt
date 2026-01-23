@@ -338,7 +338,7 @@
     <string name="desc_edit_trigger_symbol">Change the symbol that triggers this action</string>
     <string name="label_enable_trigger">Enable Trigger</string>
     <string name="desc_enable_trigger">Turn on to activate this trigger</string>
-    <string name="hint_trigger_symbol">Trigger Symbol</string>
+
     <string name="label_preview">Preview</string>
 
     <!-- App Trigger Dialog -->
@@ -605,9 +605,15 @@
     <string name="tag_added">ONGEZA</string>
     <string name="tag_improved">BORESHA</string>
     <string name="tag_fixed">REKEBISHA</string>
-    <string name="changelog_4_0_6_item1">Imeongezwa mfumo wa uainishaji wa funguo za API za kulipia/bure ili kurahisisha usimamizi</string>
-    <string name="changelog_4_0_6_item2">Imeongezwa kitufe cha \'Pata Ufunguo\' katika Mipangilio ya AI / Funguo za API kwa ufikiaji wa haraka</string>
-    <string name="changelog_4_0_6_item3">Imeboreshwa muundo wa kadi ya ufunguo wa pili ili kuendana na kadi kuu kwa uwiano bora wa kuona</string>
+    <string name="changelog_1_0_0_item1">Imeongezwa Google AI Mode kwenye chaguo za utafutaji wa wavuti</string>
+    <string name="changelog_1_0_0_item2">Imeongezwa kipengele cha kuchagua lugha chenye msaada wa lugha zote zinazopatikana</string>
+    <string name="changelog_1_0_0_item3">Imeboreshwa miundo ya skrini kwa matumizi ya mkono mmoja na vidole vikubwa</string>
+    <string name="changelog_1_0_0_item4">Imerekebishwa matatizo mengi ya uthabiti na kuboresha utendaji</string>
+    <string name="changelog_1_0_0_item5">Imejaribiwa na kuongeza msaada wa kibodi ya FUTO</string>
+    <string name="changelog_1_0_0_item6">Imerekebishwa tatizo la muunganisho na Chutes API</string>
+    <string name="changelog_1_0_0_item7">Imeongezwa modeli mpya ya Perplexity na msaada wa Perplexity API</string>
+    <string name="changelog_1_0_0_item8">Imeondolewa kizuizi cha kutumia \"/\" kwa amri</string>
+    <string name="changelog_1_0_0_note">Tafadhali kuwa na subira kwani matatizo zaidi yameripotiwa kwa msanidi programu, lakini yatasululiwa katika vikundi vya masasisho kwani huu ni mradi wa mtu mmoja. Asante kwa uelewa wako.</string>
     <string name="module_restart_required_desc">Washa upya kifaa ili kuwezesha moduli</string>
     <string name="new_command_title">Amri Mpya</string>
     <string name="error_prefix_empty">Kiambishi awali hakiwezi kuwa tupu</string>
@@ -666,5 +672,10 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">Ishara hii tayari inatumika na muundo mwingine</string>
+    
+    <!-- Dialog strings -->
+    <string name="hint_trigger_symbol">Ingiza ishara</string>
+    <string name="btn_reset_pattern">Weka Upya Muundo</string>
+    <string name="msg_reset_pattern_confirm">Una uhakika unataka kuweka upya \'%1$s\' kuwa ishara chaguo-msingi \"%2$s\"?</string>
 </resources>

@@ -466,9 +466,15 @@
     <string name="tag_added">NUOVO</string>
     <string name="tag_improved">MIGLIORATO</string>
     <string name="tag_fixed">FIX</string>
-    <string name="changelog_4_0_6_item1">Aggiunto sistema di classificazione chiavi API a pagamento/gratuite per facilitare la gestione</string>
-    <string name="changelog_4_0_6_item2">Aggiunto pulsante \'Ottieni chiave\' in Impostazioni AI / Chiavi API per accesso rapido</string>
-    <string name="changelog_4_0_6_item3">Migliorato il design della scheda chiave secondaria per abbinarlo alla scheda principale per una migliore coerenza visiva</string>
+    <string name="changelog_1_0_0_item1">Aggiunto Google AI Mode alle opzioni di ricerca web</string>
+    <string name="changelog_1_0_0_item2">Aggiunta funzione di selezione lingua con supporto per tutte le lingue disponibili</string>
+    <string name="changelog_1_0_0_item3">Migliorati i layout dello schermo per uso con una mano e dita più grandi</string>
+    <string name="changelog_1_0_0_item4">Risolti molti problemi di stabilità e migliorato le prestazioni</string>
+    <string name="changelog_1_0_0_item5">Testato e aggiunto supporto per tastiera FUTO</string>
+    <string name="changelog_1_0_0_item6">Risolto problema di connessione con Chutes API</string>
+    <string name="changelog_1_0_0_item7">Aggiunto nuovo modello Perplexity e supporto API Perplexity</string>
+    <string name="changelog_1_0_0_item8">Rimossa restrizione di usare \"/\" per i comandi</string>
+    <string name="changelog_1_0_0_note">Si prega di essere pazienti poiché sono stati segnalati altri problemi allo sviluppatore, ma verranno risolti in lotti di aggiornamenti poiché si tratta di un progetto di una sola persona. Grazie per la comprensione.</string>
     <string name="module_restart_required_desc">Riavvia il dispositivo per attivare il modulo</string>
 
     <string name="new_command_title">Nuovo comando</string>
@@ -528,5 +534,48 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">Questo simbolo è già utilizzato</string>
+    
+    <!-- New Settings Dialog Strings -->
+    <string name="settings_option_choose_model">Scegli e configura modello</string>
+    <string name="dialog_title_commands_list">Elenco comandi</string>
+    <string name="settings_option_patterns_list">Elenco pattern</string>
+    <string name="dialog_title_config_model">Configura %1$s</string>
+
+    <string name="setting_enable_logging">Abilita log</string>
+    <string name="setting_desc_enable_logging">Disabilita per le prestazioni. Non potrai segnalare errori.</string>
+    <string name="setting_external_internet">Usa servizio internet esterno</string>
+    <string name="setting_desc_external_internet">Consigliato se la chat non funziona.</string>
+    <string name="setting_search_engine">Motore di ricerca</string>
+    <string name="setting_desc_search_engine">Motore di ricerca predefinito.</string>
+    <string name="setting_material_you">Abilita Material You</string>
+    <string name="setting_desc_material_you">Colori dinamici basati sullo sfondo.</string>
+    <string name="dialog_title_trigger_symbols">Simboli trigger</string>
+    <string name="no_patterns">Nessun pattern</string>
+    <string name="dialog_title_edit_pattern">Modifica %1$s</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 Apre impostazioni</string>
+    <string name="example_ai_responds">\u0022Ciao, come stai?%1$s\u0022 \u2192 L\'AI risponde</string>
+    <string name="example_translates">\u0022Ciao%1$straduci%1$s\u0022 \u2192 Traduce</string>
+    <string name="example_format_italic">\u0022testo%1$s\u0022 \u2192 testo corsivo</string>
+    <string name="example_format_bold">\u0022testo%1$s\u0022 \u2192 testo grassetto</string>
+    <string name="example_format_crossout">\u0022testo%1$s\u0022 \u2192 barrato</string>
+    <string name="example_format_underline">\u0022testo%1$s\u0022 \u2192 sottolineato</string>
+    <string name="example_default">Scrivi il testo, poi aggiungi \u0022%1$s\u0022 alla fine</string>
+    <string name="pattern_subtitle_trigger">Trigger: %1$s</string>
+    <string name="title_settings_trigger">Impostazioni</string>
+    <string name="title_ai_trigger">Trigger AI</string>
+    <string name="title_custom_command">Comando personalizzato</string>
+    <string name="title_italic">Corsivo</string>
+    <string name="title_bold">Grassetto</string>
+    <string name="title_crossout">Barrato</string>
+    <string name="title_underline">Sottolineato</string>
+    <string name="title_web_search">Ricerca web</string>
+    <string name="btn_reset_pattern">Reimposta pattern</string>
+    <string name="msg_reset_pattern_confirm">Reimpostare \'%1$s\' al simbolo predefinito \"%2$s\"?</string>
+    <string name="field_api_key">Chiave API</string>
+    <string name="field_sub_model">Sotto-modello</string>
+    <string name="field_base_url">URL base</string>
+    <string name="field_max_tokens">Token massimi</string>
+    <string name="field_temperature">Temperatura</string>
+    <string name="field_top_p">Top P</string>
 </resources>

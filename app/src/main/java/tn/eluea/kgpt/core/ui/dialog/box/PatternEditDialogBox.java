@@ -85,8 +85,9 @@ public class PatternEditDialogBox extends DialogBox {
         }
         ParsePattern pattern = getConfig().patterns.get(patternIndex);
 
-        tvTitle.setText("Edit " + pattern.getType().title);
-        tvDescription.setText(pattern.getType().description);
+        tvTitle.setText(themedContext.getString(R.string.dialog_title_edit_pattern,
+                themedContext.getString(pattern.getType().titleResId)));
+        tvDescription.setVisibility(View.GONE); // Pattern description removed, using examples instead
 
         // Set enabled state
         switchEnabled.setChecked(pattern.isEnabled());
@@ -221,32 +222,7 @@ public class PatternEditDialogBox extends DialogBox {
             symbol = type.defaultSymbol;
         }
 
-        String example;
-        switch (type) {
-            case Settings:
-                example = "\"" + symbol + "\" â†’ Opens settings";
-                break;
-            case CommandAI:
-                example = "\"Hello, how are you?" + symbol + "\" â†’ AI responds";
-                break;
-            case CommandCustom:
-                example = "\"Hello" + symbol + "translate" + symbol + "\" â†’ Translates";
-                break;
-            case FormatItalic:
-                example = "\"text" + symbol + "\" â†’ italic text";
-                break;
-            case FormatBold:
-                example = "\"text" + symbol + "\" â†’ bold text";
-                break;
-            case FormatCrossout:
-                example = "\"text" + symbol + "\" â†’ strikethrough";
-                break;
-            case FormatUnderline:
-                example = "\"text" + symbol + "\" â†’ underlined";
-                break;
-            default:
-                example = "Type text, then add \"" + symbol + "\" at the end";
-        }
+        String example = tvExample.getContext().getString(type.exampleResId, symbol);
         tvExample.setText(example);
     }
 }

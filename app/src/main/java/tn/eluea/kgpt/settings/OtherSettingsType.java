@@ -7,39 +7,41 @@
  */
 package tn.eluea.kgpt.settings;
 
+import tn.eluea.kgpt.R;
+
 public enum OtherSettingsType {
-        EnableLogs("Enable logging", "Disable for performance. You won't be able to report errors.",
+        EnableLogs(R.string.setting_enable_logging, R.string.setting_desc_enable_logging,
                         Nature.Boolean, true),
-        EnableExternalInternet("Use external internet service",
-                        "Recommended to keep on unless chat completion is not working.",
+        EnableExternalInternet(R.string.setting_external_internet,
+                        R.string.setting_desc_external_internet,
                         Nature.Boolean, true),
-        SearchEngine("Search Engine", "Default search engine for web searches.",
+        SearchEngine(R.string.setting_search_engine, R.string.setting_desc_search_engine,
                         Nature.String, "duckduckgo"),
-        MaterialYouEnabled("Enable Material You", "Use dynamic colors based on wallpaper or custom color.",
+        MaterialYouEnabled(R.string.setting_material_you, R.string.setting_desc_material_you,
                         Nature.Boolean, false),
-        MaterialYouUseWallpaper("Use Wallpaper Colors", "Extract colors from device wallpaper (Android 12+).",
+        MaterialYouUseWallpaper(R.string.setting_wallpaper_colors, R.string.setting_desc_wallpaper_colors,
                         Nature.Boolean, true),
-        MaterialYouSeedColor("Seed Color", "Custom color to generate theme.",
-                        Nature.Integer, 0xFF2196F3), // Default Blue
-        MaterialYouSingleTone("Use Single Tone", "Use a single color tone for the theme.",
+        MaterialYouSeedColor(R.string.setting_seed_color, R.string.setting_desc_seed_color,
+                        Nature.Integer, 0xFF2196F3),
+        MaterialYouSingleTone(R.string.setting_single_tone, R.string.setting_desc_single_tone,
                         Nature.Boolean, false),
 
         // Update Settings
-        UpdateCheckEnabled("Check for Updates", "Automatically check for new versions.",
+        UpdateCheckEnabled(R.string.setting_check_updates, R.string.setting_desc_check_updates,
                         Nature.Boolean, true),
-        UpdateCheckInterval("Update Check Interval", "How often to check for updates (in hours).",
-                        Nature.Integer, 24), // Default: every 24 hours
-        UpdateDownloadPath("Download Path", "Custom path for downloading updates.",
-                        Nature.String, ""); // Empty means default Downloads folder
+        UpdateCheckInterval(R.string.setting_update_interval, R.string.setting_desc_update_interval,
+                        Nature.Integer, 24),
+        UpdateDownloadPath(R.string.setting_download_path, R.string.setting_desc_download_path,
+                        Nature.String, "");
 
-        public final String title;
-        public final String description;
+        public final int titleResId;
+        public final int descriptionResId;
         public final Nature nature;
         public final Object defaultValue;
 
-        OtherSettingsType(String title, String description, Nature nature, Object defaultValue) {
-                this.title = title;
-                this.description = description;
+        OtherSettingsType(int titleResId, int descriptionResId, Nature nature, Object defaultValue) {
+                this.titleResId = titleResId;
+                this.descriptionResId = descriptionResId;
                 this.nature = nature;
                 this.defaultValue = defaultValue;
         }

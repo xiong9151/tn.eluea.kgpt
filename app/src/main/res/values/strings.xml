@@ -335,7 +335,7 @@
     <string name="error_prefix_empty">Prefix cannot be empty</string>
     <string name="error_message_empty">Message cannot be empty</string>
     <string name="error_duplicate_command">There is another command with same name</string>
-    <string name="hint_command_prefix">Command (e.g. /ask)</string>
+    <string name="hint_command_prefix">Command (e.g. ask)</string>
     <string name="hint_prompt">Prompt</string>
 
     <!-- Edit Trigger Symbol Dialog -->
@@ -451,7 +451,7 @@
     <string name="desc_add_command">Create a custom command to trigger AI</string>
     <string name="hint_command_name">Command Name</string>
     <string name="hint_system_message">System Message (Optional)</string>
-    <string name="help_command_usage">Usage: text /command + AI trigger symbol\ne.g. Hello world /short$</string>
+    <string name="help_command_usage">Usage: text command + AI trigger symbol\ne.g. Hello world short$</string>
     <string name="title_edit_pattern">Edit Pattern</string>
     <string name="desc_edit_pattern">Customize the regex pattern for AI trigger</string>
     <string name="hint_regex_pattern">Regex Pattern</string>
@@ -575,13 +575,13 @@
     
     <!-- Pattern Descriptions -->
     <string name="pattern_desc_settings">Settings trigger</string>
-    <string name="pattern_desc_ai_trigger">Type text then add $ at end</string>
-    <string name="pattern_desc_custom_command">Type text then add %command%</string>
-    <string name="pattern_desc_italic">Type text then add |</string>
-    <string name="pattern_desc_bold">Type text then add @</string>
-    <string name="pattern_desc_crossout">Type text then add ~</string>
-    <string name="pattern_desc_underline">Type text then add _</string>
-    <string name="pattern_desc_web_search">Type text then add ?? to search</string>
+    <string name="pattern_desc_ai_trigger">Type text then add %1$s at end</string>
+    <string name="pattern_desc_custom_command">Type text then add %1$scommand%1$s</string>
+    <string name="pattern_desc_italic">Type text then add %1$s</string>
+    <string name="pattern_desc_bold">Type text then add %1$s</string>
+    <string name="pattern_desc_crossout">Type text then add %1$s</string>
+    <string name="pattern_desc_underline">Type text then add %1$s</string>
+    <string name="pattern_desc_web_search">Type text then add %1$s to search</string>
     
     <!-- Pattern Status -->
     <string name="status_disabled">Disabled</string>
@@ -617,9 +617,16 @@
     <string name="tag_improved">IMPROVE</string>
     <string name="tag_fixed">FIX</string>
     
-    <string name="changelog_4_0_6_item1">Added paid/free API key classification system to facilitate key management</string>
-    <string name="changelog_4_0_6_item2">Added \'Get Key\' button in AI Settings / API Keys for quick access</string>
-    <string name="changelog_4_0_6_item3">Improved secondary key card design to match the primary card for better visual consistency</string>
+    <string name="changelog_1_0_0_item1">Added Google AI Mode to web search options</string>
+    <string name="changelog_1_0_0_item2">Added language selection feature with support for all available languages</string>
+    <string name="changelog_1_0_0_item3">Improved screen layouts for one-handed use and larger fingers</string>
+    <string name="changelog_1_0_0_item4">Fixed many stability issues and improved performance</string>
+    <string name="changelog_1_0_0_item5">Tested and added support for FUTO keyboard</string>
+    <string name="changelog_1_0_0_item6">Fixed connection issue with Chutes API</string>
+    <string name="changelog_1_0_0_item7">Added new Perplexity model and Perplexity API support</string>
+    <string name="changelog_1_0_0_item8">Removed "/" restriction for using commands</string>
+    <string name="changelog_1_0_0_note">Please be patient as more issues have been reported to the developer, but they will be resolved in batches of updates as this is a one-person project. Thank you for your understanding.</string>
+    
     <!-- Language Selection -->
     <string name="hint_search_language">Search languages...</string>
     <string name="msg_theme_updated">Theme updated</string>
@@ -660,4 +667,62 @@
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
     <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <!-- Model Config Fields -->
+    <string name="field_api_key">API Key</string>
+    <string name="field_top_p">Top P</string>
+    <string name="dialog_title_config_model">%1$s Config</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="settings_option_choose_model">Choose &amp; Configure Model</string>
+    <string name="dialog_title_commands_list">Commands List</string>
+    <string name="settings_option_patterns_list">Patterns List</string>
+    <!-- Other Settings -->
+    <string name="setting_enable_logging">Enable logging</string>
+    <string name="setting_desc_enable_logging">Disable for performance. You won\'t be able to report errors.</string>
+    <string name="setting_external_internet">Use external internet service</string>
+    <string name="setting_desc_external_internet">Recommended to keep on unless chat completion is not working.</string>
+    <string name="setting_search_engine">Search Engine</string>
+    <string name="setting_desc_search_engine">Default search engine for web searches.</string>
+    <string name="setting_material_you">Enable Material You</string>
+    <string name="setting_desc_material_you">Use dynamic colors based on wallpaper or custom color.</string>
+    <string name="setting_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="setting_desc_wallpaper_colors">Extract colors from device wallpaper (Android 12+).</string>
+    <string name="setting_seed_color">Seed Color</string>
+    <string name="setting_desc_seed_color">Custom color to generate theme.</string>
+    <string name="setting_single_tone">Use Single Tone</string>
+    <string name="setting_desc_single_tone">Use a single color tone for the theme.</string>
+    <string name="setting_check_updates">Check for Updates</string>
+    <string name="setting_desc_check_updates">Automatically check for new versions.</string>
+    <string name="setting_update_interval">Update Check Interval</string>
+    <string name="setting_desc_update_interval">How often to check for updates (in hours).</string>
+    <string name="setting_download_path">Download Path</string>
+    <string name="setting_desc_download_path">Custom path for downloading updates.</string>
+
+    <!-- Pattern List & Edit -->
+    <string name="dialog_title_trigger_symbols">Trigger Symbols</string>
+    <string name="no_patterns">No patterns</string>
+    <string name="dialog_title_edit_pattern">Edit %1$s</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 Opens settings</string>
+    <string name="example_ai_responds">\u0022Hello, how are you?%1$s\u0022 \u2192 AI responds</string>
+    <string name="example_translates">\u0022Hello%1$stranslate%1$s\u0022 \u2192 Translates</string>
+    <string name="example_format_italic">\u0022text%1$s\u0022 \u2192 italic text</string>
+    <string name="example_format_bold">\u0022text%1$s\u0022 \u2192 bold text</string>
+    <string name="example_format_crossout">\u0022text%1$s\u0022 \u2192 strikethrough</string>
+    <string name="example_format_underline">\u0022text%1$s\u0022 \u2192 underlined</string>
+    <string name="example_default">Type text, then add \u0022%1$s\u0022 at the end</string>
+    <string name="pattern_subtitle_trigger">Trigger: %1$s</string>
+    
+    <!-- PatternType Titles -->
+    <string name="title_settings_trigger">Settings</string>
+    <string name="title_ai_trigger">AI Trigger</string>
+    <string name="title_custom_command">Custom command</string>
+    <string name="title_italic">Italic</string>
+    <string name="title_bold">Bold</string>
+    <string name="title_crossout">Crossout</string>
+    <string name="title_underline">Underline</string>
+    <string name="title_web_search">Web Search</string>
+    <string name="btn_reset_pattern">Reset Pattern</string>
+    <string name="msg_reset_pattern_confirm">Reset \'%1$s\' to default symbol \"%2$s\"?</string>
 </resources>

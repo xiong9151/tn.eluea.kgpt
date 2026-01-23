@@ -338,7 +338,7 @@
     <string name="desc_edit_trigger_symbol">Change the symbol that triggers this action</string>
     <string name="label_enable_trigger">Enable Trigger</string>
     <string name="desc_enable_trigger">Turn on to activate this trigger</string>
-    <string name="hint_trigger_symbol">Trigger Symbol</string>
+
     <string name="label_preview">Preview</string>
 
     <!-- App Trigger Dialog -->
@@ -458,21 +458,21 @@
     <string name="desc_app_tagline">Integrate Generative AI and many models</string>
 
     <!-- Command & Pattern Dialogs -->
-    <string name="title_add_command">Add new command</string>
-    <string name="desc_add_command">Create a custom command to trigger AI</string>
-    <string name="hint_command_name">Command Name</string>
-    <string name="hint_system_message">System Message (Optional)</string>
-    <string name="help_command_usage">Usage: text /command + AI trigger symbol\ne.g. Hello world /short$</string>
-    <string name="title_edit_pattern">Edit Pattern</string>
-    <string name="desc_edit_pattern">Customize the regex pattern for AI trigger</string>
-    <string name="hint_regex_pattern">Regex Pattern</string>
-    <string name="help_regex_default">Default: $prompt$ → \$([^$]*)\$</string>
-    <string name="title_other_settings">Other Settings</string>
-    <string name="enable_trigger">Enable this trigger</string>
-    <string name="hint_description">Description...</string>
-    <string name="reset_default">Reset to default</string>
-    <string name="hint_example">Example...</string>
-    <string name="no_commands">No commands yet</string>
+    <string name="title_add_command">Nieuw commando toevoegen</string>
+    <string name="desc_add_command">Maak een aangepast commando om AI te activeren</string>
+    <string name="hint_command_name">Commandonaam</string>
+    <string name="hint_system_message">Systeembericht (Optioneel)</string>
+    <string name="help_command_usage">Gebruik: tekst /commando + AI-activeringssymbool\nbijv. Hallo wereld /kort$</string>
+    <string name="title_edit_pattern">Patroon bewerken</string>
+    <string name="desc_edit_pattern">Pas het regex-patroon aan voor AI-activering</string>
+    <string name="hint_regex_pattern">Regex-patroon</string>
+    <string name="help_regex_default">Standaard: $prompt$ → \$([^$]*)\$</string>
+    <string name="title_other_settings">Overige instellingen</string>
+    <string name="enable_trigger">Activeer deze trigger</string>
+    <string name="hint_description">Beschrijving...</string>
+    <string name="reset_default">Herstellen naar standaard</string>
+    <string name="hint_example">Voorbeeld...</string>
+    <string name="no_commands">Nog geen commando\'s</string>
 
     <!-- Settings Fragment Extras -->
     <string name="winter_mode">Winter Mode</string>
@@ -605,9 +605,15 @@
     <string name="tag_added">NIEUW</string>
     <string name="tag_improved">VERBETERD</string>
     <string name="tag_fixed">FIX</string>
-    <string name="changelog_4_0_6_item1">Classificatiesysteem voor betaalde/gratis API-sleutels toegevoegd om beheer te vergemakkelijken</string>
-    <string name="changelog_4_0_6_item2">Knop \'Sleutel ophalen\' toegevoegd in AI-instellingen / API-sleutels voor snelle toegang</string>
-    <string name="changelog_4_0_6_item3">Ontwerp van secundaire sleutelkaart verbeterd om overeen te komen met de primaire kaart voor betere visuele consistentie</string>
+    <string name="changelog_1_0_0_item1">Google AI Mode toegevoegd aan webzoekopties</string>
+    <string name="changelog_1_0_0_item2">Taalselectiefunctie toegevoegd met ondersteuning voor alle beschikbare talen</string>
+    <string name="changelog_1_0_0_item3">Schermindelingen verbeterd voor gebruik met één hand en grotere vingers</string>
+    <string name="changelog_1_0_0_item4">Veel stabiliteitsproblemen opgelost en prestaties verbeterd</string>
+    <string name="changelog_1_0_0_item5">FUTO-toetsenbord getest en ondersteuning toegevoegd</string>
+    <string name="changelog_1_0_0_item6">Verbindingsprobleem met Chutes API opgelost</string>
+    <string name="changelog_1_0_0_item7">Nieuw Perplexity-model en Perplexity API-ondersteuning toegevoegd</string>
+    <string name="changelog_1_0_0_item8">\"/\"-beperking voor commando\'s verwijderd</string>
+    <string name="changelog_1_0_0_note">Wees geduldig, want er zijn meer problemen gemeld aan de ontwikkelaar, maar deze worden in batches van updates opgelost omdat dit een eenmanproject is. Bedankt voor uw begrip.</string>
     <string name="module_restart_required_desc">Herstart apparaat om module te activeren</string>
     <string name="new_command_title">Nieuw commando</string>
     <string name="error_prefix_empty">Prefix mag niet leeg zijn</string>
@@ -650,7 +656,7 @@
     <string name="msg_pattern_create_failed">Could not create pattern</string>
     <string name="msg_pattern_invalid">Invalid pattern</string>
     <string name="msg_trigger_status_format">Trigger "%1$s" %2$s</string>
-    <string name="msg_pattern_reset">Pattern reset to default</string>
+
     <string name="msg_command_name_required">Command name is required</string>
     <string name="msg_command_exists">Command already exists</string>
     <string name="msg_command_builtin_conflict">Cannot use built-in command name</string>
@@ -666,5 +672,12 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">Dit symbool wordt al gebruikt door een ander patroon</string>
+    
+    <!-- Dialog strings -->
+    <string name="dialog_title_edit_pattern">%1$s Bewerken</string>
+    <string name="hint_trigger_symbol">Voer symbool in</string>
+    <string name="btn_reset_pattern">Patroon Resetten</string>
+    <string name="msg_reset_pattern_confirm">Weet je zeker dat je \'%1$s\' wilt resetten naar het standaardsymbool \"%2$s\"?</string>
+    <string name="msg_pattern_reset">Patroon hersteld naar standaard</string>
 </resources>

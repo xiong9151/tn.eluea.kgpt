@@ -338,7 +338,6 @@
     <string name="desc_edit_trigger_symbol">Change the symbol that triggers this action</string>
     <string name="label_enable_trigger">Enable Trigger</string>
     <string name="desc_enable_trigger">Turn on to activate this trigger</string>
-    <string name="hint_trigger_symbol">Trigger Symbol</string>
     <string name="label_preview">Preview</string>
 
     <!-- App Trigger Dialog -->
@@ -605,9 +604,15 @@
     <string name="tag_added">اضافہ</string>
     <string name="tag_improved">بہتری</string>
     <string name="tag_fixed">درستگی</string>
-    <string name="changelog_4_0_6_item1">کی منیجمنٹ میں آسانی کے لیے ادا شدہ/مفت API کی درجہ بندی کا نظام شامل کیا گیا</string>
-    <string name="changelog_4_0_6_item2">فوری رسائی کے لیے AI ترتیبات / API کیز میں \'کی حاصل کریں\' کا بٹن شامل کیا گیا</string>
-    <string name="changelog_4_0_6_item3">بصری ہم آہنگی کے لیے ثانوی کی کارڈ کا ڈیزائن بہتر بنایا گیا تاکہ وہ بنیادی کارڈ سے میل کھائے</string>
+    <string name="changelog_1_0_0_item1">ویب سرچ کے اختیارات میں Google AI Mode شامل کیا گیا</string>
+    <string name="changelog_1_0_0_item2">تمام دستیاب زبانوں کی معاونت کے ساتھ زبان کے انتخاب کی خصوصیت شامل کی گئی</string>
+    <string name="changelog_1_0_0_item3">ایک ہاتھ کے استعمال اور بڑی انگلیوں کے لیے اسکرین لے آؤٹ بہتر بنایا گیا</string>
+    <string name="changelog_1_0_0_item4">بہت سے استحکام کے مسائل کو ٹھیک کیا اور کارکردگی بہتر بنائی</string>
+    <string name="changelog_1_0_0_item5">FUTO کی بورڈ کی جانچ کی اور معاونت شامل کی</string>
+    <string name="changelog_1_0_0_item6">Chutes API کے ساتھ کنکشن کا مسئلہ ٹھیک کیا</string>
+    <string name="changelog_1_0_0_item7">نیا Perplexity ماڈل اور Perplexity API کی معاونت شامل کی</string>
+    <string name="changelog_1_0_0_item8">کمانڈز کے لیے \"/\" کی پابندی ہٹا دی گئی</string>
+    <string name="changelog_1_0_0_note">براہ کرم صبر کریں کیونکہ ڈویلپر کو مزید مسائل کی اطلاع دی گئی ہے، لیکن یہ ایک شخص کا پروجیکٹ ہونے کی وجہ سے اپ ڈیٹس کے بیچوں میں حل کیے جائیں گے۔ آپ کی سمجھ کا شکریہ۔</string>
     <string name="module_restart_required_desc">ماڈیول کو فعال کرنے کے لیے آلہ کو دوبارہ شروع کریں</string>
     <string name="new_command_title">نئی کمانڈ</string>
     <string name="error_prefix_empty">پریفکس خالی نہیں ہو سکتا</string>
@@ -650,7 +655,6 @@
     <string name="msg_pattern_create_failed">Could not create pattern</string>
     <string name="msg_pattern_invalid">Invalid pattern</string>
     <string name="msg_trigger_status_format">Trigger "%1$s" %2$s</string>
-    <string name="msg_pattern_reset">Pattern reset to default</string>
     <string name="msg_command_name_required">Command name is required</string>
     <string name="msg_command_exists">Command already exists</string>
     <string name="msg_command_builtin_conflict">Cannot use built-in command name</string>
@@ -666,5 +670,10 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">یہ علامت پہلے سے کسی اور پیٹرن میں استعمال ہو رہی ہے</string>
+    
+    <!-- Dialog strings -->
+    <string name="hint_trigger_symbol">علامت درج کریں</string>
+    <string name="btn_reset_pattern">پیٹرن ری سیٹ کریں</string>
+    <string name="msg_reset_pattern_confirm">کیا آپ واقعی \'%1$s\' کو ڈیفالٹ علامت \"%2$s\" پر ری سیٹ کرنا چاہتے ہیں؟</string>
 </resources>

@@ -11,8 +11,8 @@ android {
         applicationId = "tn.eluea.kgpt"
         minSdk = 24
         targetSdk = 36
-        versionCode = 7
-        versionName = "4.0.6"
+        versionCode = 8
+        versionName = "4.0.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

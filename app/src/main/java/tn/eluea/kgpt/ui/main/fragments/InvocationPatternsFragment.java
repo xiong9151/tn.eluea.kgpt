@@ -171,8 +171,9 @@ public class InvocationPatternsFragment extends Fragment {
         MaterialButton btnCancel = dialogView.findViewById(R.id.btn_cancel);
         MaterialButton btnSave = dialogView.findViewById(R.id.btn_save);
 
-        tvPatternType.setText(pattern.getType().title);
-        tvDescription.setText(pattern.getType().description);
+        tvPatternType.setText(getString(pattern.getType().titleResId));
+        tvDescription.setText(
+                getString(pattern.getType().exampleResId, PatternType.regexToSymbol(pattern.getPattern().pattern())));
 
         switchEnabled.setChecked(pattern.isEnabled());
 
@@ -279,9 +280,9 @@ public class InvocationPatternsFragment extends Fragment {
         MaterialButton btnCancel = sheetView.findViewById(R.id.btn_cancel);
         MaterialButton btnDelete = sheetView.findViewById(R.id.btn_delete);
 
-        tvTitle.setText("Reset Pattern");
-        tvMessage.setText("Reset '" + pattern.getType().title + "' to default symbol \""
-                + pattern.getType().defaultSymbol + "\"?");
+        tvTitle.setText(R.string.btn_reset_pattern);
+        tvMessage.setText(getString(R.string.msg_reset_pattern_confirm, getString(pattern.getType().titleResId),
+                pattern.getType().defaultSymbol));
         btnDelete.setText("Reset");
 
         btnCancel.setOnClickListener(v -> dialog.dismiss());

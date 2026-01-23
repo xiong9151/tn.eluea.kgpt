@@ -80,6 +80,8 @@ public class ConfigProvider extends ContentProvider {
 
     private SharedPreferences mPrefs;
 
+    private boolean mIsDeviceProtected = false;
+
     @Override
     @SuppressWarnings("deprecation")
     public boolean onCreate() {
@@ -89,40 +91,61 @@ public class ConfigProvider extends ContentProvider {
             return false;
         }
 
+        initializePrefs(context);
+        return true;
+    }
+
+    private void initializePrefs(Context context) {
         // Check if device is unlocked before accessing credential-protected storage
-        // This is important for directBootAware providers
         android.os.UserManager userManager = (android.os.UserManager) context.getSystemService(Context.USER_SERVICE);
-        if (userManager != null && !userManager.isUserUnlocked()) {
-            Log.w(TAG, "onCreate: User not unlocked yet, using device-protected storage");
+        boolean isUserUnlocked = userManager != null && userManager.isUserUnlocked();
+
+        if (!isUserUnlocked) {
+            Log.w(TAG, "User locked, using device-protected storage");
             // Use device-protected storage for direct boot
             try {
                 Context deviceContext = context.createDeviceProtectedStorageContext();
                 mPrefs = deviceContext.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-                Log.d(TAG, "onCreate: Using device-protected SharedPreferences");
+                mIsDeviceProtected = true;
+                Log.d(TAG, "Using device-protected SharedPreferences");
             } catch (Exception e) {
                 Log.e(TAG, "Failed to create device-protected storage", e);
-                return false;
             }
         } else {
             // CRITICAL: Use MODE_WORLD_READABLE for LSPosed's New XSharedPreferences
-            // LSPosed hooks ContextImpl.checkMode() to allow this on API 93+
-            // Must use credential-protected storage (default), NOT device-protected
             try {
                 mPrefs = context.getSharedPreferences(PREF_NAME, Context.MODE_WORLD_READABLE);
-                Log.d(TAG, "onCreate: Using MODE_WORLD_READABLE SharedPreferences");
+                Log.d(TAG, "Using MODE_WORLD_READABLE SharedPreferences");
             } catch (SecurityException e) {
                 // Fallback for non-LSPosed environments
                 Log.w(TAG, "MODE_WORLD_READABLE not available, using MODE_PRIVATE", e);
                 mPrefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
             }
+            mIsDeviceProtected = false;
         }
 
-        Log.d(TAG, "onCreate: SharedPreferences has " + mPrefs.getAll().size() + " entries");
+        if (mPrefs != null) {
+            Log.d(TAG, "SharedPreferences has " + mPrefs.getAll().size() + " entries");
+            // Proactively fix permissions on startup
+            fixFilePermissions();
+        }
+    }
 
-        // Proactively fix permissions on startup
-        fixFilePermissions();
-
-        return true;
+    private SharedPreferences getPrefs() {
+        // If we are currently using device protected storage, checks if we can switch
+        // to credential storage
+        if (mIsDeviceProtected) {
+            Context context = getContext();
+            if (context != null) {
+                android.os.UserManager userManager = (android.os.UserManager) context
+                        .getSystemService(Context.USER_SERVICE);
+                if (userManager != null && userManager.isUserUnlocked()) {
+                    Log.i(TAG, "User unlocked! Switching from Device Protected to Credential Protected storage.");
+                    initializePrefs(context);
+                }
+            }
+        }
+        return mPrefs;
     }
 
     @Nullable
@@ -131,17 +154,21 @@ public class ConfigProvider extends ContentProvider {
             @Nullable String selection, @Nullable String[] selectionArgs,
             @Nullable String sortOrder) {
 
+        SharedPreferences prefs = getPrefs();
+        if (prefs == null)
+            return null;
+
         MatrixCursor cursor = new MatrixCursor(new String[] { COLUMN_KEY, COLUMN_VALUE, COLUMN_TYPE });
 
         switch (sUriMatcher.match(uri)) {
             case CONFIG_KEY:
                 String key = uri.getLastPathSegment();
-                addRowForKey(cursor, key);
+                addRowForKey(cursor, key, prefs);
                 break;
 
             case CONFIG_ALL:
-                for (String k : mPrefs.getAll().keySet()) {
-                    addRowForKey(cursor, k);
+                for (String k : prefs.getAll().keySet()) {
+                    addRowForKey(cursor, k, prefs);
                 }
                 break;
         }
@@ -150,8 +177,8 @@ public class ConfigProvider extends ContentProvider {
         return cursor;
     }
 
-    private void addRowForKey(MatrixCursor cursor, String key) {
-        Object value = mPrefs.getAll().get(key);
+    private void addRowForKey(MatrixCursor cursor, String key, SharedPreferences prefs) {
+        Object value = prefs.getAll().get(key);
         if (value != null) {
             String type = getTypeString(value);
             cursor.addRow(new Object[] { key, String.valueOf(value), type });
@@ -175,7 +202,8 @@ public class ConfigProvider extends ContentProvider {
     @Nullable
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
-        if (values == null)
+        SharedPreferences prefs = getPrefs();
+        if (values == null || prefs == null)
             return null;
 
         String key = values.getAsString(COLUMN_KEY);
@@ -185,7 +213,7 @@ public class ConfigProvider extends ContentProvider {
         if (key == null || value == null)
             return null;
 
-        SharedPreferences.Editor editor = mPrefs.edit();
+        SharedPreferences.Editor editor = prefs.edit();
 
         if (type == null)
             type = TYPE_STRING;
@@ -272,9 +300,12 @@ public class ConfigProvider extends ContentProvider {
             @Nullable String[] selectionArgs) {
         if (sUriMatcher.match(uri) == CONFIG_KEY) {
             String key = uri.getLastPathSegment();
-            mPrefs.edit().remove(key).commit();
-            getContext().getContentResolver().notifyChange(uri, null);
-            return 1;
+            SharedPreferences prefs = getPrefs();
+            if (prefs != null) {
+                prefs.edit().remove(key).commit();
+                getContext().getContentResolver().notifyChange(uri, null);
+                return 1;
+            }
         }
         return 0;
     }

@@ -7,32 +7,36 @@
  */
 package tn.eluea.kgpt.text.parse;
 
-public enum PatternType {
-    Settings("Settings", 0, "\\*#settings#\\*$", true, "*#settings#*", "Settings trigger"),
-    CommandAI("AI Trigger", 1, "(.+)\\$$", true, "$", "Type text then add $ at end"),
-    CommandCustom("Custom command", 2, "([^%]+)%(?:([^ %]+))?%$", true, "%", "Type text then add %command%"),
-    FormatItalic("Italic", 1, "([^|]+)\\|$", true, "|", "Type text then add |"),
-    FormatBold("Bold", 1, "([^@]+)@$", true, "@", "Type text then add @"),
-    FormatCrossout("Crossout", 1, "([^~]+)~$", true, "~", "Type text then add ~"),
-    FormatUnderline("Underline", 1, "([^_]+)_$", true, "_", "Type text then add _"),
-    WebSearch("Web Search", 1, "(.+)\\?\\?$", true, "??", "Type text then add ?? to search"),
-    ;
+import tn.eluea.kgpt.R;
 
-    public final String title;
+public enum PatternType {
+    Settings(R.string.title_settings_trigger, 0, "€$", true, "€", R.string.example_opens_settings),
+    CommandAI(R.string.title_ai_trigger, 1, "(.+)\\$$", true, "$", R.string.example_ai_responds),
+    CommandCustom(R.string.title_custom_command, 2, "([^%]+)%(?:([^ %]+))?%$", true, "%", R.string.example_translates),
+    FormatItalic(R.string.title_italic, 1, "([^|]+)\\|$", true, "|", R.string.example_format_italic),
+    FormatBold(R.string.title_bold, 1, "([^@]+)@$", true, "@", R.string.example_format_bold),
+    FormatCrossout(R.string.title_crossout, 1, "([^~]+)~$", true, "~", R.string.example_format_crossout),
+    FormatUnderline(R.string.title_underline, 1, "([^_]+)_$", true, "_", R.string.example_format_underline),
+    WebSearch(R.string.title_web_search, 1, "(.+)\\?\\?$", true, "??", R.string.example_ai_responds); // Reusing generic
+                                                                                                      // example or
+                                                                                                      // create new if
+                                                                                                      // needed
+
+    public final int titleResId;
     public final int groupCount;
     public final String defaultPattern;
     public final boolean editable;
     public final String defaultSymbol;
-    public final String description;
+    public final int exampleResId;
 
-    PatternType(String title, int groupCount, String defaultPattern, boolean editable, String defaultSymbol,
-            String description) {
-        this.title = title;
+    PatternType(int titleResId, int groupCount, String defaultPattern, boolean editable, String defaultSymbol,
+            int exampleResId) {
+        this.titleResId = titleResId;
         this.groupCount = groupCount;
         this.defaultPattern = defaultPattern;
         this.editable = editable;
         this.defaultSymbol = defaultSymbol;
-        this.description = description;
+        this.exampleResId = exampleResId;
     }
 
     /**

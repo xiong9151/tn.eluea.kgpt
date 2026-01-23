@@ -84,6 +84,7 @@ public class HomeFragment extends Fragment {
     private static final String[][] SEARCH_ENGINES = {
             { "duckduckgo", "DuckDuckGo" },
             { "google", "Google" },
+            { "google_ai", "Google AI Mode" },
             { "bing", "Bing" },
             { "brave", "Brave Search" },
             { "ecosia", "Ecosia" },

@@ -65,7 +65,7 @@ public class SettingsDialogBox extends DialogBox {
         // 1. Choose Model
         tn.eluea.kgpt.core.ui.dialog.utils.DialogUiUtils.addSettingsOption(
                 optionsContainer,
-                "Choose & Configure Model",
+                themedContext.getString(R.string.settings_option_choose_model),
                 R.drawable.ic_cpu_filled,
                 themedContext,
                 v -> {
@@ -76,7 +76,7 @@ public class SettingsDialogBox extends DialogBox {
         // 2. Commands List
         tn.eluea.kgpt.core.ui.dialog.utils.DialogUiUtils.addSettingsOption(
                 optionsContainer,
-                "Commands List",
+                themedContext.getString(R.string.dialog_title_commands_list),
                 R.drawable.ic_command_filled,
                 themedContext,
                 v -> {
@@ -87,7 +87,7 @@ public class SettingsDialogBox extends DialogBox {
         // 3. Patterns List
         tn.eluea.kgpt.core.ui.dialog.utils.DialogUiUtils.addSettingsOption(
                 optionsContainer,
-                "Patterns List",
+                themedContext.getString(R.string.settings_option_patterns_list),
                 R.drawable.ic_document_code_filled,
                 themedContext,
                 v -> {
@@ -98,7 +98,7 @@ public class SettingsDialogBox extends DialogBox {
         // 4. Other Settings
         tn.eluea.kgpt.core.ui.dialog.utils.DialogUiUtils.addSettingsOption(
                 optionsContainer,
-                "Other Settings",
+                themedContext.getString(R.string.title_other_settings),
                 R.drawable.ic_setting_filled,
                 themedContext,
                 v -> {

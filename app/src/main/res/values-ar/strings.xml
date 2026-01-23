@@ -622,9 +622,16 @@
     <string name="tag_improved">تحسين</string>
     <string name="tag_fixed">إصلاح</string>
 
-    <string name="changelog_4_0_6_item1">تم إضافة نظام تصنيف لمفاتيح API (مدفوع/مجاني) لتسهيل الإدارة</string>
-    <string name="changelog_4_0_6_item2">تم إضافة زر \'الحصول على مفتاح\' في الإعدادات للوصول السريع</string>
-    <string name="changelog_4_0_6_item3">تحسين تصميم بطاقة المفتاح الثانوي لتتناسب مع البطاقة الأساسية بصرياً</string>
+    <string name="changelog_1_0_0_item1">تم إضافة وضع Google AI Mode من ضمن خيارات البحث على الويب</string>
+    <string name="changelog_1_0_0_item2">تم إضافة إمكانية اختيار لغة معينة مع دعم جميع اللغات المتاحة</string>
+    <string name="changelog_1_0_0_item3">تم تحسين بعض الشاشات لتناسب سهولة استخدام اليد الواحدة والأصابع الكبيرة</string>
+    <string name="changelog_1_0_0_item4">تم تصحيح الكثير من الأخطاء المتعلقة بالاستقرار وتحسين الأداء</string>
+    <string name="changelog_1_0_0_item5">تم اختبار ودعم لوحة مفاتيح FUTO</string>
+    <string name="changelog_1_0_0_item6">تم إصلاح مشكلة عدم الاتصال الناجح مع Chutes API</string>
+    <string name="changelog_1_0_0_item7">تم إضافة موديل جديد Perplexity ودعم Perplexity API</string>
+    <string name="changelog_1_0_0_item8">تم إلغاء التقييد باستخدام علامة \"/\" فيما يخص استخدام الأوامر</string>
+    <string name="changelog_1_0_0_note">برجاء التحلي بالصبر حيث تم إعلام المطور بالمزيد من المشكلات ولكن سيتم حلها على دفعات من التحديثات حيث أنه شخص واحد فقط يقف وراء تطوير كل هذا. شكراً لتفهمكم.</string>
+    
     <!-- Language Selection -->
     <string name="hint_search_language">بحث عن لغة...</string>
 
@@ -669,7 +676,7 @@
     <string name="msg_pattern_create_failed">تعذر إنشاء النمط</string>
     <string name="msg_pattern_invalid">نمط غير صالح</string>
     <string name="msg_trigger_status_format">المشغل "%1$s" %2$s</string>
-    <string name="msg_pattern_reset">تم إعادة تعيين النمط للافتراضي</string>
+
     <string name="msg_command_name_required">اسم الأمر مطلوب</string>
     <string name="msg_command_exists">الأمر موجود بالفعل</string>
     <string name="msg_command_builtin_conflict">لا يمكن استخدام اسم أمر مدمج</string>
@@ -686,4 +693,60 @@
     <string name="msg_pattern_create_symbol_failed">تعذر إنشاء نمط لهذا الرمز</string>
     <string name="msg_pattern_generated_invalid">تم إنشاء نمط غير صالح</string>
     <string name="msg_symbol_already_used">هذا الرمز مستخدم بالفعل بواسطة نمط آخر</string>
+    
+    <!-- New Settings Dialog Strings -->
+    <string name="settings_option_choose_model">اختيار وإعداد النموذج</string>
+    <string name="dialog_title_commands_list">قائمة الأوامر</string>
+    <string name="settings_option_patterns_list">قائمة الأنماط</string>
+    <string name="dialog_title_config_model">إعداد %1$s</string>
+    
+    <!-- Other Settings -->
+    <string name="setting_enable_logging">تفعيل السجلات</string>
+    <string name="setting_desc_enable_logging">عطل هذا الخيار لتحسين الأداء. لن تتمكن من الإبلاغ عن الأخطاء.</string>
+    <string name="setting_external_internet">استخدام خدمة إنترنت خارجية</string>
+    <string name="setting_desc_external_internet">يُنصح بتفعيله ما لم يكن إكمال المحادثة لا يعمل.</string>
+    <string name="setting_search_engine">محرك البحث</string>
+    <string name="setting_desc_search_engine">محرك البحث الافتراضي لعمليات البحث.</string>
+    <string name="setting_material_you">تفعيل Material You</string>
+    <string name="setting_desc_material_you">استخدام الألوان الديناميكية بناءً على الخلفية أو لون مخصص.</string>
+    <string name="setting_wallpaper_colors">استخدام ألوان الخلفية</string>
+    <string name="setting_desc_wallpaper_colors">استخراج الألوان من خلفية الجهاز (أندرويد 12+).</string>
+    <string name="setting_seed_color">لون البذرة</string>
+    <string name="setting_desc_seed_color">لون مخصص لتوليد السمة.</string>
+    <string name="setting_single_tone">استخدام درجة لون واحدة</string>
+    <string name="setting_desc_single_tone">استخدام درجة لون واحدة للسمة.</string>
+    <string name="setting_check_updates">التحقق من التحديثات</string>
+    <string name="setting_desc_check_updates">التحقق تلقائياً من الإصدارات الجديدة.</string>
+    <string name="setting_update_interval">فترة التحقق من التحديثات</string>
+    <string name="setting_desc_update_interval">كم مرة يتم التحقق من التحديثات (بالساعات).</string>
+    <string name="setting_download_path">مسار التنزيل</string>
+    <string name="setting_desc_download_path">مسار مخصص لتنزيل التحديثات.</string>
+    
+    <!-- Pattern List & Edit -->
+    <string name="dialog_title_trigger_symbols">رموز التفعيل</string>
+    <string name="no_patterns">لا توجد أنماط</string>
+    <string name="dialog_title_edit_pattern">تعديل %1$s</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 يفتح الإعدادات</string>
+    <string name="example_ai_responds">\u0022مرحباً، كيف حالك؟%1$s\u0022 \u2192 يرد الذكاء الاصطناعي</string>
+    <string name="example_translates">\u0022مرحباً%1$sترجم%1$s\u0022 \u2192 يترجم</string>
+    <string name="example_format_italic">\u0022نص%1$s\u0022 \u2192 نص مائل</string>
+    <string name="example_format_bold">\u0022نص%1$s\u0022 \u2192 نص عريض</string>
+    <string name="example_format_crossout">\u0022نص%1$s\u0022 \u2192 يتوسطه خط</string>
+    <string name="example_format_underline">\u0022نص%1$s\u0022 \u2192 تحته خط</string>
+    <string name="example_default">اكتب النص، ثم أضف \u0022%1$s\u0022 في النهاية</string>
+    <string name="pattern_subtitle_trigger">المشغل: %1$s</string>
+    
+    <!-- PatternType Titles -->
+    <string name="title_settings_trigger">الإعدادات</string>
+    <string name="title_ai_trigger">مشغل AI</string>
+    <string name="title_custom_command">أمر مخصص</string>
+    <string name="title_italic">مائل</string>
+    <string name="title_bold">عريض</string>
+    <string name="title_crossout">مشطوب</string>
+    <string name="title_underline">تحته خط</string>
+    <string name="title_web_search">بحث الويب</string>
+    <string name="btn_reset_pattern">إعادة تعيين النمط</string>
+    <string name="msg_reset_pattern_confirm">إعادة تعيين \'%1$s\' إلى الرمز الافتراضي \"%2$s\"؟</string>
+    <string name="msg_pattern_reset">تم إعادة تعيين النمط إلى الوضع الافتراضي</string>
+
 </resources>

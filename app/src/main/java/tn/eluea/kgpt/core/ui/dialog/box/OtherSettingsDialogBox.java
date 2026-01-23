@@ -77,8 +77,8 @@ public class OtherSettingsDialogBox extends DialogBox {
                 TextView descView = itemView.findViewById(R.id.text_desc);
                 MaterialSwitch switchView = itemView.findViewById(R.id.checkbox);
 
-                titleView.setText(type.title);
-                descView.setText(type.description);
+                titleView.setText(type.titleResId);
+                descView.setText(type.descriptionResId);
 
                 // Get value from ContentProvider
                 boolean currentValue = otherSettingsInput.getBoolean(type.name(), (Boolean) type.defaultValue);

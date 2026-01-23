@@ -75,7 +75,11 @@ public class CommandEditDialogBox extends DialogBox {
                 return sheet;
             }
             GenerativeAICommand command = getConfig().commands.get(commandIndex);
-            prefixEditText.setText(command.getCommandPrefix());
+            String displayPrefix = command.getCommandPrefix();
+            if (displayPrefix.startsWith("/")) {
+                displayPrefix = displayPrefix.substring(1);
+            }
+            prefixEditText.setText(displayPrefix);
             messageEditText.setText(command.getTweakMessage());
             tvTitle.setText(R.string.edit_command_title);
             btnDelete.setVisibility(View.VISIBLE);
@@ -93,6 +97,10 @@ public class CommandEditDialogBox extends DialogBox {
             int commandPos = commandIndex;
 
             String prefix = prefixEditText.getText().toString().trim();
+            // Remove leading slash if user added it
+            if (prefix.startsWith("/")) {
+                prefix = prefix.substring(1);
+            }
             String message = messageEditText.getText().toString().trim();
 
             if (prefix.isEmpty()) {
@@ -105,7 +113,8 @@ public class CommandEditDialogBox extends DialogBox {
                 return;
             }
 
-            long similarCount = getConfig().commands.stream().filter((c) -> prefix.equals(c.getCommandPrefix()))
+            final String finalPrefix = prefix;
+            long similarCount = getConfig().commands.stream().filter((c) -> finalPrefix.equals(c.getCommandPrefix()))
                     .count();
             if ((commandPos == -1 && similarCount >= 1)
                     || (commandPos >= 0 && similarCount >= 2)) {

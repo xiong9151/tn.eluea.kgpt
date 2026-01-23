@@ -36,7 +36,7 @@ public class ChatGPTClient extends LanguageModelClient {
         String url = getBaseUrl() + "/chat/completions";
         HttpURLConnection con;
         try {
-            con = (HttpURLConnection) new URL(url).openConnection();
+            con = (HttpURLConnection) java.net.URI.create(url).toURL().openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "application/json");
             con.setRequestProperty("Authorization", "Bearer " + getApiKey());
@@ -52,7 +52,7 @@ public class ChatGPTClient extends LanguageModelClient {
             rootJson.put("model", getSubModel());
             rootJson.put("messages", messagesJson);
             rootJson.put("stream", false);
-            rootJson.put("max_completion_tokens", getIntField(LanguageModelField.MaxTokens));
+            rootJson.put("max_tokens", getIntField(LanguageModelField.MaxTokens));
             rootJson.put("temperature", getDoubleField(LanguageModelField.Temperature));
             rootJson.put("top_p", getDoubleField(LanguageModelField.TopP));
 
@@ -74,8 +74,7 @@ public class ChatGPTClient extends LanguageModelClient {
                                 s.onNext(choices.getJSONObject(0)
                                         .getJSONObject("message")
                                         .getString("content"));
-                            }
-                            else {
+                            } else {
                                 throw new JSONException("choices has length 0");
                             }
                         } else {
@@ -90,7 +89,7 @@ public class ChatGPTClient extends LanguageModelClient {
                             String message = errorJson.optString("message", response);
                             String type = errorJson.optString("type", "");
                             String code = errorJson.optString("code", "");
-                            
+
                             // Provide user-friendly error messages
                             String userMessage;
                             if ("insufficient_quota".equals(code) || message.contains("quota")) {
@@ -104,10 +103,9 @@ public class ChatGPTClient extends LanguageModelClient {
                             } else {
                                 userMessage = "OpenAI Error: " + message;
                             }
-                            
+
                             throw new RuntimeException(userMessage);
-                        }
-                        else {
+                        } else {
                             throw new RuntimeException(response);
                         }
                     });

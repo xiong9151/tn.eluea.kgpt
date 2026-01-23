@@ -161,6 +161,17 @@ public class ModelsFragment extends Fragment implements ModelsAdapter.OnModelSel
                 "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
         });
         VALID_MODELS.put(LanguageModel.Chutes, null); // Allow any model
+
+        // Perplexity models
+        SUB_MODEL_PRESETS.put(LanguageModel.Perplexity, new String[] {
+                "sonar-pro",
+                "sonar",
+                "sonar-reasoning-pro",
+                "sonar-reasoning",
+                "r1-1776"
+        });
+        VALID_MODELS.put(LanguageModel.Perplexity, new java.util.HashSet<>(java.util.Arrays.asList(
+                "sonar-pro", "sonar", "sonar-reasoning-pro", "sonar-reasoning", "r1-1776")));
     }
 
     /**

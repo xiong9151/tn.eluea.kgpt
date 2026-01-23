@@ -466,9 +466,15 @@
     <string name="tag_added">जोड़ा</string>
     <string name="tag_improved">सुधार</string>
     <string name="tag_fixed">ठीक किया</string>
-    <string name="changelog_4_0_6_item1">कुंजी प्रबंधन को सुविधाजनक बनाने के लिए भुगतान/मुफ्त API कुंजी वर्गीकरण प्रणाली जोड़ी गई</string>
-    <string name="changelog_4_0_6_item2">त्वरित पहुँच के लिए AI सेटिंग्स / API कुंजी में \'Get Key\' बटन जोड़ा गया</string>
-    <string name="changelog_4_0_6_item3">बेहतर दृश्य स्थिरता के लिए प्राथमिक कार्ड से मेल खाने के लिए द्वितीयक कुंजी कार्ड डिजाइन में सुधार किया गया</string>
+    <string name="changelog_1_0_0_item1">वेब सर्च विकल्पों में Google AI Mode जोड़ा गया</string>
+    <string name="changelog_1_0_0_item2">सभी उपलब्ध भाषाओं के समर्थन के साथ भाषा चयन सुविधा जोड़ी गई</string>
+    <string name="changelog_1_0_0_item3">एक हाथ के उपयोग और बड़ी उंगलियों के लिए स्क्रीन लेआउट में सुधार किया गया</string>
+    <string name="changelog_1_0_0_item4">कई स्थिरता समस्याओं को ठीक किया और प्रदर्शन में सुधार किया</string>
+    <string name="changelog_1_0_0_item5">FUTO कीबोर्ड का परीक्षण किया और समर्थन जोड़ा</string>
+    <string name="changelog_1_0_0_item6">Chutes API के साथ कनेक्शन समस्या को ठीक किया</string>
+    <string name="changelog_1_0_0_item7">नया Perplexity मॉडल और Perplexity API समर्थन जोड़ा</string>
+    <string name="changelog_1_0_0_item8">कमांड के लिए \"/\" प्रतिबंध हटाया गया</string>
+    <string name="changelog_1_0_0_note">कृपया धैर्य रखें क्योंकि डेवलपर को अधिक समस्याओं की रिपोर्ट की गई है, लेकिन यह एक व्यक्ति की परियोजना होने के कारण अपडेट के बैच में हल की जाएगी। आपकी समझ के लिए धन्यवाद।</string>
     <string name="module_restart_required_desc">मॉड्यूल को सक्रिय करने के लिए डिवाइस को रिबूट करें</string>
 
     <string name="new_command_title">नई कमांड</string>
@@ -528,5 +534,48 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">यह प्रतीक पहले से उपयोग में है</string>
+    
+    <!-- New Settings Dialog Strings -->
+    <string name="settings_option_choose_model">मॉडल चुनें और कॉन्फ़िगर करें</string>
+    <string name="dialog_title_commands_list">कमांड सूची</string>
+    <string name="settings_option_patterns_list">पैटर्न सूची</string>
+    <string name="dialog_title_config_model">%1$s कॉन्फ़िगर करें</string>
+
+    <string name="setting_enable_logging">लॉगिंग सक्षम करें</string>
+    <string name="setting_desc_enable_logging">प्रदर्शन के लिए अक्षम करें। आप त्रुटियां रिपोर्ट नहीं कर पाएंगे।</string>
+    <string name="setting_external_internet">बाहरी इंटरनेट सेवा उपयोग करें</string>
+    <string name="setting_desc_external_internet">यदि चैट काम नहीं कर रही तो अनुशंसित।</string>
+    <string name="setting_search_engine">खोज इंजन</string>
+    <string name="setting_desc_search_engine">डिफ़ॉल्ट खोज इंजन।</string>
+    <string name="setting_material_you">Material You सक्षम करें</string>
+    <string name="setting_desc_material_you">वॉलपेपर आधारित गतिशील रंग।</string>
+    <string name="dialog_title_trigger_symbols">ट्रिगर प्रतीक</string>
+    <string name="no_patterns">कोई पैटर्न नहीं</string>
+    <string name="dialog_title_edit_pattern">%1$s संपादित करें</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 सेटिंग्स खोलता है</string>
+    <string name="example_ai_responds">\u0022नमस्ते, कैसे हो?%1$s\u0022 \u2192 AI जवाब देता है</string>
+    <string name="example_translates">\u0022नमस्ते%1$sअनुवाद%1$s\u0022 \u2192 अनुवाद करता है</string>
+    <string name="example_format_italic">\u0022टेक्स्ट%1$s\u0022 \u2192 इटैलिक टेक्स्ट</string>
+    <string name="example_format_bold">\u0022टेक्स्ट%1$s\u0022 \u2192 बोल्ड टेक्स्ट</string>
+    <string name="example_format_crossout">\u0022टेक्स्ट%1$s\u0022 \u2192 स्ट्राइकथ्रू</string>
+    <string name="example_format_underline">\u0022टेक्स्ट%1$s\u0022 \u2192 अंडरलाइन</string>
+    <string name="example_default">टेक्स्ट टाइप करें, फिर अंत में \u0022%1$s\u0022 जोड़ें</string>
+    <string name="pattern_subtitle_trigger">ट्रिगर: %1$s</string>
+    <string name="title_settings_trigger">सेटिंग्स</string>
+    <string name="title_ai_trigger">AI ट्रिगर</string>
+    <string name="title_custom_command">कस्टम कमांड</string>
+    <string name="title_italic">इटैलिक</string>
+    <string name="title_bold">बोल्ड</string>
+    <string name="title_crossout">स्ट्राइकथ्रू</string>
+    <string name="title_underline">अंडरलाइन</string>
+    <string name="title_web_search">वेब खोज</string>
+    <string name="btn_reset_pattern">पैटर्न रीसेट करें</string>
+    <string name="msg_reset_pattern_confirm">\'%1$s\' को डिफ़ॉल्ट प्रतीक \"%2$s\" पर रीसेट करें?</string>
+    <string name="field_api_key">API कुंजी</string>
+    <string name="field_sub_model">उप-मॉडल</string>
+    <string name="field_base_url">बेस URL</string>
+    <string name="field_max_tokens">अधिकतम टोकन</string>
+    <string name="field_temperature">तापमान</string>
+    <string name="field_top_p">Top P</string>
 </resources>

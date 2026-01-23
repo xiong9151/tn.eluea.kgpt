@@ -466,9 +466,15 @@
     <string name="tag_added">추가</string>
     <string name="tag_improved">개선</string>
     <string name="tag_fixed">수정</string>
-    <string name="changelog_4_0_6_item1">키 관리를 용이하게 하기 위한 유료/무료 API 키 분류 시스템 추가</string>
-    <string name="changelog_4_0_6_item2">빠른 액세스를 위해 AI 설정 / API 키에 \'Get Key\' 버튼 추가</string>
-    <string name="changelog_4_0_6_item3">시각적 일관성을 높이기 위해 보조 키 카드 디자인을 기본 카드와 일치하도록 개선</string>
+    <string name="changelog_1_0_0_item1">웹 검색 옵션에 Google AI Mode 추가</string>
+    <string name="changelog_1_0_0_item2">사용 가능한 모든 언어를 지원하는 언어 선택 기능 추가</string>
+    <string name="changelog_1_0_0_item3">한 손 사용 및 큰 손가락에 맞게 화면 레이아웃 개선</string>
+    <string name="changelog_1_0_0_item4">많은 안정성 문제 수정 및 성능 개선</string>
+    <string name="changelog_1_0_0_item5">FUTO 키보드 테스트 및 지원 추가</string>
+    <string name="changelog_1_0_0_item6">Chutes API 연결 문제 수정</string>
+    <string name="changelog_1_0_0_item7">새로운 Perplexity 모델 및 Perplexity API 지원 추가</string>
+    <string name="changelog_1_0_0_item8">명령 사용 시 \"/\" 제한 제거</string>
+    <string name="changelog_1_0_0_note">개발자에게 더 많은 문제가 보고되었지만 한 사람의 프로젝트이므로 업데이트 배치로 해결될 예정입니다. 이해해 주셔서 감사합니다.</string>
     <string name="module_restart_required_desc">모듈을 활성화하려면 장치를 재부팅하세요</string>
 
     <string name="new_command_title">새 명령</string>
@@ -528,5 +534,48 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">이 기호는 이미 사용 중입니다</string>
+    
+    <!-- New Settings Dialog Strings -->
+    <string name="settings_option_choose_model">모델 선택 및 구성</string>
+    <string name="dialog_title_commands_list">명령어 목록</string>
+    <string name="settings_option_patterns_list">패턴 목록</string>
+    <string name="dialog_title_config_model">%1$s 구성</string>
+
+    <string name="setting_enable_logging">로그 활성화</string>
+    <string name="setting_desc_enable_logging">성능을 위해 비활성화하세요. 오류를 보고할 수 없습니다.</string>
+    <string name="setting_external_internet">외부 인터넷 서비스 사용</string>
+    <string name="setting_desc_external_internet">채팅이 작동하지 않을 때 권장.</string>
+    <string name="setting_search_engine">검색 엔진</string>
+    <string name="setting_desc_search_engine">기본 검색 엔진.</string>
+    <string name="setting_material_you">Material You 활성화</string>
+    <string name="setting_desc_material_you">배경화면 기반 동적 색상.</string>
+    <string name="dialog_title_trigger_symbols">트리거 기호</string>
+    <string name="no_patterns">패턴 없음</string>
+    <string name="dialog_title_edit_pattern">%1$s 편집</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 설정 열기</string>
+    <string name="example_ai_responds">\u0022안녕하세요, 어떻게 지내세요?%1$s\u0022 \u2192 AI가 응답</string>
+    <string name="example_translates">\u0022안녕%1$s번역%1$s\u0022 \u2192 번역</string>
+    <string name="example_format_italic">\u0022텍스트%1$s\u0022 \u2192 기울임꼴</string>
+    <string name="example_format_bold">\u0022텍스트%1$s\u0022 \u2192 굵게</string>
+    <string name="example_format_crossout">\u0022텍스트%1$s\u0022 \u2192 취소선</string>
+    <string name="example_format_underline">\u0022텍스트%1$s\u0022 \u2192 밑줄</string>
+    <string name="example_default">텍스트를 입력하고 끝에 \u0022%1$s\u0022 추가</string>
+    <string name="pattern_subtitle_trigger">트리거: %1$s</string>
+    <string name="title_settings_trigger">설정</string>
+    <string name="title_ai_trigger">AI 트리거</string>
+    <string name="title_custom_command">사용자 정의 명령</string>
+    <string name="title_italic">기울임꼴</string>
+    <string name="title_bold">굵게</string>
+    <string name="title_crossout">취소선</string>
+    <string name="title_underline">밑줄</string>
+    <string name="title_web_search">웹 검색</string>
+    <string name="btn_reset_pattern">패턴 재설정</string>
+    <string name="msg_reset_pattern_confirm">\'%1$s\'을(를) 기본 기호 \"%2$s\"(으)로 재설정하시겠습니까?</string>
+    <string name="field_api_key">API 키</string>
+    <string name="field_sub_model">하위 모델</string>
+    <string name="field_base_url">기본 URL</string>
+    <string name="field_max_tokens">최대 토큰</string>
+    <string name="field_temperature">온도</string>
+    <string name="field_top_p">Top P</string>
 </resources>

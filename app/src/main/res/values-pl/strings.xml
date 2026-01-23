@@ -338,7 +338,7 @@
     <string name="desc_edit_trigger_symbol">Change the symbol that triggers this action</string>
     <string name="label_enable_trigger">Enable Trigger</string>
     <string name="desc_enable_trigger">Turn on to activate this trigger</string>
-    <string name="hint_trigger_symbol">Trigger Symbol</string>
+
     <string name="label_preview">Preview</string>
 
     <!-- App Trigger Dialog -->
@@ -605,9 +605,15 @@
     <string name="tag_added">DODANO</string>
     <string name="tag_improved">ULEPSZONO</string>
     <string name="tag_fixed">NAPRAWIONO</string>
-    <string name="changelog_4_0_6_item1">Dodano system klasyfikacji płatnych/darmowych kluczy API w celu ułatwienia zarządzania</string>
-    <string name="changelog_4_0_6_item2">Dodano przycisk \'Pobierz klucz\' w Ustawieniach AI / Kluczach API dla szybkiego dostępu</string>
-    <string name="changelog_4_0_6_item3">Ulepszono wygląd karty klucza drugorzędnego, aby pasował do karty głównej dla lepszej spójności wizualnej</string>
+    <string name="changelog_1_0_0_item1">Dodano Google AI Mode do opcji wyszukiwania w sieci</string>
+    <string name="changelog_1_0_0_item2">Dodano funkcję wyboru języka z obsługą wszystkich dostępnych języków</string>
+    <string name="changelog_1_0_0_item3">Ulepszono układy ekranu dla obsługi jedną ręką i większych palców</string>
+    <string name="changelog_1_0_0_item4">Naprawiono wiele problemów ze stabilnością i poprawiono wydajność</string>
+    <string name="changelog_1_0_0_item5">Przetestowano i dodano obsługę klawiatury FUTO</string>
+    <string name="changelog_1_0_0_item6">Naprawiono problem z połączeniem z Chutes API</string>
+    <string name="changelog_1_0_0_item7">Dodano nowy model Perplexity i obsługę API Perplexity</string>
+    <string name="changelog_1_0_0_item8">Usunięto ograniczenie używania \"/\" dla poleceń</string>
+    <string name="changelog_1_0_0_note">Prosimy o cierpliwość, ponieważ zgłoszono więcej problemów deweloperowi, ale zostaną one rozwiązane w partiach aktualizacji, ponieważ jest to projekt jednej osoby. Dziękujemy za zrozumienie.</string>
     <string name="module_restart_required_desc">Uruchom ponownie urządzenie, aby aktywować moduł</string>
     <string name="new_command_title">Nowe polecenie</string>
     <string name="error_prefix_empty">Prefiks nie może być pusty</string>
@@ -666,5 +672,11 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">Ten symbol jest już używany przez inny wzorzec</string>
+    
+    <!-- Dialog strings -->
+    <string name="dialog_title_edit_pattern">Edytuj %1$s</string>
+    <string name="hint_trigger_symbol">Wprowadź symbol</string>
+    <string name="btn_reset_pattern">Resetuj Wzorzec</string>
+    <string name="msg_reset_pattern_confirm">Czy na pewno chcesz zresetować \'%1$s\' do domyślnego symbolu \"%2$s\"?</string>
 </resources>

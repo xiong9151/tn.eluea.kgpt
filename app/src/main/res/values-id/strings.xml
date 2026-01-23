@@ -466,9 +466,15 @@
     <string name="tag_added">TAMBAH</string>
     <string name="tag_improved">INCREASE</string>
     <string name="tag_fixed">PERBAIKAN</string>
-    <string name="changelog_4_0_6_item1">Menambahkan sistem klasifikasi kunci API berbayar/gratis untuk memfasilitasi manajemen kunci</string>
-    <string name="changelog_4_0_6_item2">Menambahkan tombol \'Dapatkan Kunci\' di Pengaturan AI / Kunci API untuk akses cepat</string>
-    <string name="changelog_4_0_6_item3">Meningkatkan desain kartu kunci sekunder agar sesuai dengan kartu utama untuk konsistensi visual yang lebih baik</string>
+    <string name="changelog_1_0_0_item1">Menambahkan Google AI Mode ke opsi pencarian web</string>
+    <string name="changelog_1_0_0_item2">Menambahkan fitur pemilihan bahasa dengan dukungan untuk semua bahasa yang tersedia</string>
+    <string name="changelog_1_0_0_item3">Meningkatkan tata letak layar untuk penggunaan satu tangan dan jari yang lebih besar</string>
+    <string name="changelog_1_0_0_item4">Memperbaiki banyak masalah stabilitas dan meningkatkan kinerja</string>
+    <string name="changelog_1_0_0_item5">Menguji dan menambahkan dukungan untuk keyboard FUTO</string>
+    <string name="changelog_1_0_0_item6">Memperbaiki masalah koneksi dengan Chutes API</string>
+    <string name="changelog_1_0_0_item7">Menambahkan model Perplexity baru dan dukungan API Perplexity</string>
+    <string name="changelog_1_0_0_item8">Menghapus pembatasan penggunaan \"/\" untuk perintah</string>
+    <string name="changelog_1_0_0_note">Harap bersabar karena lebih banyak masalah telah dilaporkan kepada pengembang, tetapi akan diselesaikan dalam batch pembaruan karena ini adalah proyek satu orang. Terima kasih atas pengertian Anda.</string>
     <string name="module_restart_required_desc">Reboot perangkat untuk mengaktifkan modul</string>
 
     <string name="new_command_title">Perintah Baru</string>
@@ -528,5 +534,48 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">Simbol ini sudah digunakan</string>
+    
+    <!-- New Settings Dialog Strings -->
+    <string name="settings_option_choose_model">Pilih dan konfigurasi model</string>
+    <string name="dialog_title_commands_list">Daftar perintah</string>
+    <string name="settings_option_patterns_list">Daftar pola</string>
+    <string name="dialog_title_config_model">Konfigurasi %1$s</string>
+
+    <string name="setting_enable_logging">Aktifkan log</string>
+    <string name="setting_desc_enable_logging">Nonaktifkan untuk performa. Anda tidak dapat melaporkan error.</string>
+    <string name="setting_external_internet">Gunakan layanan internet eksternal</string>
+    <string name="setting_desc_external_internet">Disarankan jika chat tidak berfungsi.</string>
+    <string name="setting_search_engine">Mesin pencari</string>
+    <string name="setting_desc_search_engine">Mesin pencari default.</string>
+    <string name="setting_material_you">Aktifkan Material You</string>
+    <string name="setting_desc_material_you">Warna dinamis berdasarkan wallpaper.</string>
+    <string name="dialog_title_trigger_symbols">Simbol pemicu</string>
+    <string name="no_patterns">Tidak ada pola</string>
+    <string name="dialog_title_edit_pattern">Edit %1$s</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 Membuka pengaturan</string>
+    <string name="example_ai_responds">\u0022Halo, apa kabar?%1$s\u0022 \u2192 AI merespons</string>
+    <string name="example_translates">\u0022Halo%1$sterjemahkan%1$s\u0022 \u2192 Menerjemahkan</string>
+    <string name="example_format_italic">\u0022teks%1$s\u0022 \u2192 teks miring</string>
+    <string name="example_format_bold">\u0022teks%1$s\u0022 \u2192 teks tebal</string>
+    <string name="example_format_crossout">\u0022teks%1$s\u0022 \u2192 dicoret</string>
+    <string name="example_format_underline">\u0022teks%1$s\u0022 \u2192 garis bawah</string>
+    <string name="example_default">Ketik teks, lalu tambahkan \u0022%1$s\u0022 di akhir</string>
+    <string name="pattern_subtitle_trigger">Pemicu: %1$s</string>
+    <string name="title_settings_trigger">Pengaturan</string>
+    <string name="title_ai_trigger">Pemicu AI</string>
+    <string name="title_custom_command">Perintah kustom</string>
+    <string name="title_italic">Miring</string>
+    <string name="title_bold">Tebal</string>
+    <string name="title_crossout">Dicoret</string>
+    <string name="title_underline">Garis bawah</string>
+    <string name="title_web_search">Pencarian web</string>
+    <string name="btn_reset_pattern">Reset pola</string>
+    <string name="msg_reset_pattern_confirm">Reset \'%1$s\' ke simbol default \"%2$s\"?</string>
+    <string name="field_api_key">Kunci API</string>
+    <string name="field_sub_model">Sub-model</string>
+    <string name="field_base_url">URL dasar</string>
+    <string name="field_max_tokens">Token maksimum</string>
+    <string name="field_temperature">Suhu</string>
+    <string name="field_top_p">Top P</string>
 </resources>

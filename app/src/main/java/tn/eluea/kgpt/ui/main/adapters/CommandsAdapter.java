@@ -128,7 +128,7 @@ public class CommandsAdapter extends RecyclerView.Adapter<CommandsAdapter.Comman
         void bind(GenerativeAICommand command, int position) {
             boolean isBuiltIn = InlineAskCommand.isInlineAskCommand(command);
 
-            tvCommandName.setText("/" + command.getCommandPrefix());
+            tvCommandName.setText(command.getCommandPrefix());
 
             if (isBuiltIn) {
                 // Built-in command styling
@@ -137,7 +137,7 @@ public class CommandsAdapter extends RecyclerView.Adapter<CommandsAdapter.Comman
                 tvCommandDescription.setVisibility(View.VISIBLE);
 
                 // Add "BUILT-IN" indicator
-                tvCommandName.setText("/" + command.getCommandPrefix() + ctx.getString(R.string.built_in_indicator));
+                tvCommandName.setText(command.getCommandPrefix() + ctx.getString(R.string.built_in_indicator));
 
                 // Show special example for /ask
                 if (tvCommandExample != null) {
@@ -190,22 +190,22 @@ public class CommandsAdapter extends RecyclerView.Adapter<CommandsAdapter.Comman
         private String getExampleForCommand(GenerativeAICommand command) {
             String prefix = command.getCommandPrefix().toLowerCase(java.util.Locale.ROOT);
 
-            // Generate contextual examples based on command name - using /command$ format
+            // Generate contextual examples based on command name - using command$ format
             // The $ at the end is the AI trigger symbol (default)
             if (prefix.contains("translate")) {
-                return "Hello world /" + command.getCommandPrefix() + "$";
+                return "Hello world " + command.getCommandPrefix() + "$";
             } else if (prefix.contains("fix") || prefix.contains("grammar")) {
-                return "I has a apple /" + command.getCommandPrefix() + "$";
+                return "I has a apple " + command.getCommandPrefix() + "$";
             } else if (prefix.contains("summar") || prefix.contains("short")) {
-                return "[long text] /" + command.getCommandPrefix() + "$";
+                return "[long text] " + command.getCommandPrefix() + "$";
             } else if (prefix.contains("explain")) {
-                return "Quantum physics /" + command.getCommandPrefix() + "$";
+                return "Quantum physics " + command.getCommandPrefix() + "$";
             } else if (prefix.contains("code") || prefix.contains("program")) {
-                return "sort array /" + command.getCommandPrefix() + "$";
+                return "sort array " + command.getCommandPrefix() + "$";
             } else if (prefix.contains("email") || prefix.contains("formal")) {
-                return "meeting tomorrow /" + command.getCommandPrefix() + "$";
+                return "meeting tomorrow " + command.getCommandPrefix() + "$";
             } else {
-                return "your text /" + command.getCommandPrefix() + "$";
+                return "your text " + command.getCommandPrefix() + "$";
             }
         }
     }

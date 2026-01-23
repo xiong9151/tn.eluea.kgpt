@@ -254,7 +254,6 @@
     <string name="desc_edit_trigger_symbol">Đổi ký hiệu kích hoạt</string>
     <string name="label_enable_trigger">Kích hoạt</string>
     <string name="desc_enable_trigger">Sử dụng ký hiệu này</string>
-    <string name="hint_trigger_symbol">Ký hiệu</string>
     <string name="label_preview">Xem trước</string>
     <string name="hint_trigger_word">Từ khóa</string>
     <string name="helper_trigger_word">Gõ để mở ứng dụng</string>
@@ -466,9 +465,15 @@
     <string name="tag_added">THÊM</string>
     <string name="tag_improved">CẢI THIỆN</string>
     <string name="tag_fixed">SỬA LỖI</string>
-    <string name="changelog_4_0_6_item1">Thêm hệ thống phân loại khóa API trả phí/miễn phí để tạo thuận lợi cho việc quản lý</string>
-    <string name="changelog_4_0_6_item2">Thêm nút \'Lấy khóa\' trong Cài đặt AI / Khóa API để truy cập nhanh</string>
-    <string name="changelog_4_0_6_item3">Cải thiện thiết kế thẻ khóa phụ để phù hợp với thẻ chính cho sự nhất quán trực quan tốt hơn</string>
+    <string name="changelog_1_0_0_item1">Đã thêm Google AI Mode vào các tùy chọn tìm kiếm web</string>
+    <string name="changelog_1_0_0_item2">Đã thêm tính năng chọn ngôn ngữ với hỗ trợ cho tất cả các ngôn ngữ có sẵn</string>
+    <string name="changelog_1_0_0_item3">Cải thiện bố cục màn hình cho việc sử dụng một tay và ngón tay lớn hơn</string>
+    <string name="changelog_1_0_0_item4">Đã sửa nhiều vấn đề về tính ổn định và cải thiện hiệu suất</string>
+    <string name="changelog_1_0_0_item5">Đã kiểm tra và thêm hỗ trợ cho bàn phím FUTO</string>
+    <string name="changelog_1_0_0_item6">Đã sửa vấn đề kết nối với Chutes API</string>
+    <string name="changelog_1_0_0_item7">Đã thêm mô hình Perplexity mới và hỗ trợ API Perplexity</string>
+    <string name="changelog_1_0_0_item8">Đã xóa hạn chế sử dụng \"/\" cho các lệnh</string>
+    <string name="changelog_1_0_0_note">Vui lòng kiên nhẫn vì nhiều vấn đề hơn đã được báo cáo cho nhà phát triển, nhưng chúng sẽ được giải quyết theo từng đợt cập nhật vì đây là dự án của một người. Cảm ơn sự thông cảm của bạn.</string>
     <string name="module_restart_required_desc">Khởi động lại thiết bị để kích hoạt mô-đun</string>
 
     <string name="new_command_title">Lệnh mới</string>
@@ -512,7 +517,6 @@
     <string name="msg_pattern_create_failed">Could not create pattern</string>
     <string name="msg_pattern_invalid">Invalid pattern</string>
     <string name="msg_trigger_status_format">Trigger "%1$s" %2$s</string>
-    <string name="msg_pattern_reset">Pattern reset to default</string>
     <string name="msg_command_name_required">Command name is required</string>
     <string name="msg_command_exists">Command already exists</string>
     <string name="msg_command_builtin_conflict">Cannot use built-in command name</string>
@@ -528,5 +532,11 @@
     <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
     <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
     <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
-    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
+    <string name="msg_symbol_already_used">Ký hiệu này đã được sử dụng bởi mẫu khác</string>
+    
+    <!-- Dialog strings -->
+    <string name="dialog_title_edit_pattern">Chỉnh sửa %1$s</string>
+    <string name="hint_trigger_symbol">Nhập ký hiệu</string>
+    <string name="btn_reset_pattern">Đặt lại Mẫu</string>
+    <string name="msg_reset_pattern_confirm">Bạn có chắc muốn đặt lại \'%1$s\' về ký hiệu mặc định \"%2$s\"?</string>
 </resources>
