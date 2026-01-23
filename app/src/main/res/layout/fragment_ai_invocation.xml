@@ -36,7 +36,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="AI Invocation"
+                    android:text="@string/title_ai_invocation"
                     android:textSize="28sp"
                     android:textColor="?attr/colorOnSurface"
                     android:textStyle="bold" />
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Manage your AI commands and triggers"
+                android:text="@string/desc_ai_invocation"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?attr/colorOnSurfaceVariant" />
 

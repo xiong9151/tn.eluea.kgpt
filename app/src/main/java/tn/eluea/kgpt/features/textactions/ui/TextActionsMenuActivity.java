@@ -75,6 +75,11 @@ public class TextActionsMenuActivity extends AppCompatActivity
     private int selectionEnd;
 
     @Override
+    protected void attachBaseContext(android.content.Context newBase) {
+        super.attachBaseContext(tn.eluea.kgpt.util.LocaleHelper.onAttach(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 

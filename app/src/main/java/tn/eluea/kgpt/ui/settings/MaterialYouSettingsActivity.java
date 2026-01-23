@@ -272,7 +272,7 @@ public class MaterialYouSettingsActivity extends AppCompatActivity {
             manager.setSeedColor(selectedColor);
             colorPickerSheet.dismiss();
             tn.eluea.kgpt.KGPTApplication.getInstance().recreateAllActivities();
-            Toast.makeText(this, "Theme updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.msg_theme_updated, Toast.LENGTH_SHORT).show();
         });
 
         colorPickerSheet.show();

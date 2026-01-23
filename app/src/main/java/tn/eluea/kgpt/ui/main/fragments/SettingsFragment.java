@@ -69,8 +69,8 @@ public class SettingsFragment extends Fragment {
 
     private MaterialSwitch switchDarkMode, switchAmoled, switchWinterMode, switchLogs, switchExternalInternet;
 
-    private LinearLayout amoledContainer, btnBackup, btnRestore, btnExportLogs, btnBlurControl;
-    private TextView tvAboutVersion;
+    private LinearLayout amoledContainer, btnBackup, btnRestore, btnExportLogs, btnBlurControl, btnLanguage;
+    private TextView tvAboutVersion, tvCurrentLanguage;
     private FrameLayout btnInfo;
     private MaterialButton btnTelegramSupport, btnChangelog;
     private View rootView;
@@ -241,6 +241,8 @@ public class SettingsFragment extends Fragment {
         btnBackup = view.findViewById(R.id.btn_backup);
         btnRestore = view.findViewById(R.id.btn_restore);
         btnExportLogs = view.findViewById(R.id.btn_export_logs);
+        btnLanguage = view.findViewById(R.id.btn_language);
+        tvCurrentLanguage = view.findViewById(R.id.tv_current_language);
 
         // Initialize icons for candy colors
         iconDarkMode = view.findViewById(R.id.icon_dark_mode);
@@ -371,7 +373,11 @@ public class SettingsFragment extends Fragment {
         }
 
         // Version
+        // Version
         tvAboutVersion.setText("Version " + BuildConfig.VERSION_NAME);
+
+        // Language
+        updateLanguageText();
     }
 
     private void setupListeners() {
@@ -457,6 +463,7 @@ public class SettingsFragment extends Fragment {
         btnBackup.setOnClickListener(v -> startBackup());
         btnRestore.setOnClickListener(v -> startRestore());
         btnExportLogs.setOnClickListener(v -> startExportLogs());
+        btnLanguage.setOnClickListener(v -> showLanguageDialog());
 
         // Update settings - open dedicated activity
         if (btnUpdateSettings != null) {
@@ -507,7 +514,7 @@ public class SettingsFragment extends Fragment {
         }
 
         // Request root access first
-        Toast.makeText(requireContext(), "Requesting root access...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), R.string.msg_requesting_root, Toast.LENGTH_SHORT).show();
 
         new Thread(() -> {
             boolean hasRoot = logExporter.requestRootAccess();
@@ -515,9 +522,12 @@ public class SettingsFragment extends Fragment {
             if (getActivity() != null) {
                 getActivity().runOnUiThread(() -> {
                     if (hasRoot) {
-                        Toast.makeText(requireContext(), "Root access granted", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireContext(), getString(R.string.root_access_granted), Toast.LENGTH_SHORT)
+                                .show();
                     } else {
-                        Toast.makeText(requireContext(), "Root access denied - some logs may be limited",
+                        Toast.makeText(requireContext(), R.string.msg_root_denied, // Should be
+                                                                                   // resource
+                                                                                   // but minor
                                 Toast.LENGTH_SHORT).show();
                     }
 
@@ -551,7 +561,7 @@ public class SettingsFragment extends Fragment {
                 switchLogs.setChecked(true);
             }
             dialog.dismiss();
-            Toast.makeText(requireContext(), "Logging enabled. You can now export logs.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.logging_enabled_toast), Toast.LENGTH_SHORT).show();
         });
 
         btnCancel.setOnClickListener(v -> dialog.dismiss());
@@ -560,7 +570,7 @@ public class SettingsFragment extends Fragment {
     }
 
     private void performExportLogs(Uri uri) {
-        Toast.makeText(requireContext(), "Exporting logs...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), R.string.msg_exporting_logs, Toast.LENGTH_SHORT).show();
 
         new Thread(() -> {
             LogExporter.ExportResult result = logExporter.exportLogs(uri);
@@ -570,7 +580,8 @@ public class SettingsFragment extends Fragment {
                     if (result.success) {
                         showExportSuccessBottomSheet(result);
                     } else {
-                        Toast.makeText(requireContext(), "Failed to export logs: " + result.errorMessage,
+                        Toast.makeText(requireContext(),
+                                getString(R.string.msg_export_failed_prefix) + result.errorMessage,
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -624,10 +635,11 @@ public class SettingsFragment extends Fragment {
                         "Backup saved successfully (" + options.getSelectedCount() + " sections)",
                         Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(requireContext(), "Failed to save backup", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_backup_save_failed, Toast.LENGTH_SHORT).show();
             }
         } catch (JSONException e) {
-            Toast.makeText(requireContext(), "Error creating backup: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.msg_backup_create_error_prefix) + e.getMessage(),
+                    Toast.LENGTH_SHORT).show();
         } finally {
             pendingBackupOptions = null;
         }
@@ -637,7 +649,7 @@ public class SettingsFragment extends Fragment {
         String backupJson = backupManager.readFromFile(uri);
 
         if (backupJson == null) {
-            Toast.makeText(requireContext(), "Failed to read backup file", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_backup_read_failed, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -650,7 +662,7 @@ public class SettingsFragment extends Fragment {
         }
 
         if (analysis.availableOptions.isEmpty()) {
-            Toast.makeText(requireContext(), "No restorable data found in backup", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_no_restore_data, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -689,7 +701,8 @@ public class SettingsFragment extends Fragment {
             // Reload settings
             loadSettings();
         } else {
-            Toast.makeText(requireContext(), "Restore failed: " + result.errorMessage, Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.msg_restore_failed_prefix) + result.errorMessage,
+                    Toast.LENGTH_SHORT).show();
         }
 
         // Clear pending state
@@ -740,17 +753,17 @@ public class SettingsFragment extends Fragment {
         // Add changelog entries
         LinearLayout changelogContent = sheetView.findViewById(R.id.changelog_content);
 
-        // Version 4.0.5 Changes
-        addChangelogEntry(changelogContent, "ADD",
-                "Added paid/free API key classification system to facilitate key management",
+        // Version 4.0.6 Changes
+        addChangelogEntry(changelogContent, getString(R.string.tag_added),
+                getString(R.string.changelog_4_0_6_item1),
                 colorPrimary, colorOnPrimary);
 
-        addChangelogEntry(changelogContent, "ADD",
-                "Added 'Get Key' button in AI Settings / API Keys for quick access",
+        addChangelogEntry(changelogContent, getString(R.string.tag_added),
+                getString(R.string.changelog_4_0_6_item2),
                 colorPrimary, colorOnPrimary);
 
-        addChangelogEntry(changelogContent, "IMPROVE",
-                "Improved secondary key card design to match the primary card for better visual consistency",
+        addChangelogEntry(changelogContent, getString(R.string.tag_improved),
+                getString(R.string.changelog_4_0_6_item3),
                 colorPrimary, colorOnPrimary);
 
         MaterialButton btnClose = sheetView.findViewById(R.id.btn_close);
@@ -797,6 +810,17 @@ public class SettingsFragment extends Fragment {
     // usage.
     // I will replace usage in the block above.
 
+    private void updateLanguageText() {
+        String langCode = tn.eluea.kgpt.util.LocaleHelper.getLanguage(requireContext());
+        java.util.Locale loc = new java.util.Locale(langCode);
+        tvCurrentLanguage.setText(loc.getDisplayName(loc));
+    }
+
+    private void showLanguageDialog() {
+        Intent intent = new Intent(requireContext(), tn.eluea.kgpt.ui.settings.LanguageSelectionActivity.class);
+        startActivity(intent);
+    }
+
     private void showInfoBottomSheet() {
         View sheetView = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_info, null);
 
@@ -810,12 +834,8 @@ public class SettingsFragment extends Fragment {
         TextView tvTitle = sheetView.findViewById(R.id.tv_info_title);
         TextView tvDescription = sheetView.findViewById(R.id.tv_info_description);
 
-        tvTitle.setText("About Settings");
-        tvDescription.setText("Customize your KGPT experience.\n\n" +
-                "â€¢ Dark Mode: Enable dark theme for comfortable viewing at night.\n\n" +
-                "â€¢ AMOLED Dark: Pure black theme for OLED screens to save battery.\n\n" +
-                "â€¢ Enable Logging: Turn on logs for debugging. Disable for better performance.\n\n" +
-                "â€¢ External Internet Service: Recommended for chat completion. Enables external network requests for AI responses.");
+        tvTitle.setText(R.string.about_settings_title);
+        tvDescription.setText(R.string.about_settings_desc);
 
         MaterialButton btnClose = sheetView.findViewById(R.id.btn_close);
         btnClose.setOnClickListener(v -> dialog.dismiss());

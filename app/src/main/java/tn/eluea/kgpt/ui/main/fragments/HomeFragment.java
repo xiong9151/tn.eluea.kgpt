@@ -391,9 +391,9 @@ public class HomeFragment extends Fragment {
                 statusContainer.setBackgroundResource(R.drawable.bg_status_active);
                 ivStatusIcon.setImageResource(R.drawable.ic_shield_tick_filled);
                 ivStatusIcon.setColorFilter(getResources().getColor(R.color.success, requireContext().getTheme()));
-                tvStatusTitle.setText("Module Active");
+                tvStatusTitle.setText(R.string.module_active);
                 tvStatusTitle.setTextColor(getResources().getColor(R.color.success, requireContext().getTheme()));
-                tvStatusDesc.setText("KGPT is working");
+                tvStatusDesc.setText(R.string.module_active_desc);
                 tvStatusDesc.setTextColor(getResources().getColor(R.color.success, requireContext().getTheme()));
                 break;
 
@@ -401,9 +401,9 @@ public class HomeFragment extends Fragment {
                 statusContainer.setBackgroundResource(R.drawable.bg_status_warning);
                 ivStatusIcon.setImageResource(R.drawable.ic_refresh_filled);
                 ivStatusIcon.setColorFilter(getResources().getColor(R.color.warning, requireContext().getTheme()));
-                tvStatusTitle.setText("Restart Required");
+                tvStatusTitle.setText(R.string.restart_required_title);
                 tvStatusTitle.setTextColor(getResources().getColor(R.color.warning, requireContext().getTheme()));
-                tvStatusDesc.setText("Reboot device to activate module");
+                tvStatusDesc.setText(R.string.module_restart_required_desc);
                 tvStatusDesc.setTextColor(getResources().getColor(R.color.warning, requireContext().getTheme()));
                 break;
 
@@ -412,9 +412,9 @@ public class HomeFragment extends Fragment {
                 statusContainer.setBackgroundResource(R.drawable.bg_status_inactive);
                 ivStatusIcon.setImageResource(R.drawable.ic_shield_cross_filled);
                 ivStatusIcon.setColorFilter(getResources().getColor(R.color.error, requireContext().getTheme()));
-                tvStatusTitle.setText("Module Not Active");
+                tvStatusTitle.setText(R.string.module_inactive);
                 tvStatusTitle.setTextColor(getResources().getColor(R.color.error, requireContext().getTheme()));
-                tvStatusDesc.setText("Enable in LSPosed Manager");
+                tvStatusDesc.setText(R.string.module_inactive_desc);
                 tvStatusDesc.setTextColor(getResources().getColor(R.color.error, requireContext().getTheme()));
                 break;
         }

@@ -43,7 +43,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AI Text Actions"
+                android:text="@string/title_ai_text_actions"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -56,7 +56,7 @@
                 android:backgroundTint="?attr/colorTertiaryContainer"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="4dp"
-                android:text="NEW"
+                android:text="@string/new_badge"
                 android:textColor="?attr/colorOnTertiaryContainer"
                 android:textSize="10sp"
                 android:textStyle="bold" />
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="8dp"
-        android:text="Quick AI text actions using trigger commands. Type your text, then add the action trigger at the end."
+        android:text="@string/text_actions_intro"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="13sp" />
 
@@ -127,7 +127,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Enable Text Actions"
+                            android:text="@string/enable_text_actions"
                             android:textColor="?attr/colorOnSurface"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -136,7 +136,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Show floating menu on text selection"
+                            android:text="@string/desc_enable_text_actions_sub"
                             android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -182,7 +182,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Tap any card to edit its prompt"
+                            android:text="@string/action_tip_title"
                             android:textColor="?attr/colorOnSecondaryContainer"
                             android:textSize="12sp"
                             android:textStyle="bold"/>
@@ -191,7 +191,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="Select text to show menu • Custom selection UIs not supported"
+                            android:text="@string/action_tip_desc"
                             android:textColor="?attr/colorOnSecondaryContainer"
                             android:textSize="12sp"/>
 
@@ -221,7 +221,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:gravity="center"
-                    android:text="Enable Text Actions to configure\nwhich actions appear in the menu"
+                    android:text="@string/msg_enable_text_actions"
                     android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -259,7 +259,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Show Labels"
+                                android:text="@string/title_show_labels"
                                 android:textColor="?attr/colorOnSurface"
                                 android:textSize="15sp" />
 
@@ -267,7 +267,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="Display text labels under icons"
+                                android:text="@string/desc_show_labels"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -286,7 +286,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginBottom="12dp"
-                    android:text="Available Actions"
+                    android:text="@string/title_available_actions"
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="13sp"
                     android:textStyle="bold" />

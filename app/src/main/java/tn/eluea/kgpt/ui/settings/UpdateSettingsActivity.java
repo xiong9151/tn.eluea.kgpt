@@ -50,7 +50,7 @@ public class UpdateSettingsActivity extends AppCompatActivity {
     private ImageView btnBack;
     private ImageView ivDockIcon;
     private ObjectAnimator rotationAnimator;
-    
+
     private ActivityResultLauncher<Uri> folderPickerLauncher;
 
     @Override
@@ -70,22 +70,21 @@ public class UpdateSettingsActivity extends AppCompatActivity {
 
     private void setupFolderPicker() {
         folderPickerLauncher = registerForActivityResult(
-            new ActivityResultContracts.OpenDocumentTree(),
-            uri -> {
-                if (uri != null) {
-                    // Take persistent permission
-                    getContentResolver().takePersistableUriPermission(uri,
-                        Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-                    
-                    // Convert to file path
-                    String path = getPathFromUri(uri);
-                    if (path != null && SPManager.isReady()) {
-                        SPManager.getInstance().setUpdateDownloadPath(path);
-                        updateDownloadPathDisplay();
+                new ActivityResultContracts.OpenDocumentTree(),
+                uri -> {
+                    if (uri != null) {
+                        // Take persistent permission
+                        getContentResolver().takePersistableUriPermission(uri,
+                                Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+
+                        // Convert to file path
+                        String path = getPathFromUri(uri);
+                        if (path != null && SPManager.isReady()) {
+                            SPManager.getInstance().setUpdateDownloadPath(path);
+                            updateDownloadPathDisplay();
+                        }
                     }
-                }
-            }
-        );
+                });
     }
 
     private String getPathFromUri(Uri uri) {
@@ -97,7 +96,7 @@ public class UpdateSettingsActivity extends AppCompatActivity {
                 String[] split = docId.split(":");
                 String type = split[0];
                 String relativePath = split.length > 1 ? split[1] : "";
-                
+
                 if ("primary".equalsIgnoreCase(type)) {
                     return Environment.getExternalStorageDirectory().getPath() + "/" + relativePath;
                 }
@@ -125,7 +124,7 @@ public class UpdateSettingsActivity extends AppCompatActivity {
             ivDockIcon = btnCheckUpdate.findViewById(R.id.dock_action_icon);
 
             if (tvDockText != null)
-                tvDockText.setText("Check for Updates");
+                tvDockText.setText(R.string.check_for_updates);
             if (ivDockIcon != null)
                 ivDockIcon.setImageResource(R.drawable.ic_refresh_circle_filled);
         }
@@ -142,7 +141,7 @@ public class UpdateSettingsActivity extends AppCompatActivity {
             // Update interval button state
             btnUpdateInterval.setAlpha(updatesEnabled ? 1.0f : 0.5f);
             btnUpdateInterval.setEnabled(updatesEnabled);
-            
+
             // Update download path display
             updateDownloadPathDisplay();
         }
@@ -154,17 +153,18 @@ public class UpdateSettingsActivity extends AppCompatActivity {
     }
 
     private void updateDownloadPathDisplay() {
-        if (tvDownloadPath == null || !SPManager.isReady()) return;
-        
+        if (tvDownloadPath == null || !SPManager.isReady())
+            return;
+
         String customPath = SPManager.getInstance().getUpdateDownloadPath();
         if (customPath == null || customPath.isEmpty()) {
-            tvDownloadPath.setText("Default (Downloads)");
+            tvDownloadPath.setText(R.string.path_default_downloads_option);
         } else {
             // Show shortened path
             String displayPath = customPath;
             String externalStorage = Environment.getExternalStorageDirectory().getPath();
             if (displayPath.startsWith(externalStorage)) {
-                displayPath = displayPath.replace(externalStorage, "Internal Storage");
+                displayPath = displayPath.replace(externalStorage, getString(R.string.path_internal_storage));
             }
             tvDownloadPath.setText(displayPath);
         }
@@ -208,7 +208,8 @@ public class UpdateSettingsActivity extends AppCompatActivity {
     }
 
     private void showDownloadPathPicker() {
-        String[] options = { "Default (Downloads)", "Choose Custom Folder" };
+        String[] options = { getString(R.string.path_default_downloads_option),
+                getString(R.string.path_choose_custom) };
 
         View sheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_update_interval, null);
         tn.eluea.kgpt.ui.main.BottomSheetHelper.applyTheme(this, sheetView);
@@ -220,6 +221,11 @@ public class UpdateSettingsActivity extends AppCompatActivity {
 
         String currentPath = SPManager.isReady() ? SPManager.getInstance().getUpdateDownloadPath() : "";
         boolean isDefault = (currentPath == null || currentPath.isEmpty());
+
+        int colorOnPrimaryContainer = com.google.android.material.color.MaterialColors.getColor(this,
+                com.google.android.material.R.attr.colorOnPrimaryContainer, 0);
+        int colorOnSurface = com.google.android.material.color.MaterialColors.getColor(this,
+                com.google.android.material.R.attr.colorOnSurface, 0);
 
         for (int i = 0; i < options.length; i++) {
             final int index = i;
@@ -235,9 +241,11 @@ public class UpdateSettingsActivity extends AppCompatActivity {
             if (isSelected) {
                 itemView.setBackgroundResource(R.drawable.bg_option_selected_rounded);
                 checkMark.setVisibility(View.VISIBLE);
+                tvName.setTextColor(colorOnPrimaryContainer);
             } else {
                 itemView.setBackgroundResource(R.drawable.bg_selectable_rounded);
                 checkMark.setVisibility(View.INVISIBLE);
+                tvName.setTextColor(colorOnSurface);
             }
 
             itemView.setOnClickListener(v -> {
@@ -263,8 +271,9 @@ public class UpdateSettingsActivity extends AppCompatActivity {
     }
 
     private void showIntervalPicker() {
-        String[] options = { "Every hour", "Every 6 hours", "Every 12 hours", "Every day", "Every 2 days",
-                "Every week" };
+        String[] options = { getString(R.string.interval_every_hour), getString(R.string.interval_every_6_hours),
+                getString(R.string.interval_every_12_hours), getString(R.string.interval_every_day),
+                getString(R.string.interval_every_2_days), getString(R.string.interval_every_week) };
         int[] values = { 1, 6, 12, 24, 48, 168 };
 
         int currentInterval = SPManager.isReady() ? SPManager.getInstance().getUpdateCheckInterval() : 24;
@@ -280,6 +289,11 @@ public class UpdateSettingsActivity extends AppCompatActivity {
         // Setup Bottom Sheet
         tn.eluea.kgpt.ui.main.FloatingBottomSheet dialog = new tn.eluea.kgpt.ui.main.FloatingBottomSheet(this);
 
+        int colorOnPrimaryContainer = com.google.android.material.color.MaterialColors.getColor(this,
+                com.google.android.material.R.attr.colorOnPrimaryContainer, 0);
+        int colorOnSurface = com.google.android.material.color.MaterialColors.getColor(this,
+                com.google.android.material.R.attr.colorOnSurface, 0);
+
         for (int i = 0; i < options.length; i++) {
             final int index = i;
             View itemView = getLayoutInflater().inflate(R.layout.item_search_engine_option, optionsContainer, false);
@@ -294,9 +308,11 @@ public class UpdateSettingsActivity extends AppCompatActivity {
             if (isSelected) {
                 itemView.setBackgroundResource(R.drawable.bg_option_selected_rounded);
                 checkMark.setVisibility(View.VISIBLE);
+                tvName.setTextColor(colorOnPrimaryContainer);
             } else {
                 itemView.setBackgroundResource(R.drawable.bg_selectable_rounded);
                 checkMark.setVisibility(View.INVISIBLE);
+                tvName.setTextColor(colorOnSurface);
             }
 
             itemView.setOnClickListener(v -> {
@@ -335,7 +351,7 @@ public class UpdateSettingsActivity extends AppCompatActivity {
 
         TextView tvDockText = btnCheckUpdate.findViewById(R.id.dock_action_text);
         if (tvDockText != null) {
-            tvDockText.setText("Checking...");
+            tvDockText.setText(R.string.checking_updates);
         }
 
         // Start rotation animation on icon
@@ -367,7 +383,7 @@ public class UpdateSettingsActivity extends AppCompatActivity {
                 btnCheckUpdate.setAlpha(1.0f);
 
                 if (tvDockText != null) {
-                    tvDockText.setText("Check for Updates");
+                    tvDockText.setText(R.string.check_for_updates);
                 }
 
                 if (finalError != null) {
@@ -382,23 +398,26 @@ public class UpdateSettingsActivity extends AppCompatActivity {
     }
 
     private boolean isNetworkAvailable() {
-        android.net.ConnectivityManager connectivityManager = 
-            (android.net.ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager == null) return false;
-        
+        android.net.ConnectivityManager connectivityManager = (android.net.ConnectivityManager) getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager == null)
+            return false;
+
         android.net.Network network = connectivityManager.getActiveNetwork();
-        if (network == null) return false;
-        
+        if (network == null)
+            return false;
+
         android.net.NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(network);
-        return capabilities != null && 
-               (capabilities.hasTransport(android.net.NetworkCapabilities.TRANSPORT_WIFI) ||
-                capabilities.hasTransport(android.net.NetworkCapabilities.TRANSPORT_CELLULAR) ||
-                capabilities.hasTransport(android.net.NetworkCapabilities.TRANSPORT_ETHERNET));
+        return capabilities != null &&
+                (capabilities.hasTransport(android.net.NetworkCapabilities.TRANSPORT_WIFI) ||
+                        capabilities.hasTransport(android.net.NetworkCapabilities.TRANSPORT_CELLULAR) ||
+                        capabilities.hasTransport(android.net.NetworkCapabilities.TRANSPORT_ETHERNET));
     }
 
     private void startIconRotation() {
-        if (ivDockIcon == null) return;
-        
+        if (ivDockIcon == null)
+            return;
+
         rotationAnimator = ObjectAnimator.ofFloat(ivDockIcon, "rotation", 0f, 360f);
         rotationAnimator.setDuration(1000);
         rotationAnimator.setRepeatCount(ValueAnimator.INFINITE);
@@ -418,17 +437,17 @@ public class UpdateSettingsActivity extends AppCompatActivity {
 
     private String formatIntervalText(int hours) {
         if (hours <= 0)
-            return "Disabled";
+            return getString(R.string.interval_disabled);
         if (hours == 1)
-            return "Every hour";
+            return getString(R.string.interval_every_hour);
         if (hours < 24)
-            return "Every " + hours + " hours";
+            return getString(R.string.interval_every_n_hours, hours);
         if (hours == 24)
-            return "Every day";
+            return getString(R.string.interval_every_day);
         if (hours == 48)
-            return "Every 2 days";
+            return getString(R.string.interval_every_2_days);
         if (hours == 168)
-            return "Every week";
-        return "Every " + hours + " hours";
+            return getString(R.string.interval_every_week);
+        return getString(R.string.interval_every_n_hours, hours);
     }
 }

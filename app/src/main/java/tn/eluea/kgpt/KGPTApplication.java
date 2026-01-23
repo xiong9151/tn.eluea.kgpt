@@ -119,6 +119,18 @@ public class KGPTApplication extends Application {
         });
     }
 
+    @Override
+    protected void attachBaseContext(android.content.Context base) {
+        // Attach LocaleHelper to apply language settings
+        super.attachBaseContext(tn.eluea.kgpt.util.LocaleHelper.onAttach(base, "en"));
+    }
+
+    @Override
+    public void onConfigurationChanged(@androidx.annotation.NonNull android.content.res.Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        tn.eluea.kgpt.util.LocaleHelper.onAttach(this);
+    }
+
     public void recreateAllActivities() {
         for (java.lang.ref.WeakReference<android.app.Activity> ref : activityList) {
             android.app.Activity activity = ref.get();

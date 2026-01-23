@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Status Title"
+        android:text="@string/title_status_placeholder"
         android:textColor="?attr/colorOnSurface"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -69,7 +69,7 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:lineSpacingExtra="4dp"
-        android:text="Status message goes here."
+        android:text="@string/msg_status_placeholder"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="15sp" />
 
@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="28dp"
-        android:text="Primary Action"
+        android:text="@string/action_primary_placeholder"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textColor="?attr/colorOnPrimary"
@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="Secondary"
+        android:text="@string/action_secondary_placeholder"
         android:textAllCaps="false"
         android:visibility="gone" />
 

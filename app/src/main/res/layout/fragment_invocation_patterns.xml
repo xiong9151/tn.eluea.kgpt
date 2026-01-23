@@ -52,7 +52,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Quick Example"
+                        android:text="@string/quick_example"
                         android:textColor="?attr/colorOnSecondaryContainer"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -61,7 +61,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Type: &quot;What is the weather?$&quot; • AI will respond"
+                        android:text="@string/example_pattern_usage"
                         android:textColor="?attr/colorOnSecondaryContainer"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginStart="8dp"
-            android:text="Active Triggers"
+            android:text="@string/active_triggers"
             android:textAppearance="?attr/textAppearanceTitleMedium"
             android:textColor="?attr/colorOnSurface" />
 

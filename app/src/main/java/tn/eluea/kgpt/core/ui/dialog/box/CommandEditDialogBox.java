@@ -77,10 +77,10 @@ public class CommandEditDialogBox extends DialogBox {
             GenerativeAICommand command = getConfig().commands.get(commandIndex);
             prefixEditText.setText(command.getCommandPrefix());
             messageEditText.setText(command.getTweakMessage());
-            tvTitle.setText("Edit Command");
+            tvTitle.setText(R.string.edit_command_title);
             btnDelete.setVisibility(View.VISIBLE);
         } else {
-            tvTitle.setText("New Command");
+            tvTitle.setText(R.string.new_command_title);
             btnDelete.setVisibility(View.GONE);
         }
 
@@ -96,12 +96,12 @@ public class CommandEditDialogBox extends DialogBox {
             String message = messageEditText.getText().toString().trim();
 
             if (prefix.isEmpty()) {
-                prefixEditText.setError("Prefix cannot be empty");
+                prefixEditText.setError(getContext().getString(R.string.error_prefix_empty));
                 return;
             }
 
             if (message.isEmpty()) {
-                messageEditText.setError("Message cannot be empty");
+                messageEditText.setError(getContext().getString(R.string.error_message_empty));
                 return;
             }
 
@@ -109,7 +109,7 @@ public class CommandEditDialogBox extends DialogBox {
                     .count();
             if ((commandPos == -1 && similarCount >= 1)
                     || (commandPos >= 0 && similarCount >= 2)) {
-                Toast.makeText(getContext(), "There is another command with same name", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), R.string.error_duplicate_command, Toast.LENGTH_LONG).show();
                 return;
             }
 

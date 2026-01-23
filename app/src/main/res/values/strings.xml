@@ -19,6 +19,7 @@
     <string name="module_inactive">Module Not Active</string>
     <string name="module_active_desc">KGPT is working</string>
     <string name="module_inactive_desc">Enable in LSPosed Manager</string>
+    <string name="module_restart_required_desc">Reboot device to activate module</string>
     <string name="quick_actions">Quick Actions</string>
     <string name="current_model">Current Model</string>
     <string name="ai_invocation">AI Invocation</string>
@@ -330,6 +331,10 @@
 
     <!-- Edit Command Dialog -->
     <string name="edit_command_title">Edit Command</string>
+    <string name="new_command_title">New Command</string>
+    <string name="error_prefix_empty">Prefix cannot be empty</string>
+    <string name="error_message_empty">Message cannot be empty</string>
+    <string name="error_duplicate_command">There is another command with same name</string>
     <string name="hint_command_prefix">Command (e.g. /ask)</string>
     <string name="hint_prompt">Prompt</string>
 
@@ -373,21 +378,286 @@
     <string name="sub_model_desc">Select a preset or enter custom</string>
     <string name="hint_custom_model">Or enter custom model name</string>
     
-    <!-- Languages -->
-    <string-array name="languages_list">
-        <item>Arabic</item>
-        <item>English</item>
-        <item>French</item>
-        <item>Spanish</item>
-        <item>German</item>
-        <item>Italian</item>
-        <item>Russian</item>
-        <item>Turkish</item>
-        <item>Chinese</item>
-        <item>Japanese</item>
-        <item>Korean</item>
-        <item>Hindi</item>
-        <item>Portuguese</item>
-        <item>Indonesian</item>
-    </string-array>
+
+
+    <!-- New Strings extracted from layouts -->
+    <string name="title_app_triggers">App Triggers</string>
+    <string name="lab_badge">LAB</string>
+    <string name="app_triggers_intro">Open apps quickly by typing their trigger word</string>
+    <string name="btn_enable_app_triggers">Enable App Triggers</string>
+    <string name="desc_enable_app_triggers">Type trigger word to launch apps</string>
+    <string name="msg_no_triggers">No app triggers added yet.\nTap the button above to add one.</string>
+    <string name="guide_triggers_usage">• Type the trigger word → App opens automatically\n• Tap on app card to edit or delete</string>
+    
+    <string name="material_you_blur">Material You Blur</string>
+    <string name="use_dynamic_app_colors">Automatically use dynamic app colors</string>
+    <string name="reset_settings">Reset Settings</string>
+    <string name="performance_tip">Performance Tip</string>
+    <string name="performance_tip_desc">Disable this feature on old or low-end devices for better performance.</string>
+    
+    <string name="kgpt_lab">KGPT Lab</string>
+    <string name="experimental_badge">EXPERIMENTAL</string>
+    <string name="lab_warning">Experimental features that are still in development. Use with caution.</string>
+    <string name="desc_open_apps">Open apps by typing trigger words</string>
+    <string name="new_badge">NEW</string>
+    <string name="desc_text_actions">Quick AI actions on selected text</string>
+    <string name="text_actions_intro">Quick AI text actions using trigger commands. Type your text, then add the action trigger at the end.</string>
+    <string name="coming_soon">More features coming soon...</string>
+    
+    <string name="title_material_you">Material You</string>
+    <string name="desc_material_you">Customize dynamic colors and app theming.</string>
+    <string name="use_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="extract_wallpaper_colors">Extract colors from wallpaper</string>
+    <string name="seed_color">Seed Color</string>
+    <string name="manual_color_select">Manually select base color</string>
+    <string name="enable_text_actions">Enable Text Actions</string>
+    
+    <!-- More Text Actions Strings -->
+    <string name="title_show_labels">Show Labels</string>
+    <string name="desc_show_labels">Display text labels under icons</string>
+    <string name="title_available_actions">Available Actions</string>
+    <string name="action_tip_title">Tap any card to edit its prompt</string>
+    <string name="action_tip_desc">Select text to show menu • Custom selection UIs not supported</string>
+    <string name="msg_enable_text_actions">Enable Text Actions to configure\nwhich actions appear in the menu</string>
+    <string name="desc_enable_text_actions_sub">Show floating menu on text selection</string>
+    <string name="title_ai_text_actions">AI Text Actions</string>
+    
+    <!-- Update & Status Strings -->
+    <string name="new_update_badge">NEW UPDATE</string>
+    <string name="update_changelog_placeholder">• Bug fixes and improvements...</string>
+    <string name="title_downloading_update">Downloading Update</string>
+    <string name="msg_downloading">Downloading...</string>
+    <string name="download_progress_placeholder">0 KB / 0 MB</string>
+    <string name="action_cancel_download">Cancel Download</string>
+    <string name="action_download_update">Download Update</string>
+    <string name="action_remind_later">Remind me later</string>
+    <string name="action_install_update">Install Update</string>
+    <string name="title_status_placeholder">Status Title</string>
+    <string name="msg_status_placeholder">Status message goes here.</string>
+    <string name="action_primary_placeholder">Primary Action</string>
+    <string name="action_secondary_placeholder">Secondary</string>
+    <string name="title_update_settings">Update Settings</string>
+    <string name="title_auto_updates">Automatic Updates</string>
+    <string name="switch_auto_updates">Auto Updates</string>
+    <string name="desc_auto_updates">Check automatically</string>
+    <string name="title_check_interval">Check Interval</string>
+    <string name="interval_24h">Every 24 hours</string>
+    <string name="title_download_path">Download Path</string>
+    <string name="path_default_downloads">Default (Downloads)</string>
+    <string name="desc_app_tagline">Integrate Generative AI and many models</string>
+
+    <!-- Command & Pattern Dialogs -->
+    <string name="title_add_command">Add new command</string>
+    <string name="desc_add_command">Create a custom command to trigger AI</string>
+    <string name="hint_command_name">Command Name</string>
+    <string name="hint_system_message">System Message (Optional)</string>
+    <string name="help_command_usage">Usage: text /command + AI trigger symbol\ne.g. Hello world /short$</string>
+    <string name="title_edit_pattern">Edit Pattern</string>
+    <string name="desc_edit_pattern">Customize the regex pattern for AI trigger</string>
+    <string name="hint_regex_pattern">Regex Pattern</string>
+    <string name="help_regex_default">Default: $prompt$ → \$([^$]*)\$</string>
+    <string name="title_other_settings">Other Settings</string>
+    <string name="enable_trigger">Enable this trigger</string>
+    <string name="hint_description">Description...</string>
+    <string name="reset_default">Reset to default</string>
+    <string name="hint_example">Example...</string>
+    <string name="no_commands">No commands yet</string>
+
+    <!-- Settings Fragment Extras -->
+    <string name="winter_mode">Winter Mode</string>
+    <string name="winter_mode_desc">Enable snowfall animation effect</string>
+    <string name="title_settings_backup">Backup Data</string>
+    <string name="desc_settings_backup">Save your chats and settings</string>
+    <string name="title_settings_restore">Restore Data</string>
+    <string name="desc_settings_restore">Restore from a backup file</string>
+    <string name="support_group">Support Group</string>
+    <string name="title_export_logs">Export Logs</string>
+    <string name="desc_export_logs">Share logs for debugging</string>
+    <string name="title_updates">Updates</string>
+    <string name="desc_updates_config">Check and configure updates</string>
+    
+    <!-- Web Search -->
+    <string name="open_in_browser">Open in browser</string>
+    <string name="hint_enter_url">Enter URL</string>
+    <string name="duckduckgo">DuckDuckGo</string>
+
+    <!-- Easter Egg (Cat) -->
+    <string name="cat_caught_title">Meow! You caught me!</string>
+    <string name="cat_caught_msg">Hey there! I\'m the KGPT cat.\n\nIf you\'re enjoying the app, would you mind giving us a star on GitHub?\nIt really helps!</string>
+    <string name="cat_action_star">Star on GitHub</string>
+    <string name="cat_action_later">Maybe later</string>
+
+    <!-- Invocation Patterns -->
+    <string name="quick_example">Quick Example</string>
+    <string name="example_pattern_usage">Type: \"What is the weather?$\" • AI will respond</string>
+    <string name="active_triggers">Active Triggers</string>
+    
+    <!-- Misc -->
+    <string name="action_placeholder">Action</string>
+    <string name="version_v4_1_0">v4.1.0</string>
+
+    <!-- API Keys Fragment -->
+    <string name="api_keys_description">Manage your API keys</string>
+    <string name="gemini_api_title">Gemini API Key</string>
+    <string name="free_api_badge">Free API</string>
+    <string name="gemini_api_description">Primary key for AI features</string>
+    <string name="gemini_api_key_hint">Enter your Gemini API key</string>
+    <string name="save_key">Save Key</string>
+    <string name="get_key">Get Key</string>
+    <string name="additional_keys_title">Additional Keys</string>
+    <string name="add_key_button">+ Add Key</string>
+    <string name="add_key_desc">Add keys for other AI providers</string>
+    <string name="privacy_notice_title">Privacy Notice</string>
+    <string name="privacy_notice_desc">API keys are processed locally on your device and never shared.</string>
+
+    <!-- Settings Fragment Misc -->
+    <string name="settings_appearance">Appearance</string>
+    <string name="material_you_title">AMOLED Dark</string>
+    <string name="material_you_desc">Pure black for OLED screens</string>
+    <string name="provider_title">External Internet Service</string>
+    <string name="provider_desc">Recommended for chat completion</string>
+    <string name="about_settings">About</string>
+    <string name="changelog">Changelog</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_ai_settings">AI Settings</string>
+    <string name="desc_ai_settings">Model &amp; API Configuration</string>
+    <string name="current_version_label">CURRENT</string>
+    <string name="step_1">1</string>
+    <string name="step_2">2</string>
+    <string name="step_3">3</string>
+    <string name="step_4">4</string>
+    <string name="step_5">5</string>
+    <string name="title_ai_invocation">AI Invocation</string>
+    <string name="desc_ai_invocation">Manage your AI commands and triggers</string>
+    <string name="hash_symbol">#</string>
+    <string name="default_hex_code">FF5733</string>
+    <string name="duration_6s">6s</string>
+    <string name="language">Language</string>
+    <string name="language_desc">Choose application language</string>
+    <string name="select_language">Select Language</string>
+    <string name="about_settings_title">About Settings</string>
+    <string name="about_settings_desc">Customize your KGPT experience.\n\n• Dark Mode: Enable dark theme for comfortable viewing at night.\n\n• AMOLED Dark: Pure black theme for OLED screens to save battery.\n\n• Enable Logging: Turn on logs for debugging. Disable for better performance.\n\n• External Internet Service: Recommended for chat completion. Enables external network requests for AI responses.</string>
+    
+    <!-- Logging Warning Bottom Sheet -->
+    <string name="logging_warning_title">Enable Logging?</string>
+    <string name="logging_warning_desc">Logging is currently disabled. You need to enable it to export logs.</string>
+    <string name="btn_enable_logging_action">Enable Logging</string>
+    <string name="logging_enabled_toast">Logging enabled. You can now export logs.</string>
+    
+    <!-- Export Success Bottom Sheet -->
+    <string name="export_success_title">Export Successful</string>
+    <string name="export_success_desc">Logs have been saved to:</string>
+    <string name="root_status_label">Root Status</string>
+    <string name="boot_logs_label">Boot Logs</string>
+    <string name="system_logs_label">System Logs</string>
+    <string name="crash_logs_label">Crash Logs</string>
+    <string name="app_logs_label">App Logs</string>
+    <string name="available">Available</string>
+    <string name="unavailable">Unavailable</string>
+    
+    <!-- Tab Names -->
+    <string name="tab_commands">Commands</string>
+    <string name="tab_triggers">Triggers</string>
+    
+    <!-- Dock Actions -->
+    <string name="dock_add_command">Add Command</string>
+    <string name="dock_how_to_use">How to Use</string>
+    
+    <!-- Pattern Types (Triggers) -->
+    <string name="pattern_settings">Settings</string>
+    <string name="pattern_ai_trigger">AI Trigger</string>
+    <string name="pattern_custom_command">Custom command</string>
+    <string name="pattern_italic">Italic</string>
+    <string name="pattern_bold">Bold</string>
+    <string name="pattern_crossout">Crossout</string>
+    <string name="pattern_underline">Underline</string>
+    <string name="pattern_web_search">Web Search</string>
+    
+    <!-- Pattern Descriptions -->
+    <string name="pattern_desc_settings">Settings trigger</string>
+    <string name="pattern_desc_ai_trigger">Type text then add $ at end</string>
+    <string name="pattern_desc_custom_command">Type text then add %command%</string>
+    <string name="pattern_desc_italic">Type text then add |</string>
+    <string name="pattern_desc_bold">Type text then add @</string>
+    <string name="pattern_desc_crossout">Type text then add ~</string>
+    <string name="pattern_desc_underline">Type text then add _</string>
+    <string name="pattern_desc_web_search">Type text then add ?? to search</string>
+    
+    <!-- Pattern Status -->
+    <string name="status_disabled">Disabled</string>
+    
+    <!-- Update Interval Options -->
+    <string name="interval_every_hour">Every hour</string>
+    <string name="interval_every_6_hours">Every 6 hours</string>
+    <string name="interval_every_12_hours">Every 12 hours</string>
+    <string name="interval_every_day">Every day</string>
+    <string name="interval_every_2_days">Every 2 days</string>
+    <string name="interval_every_week">Every week</string>
+    <string name="interval_disabled">Disabled</string>
+    <string name="interval_every_n_hours">Every %d hours</string>
+    
+    <!-- Download Path Options -->
+    <string name="path_default_downloads_option">Default (Downloads)</string>
+    <string name="path_choose_custom">Choose Custom Folder</string>
+    <string name="path_internal_storage">Internal Storage</string>
+    
+    <!-- Update Check -->
+    <string name="check_for_updates">Check for Updates</string>
+    <string name="checking_updates">Checking...</string>
+    
+    <!-- AI Settings Tabs -->
+    <string name="tab_model">Model</string>
+    <string name="tab_api_keys">API Keys</string>
+    
+    <!-- Dock Actions -->
+    <string name="dock_add_app_trigger">Add App Trigger</string>
+    
+    <!-- Changelog Items -->
+    <string name="tag_added">ADD</string>
+    <string name="tag_improved">IMPROVE</string>
+    <string name="tag_fixed">FIX</string>
+    
+    <string name="changelog_4_0_6_item1">Added paid/free API key classification system to facilitate key management</string>
+    <string name="changelog_4_0_6_item2">Added \'Get Key\' button in AI Settings / API Keys for quick access</string>
+    <string name="changelog_4_0_6_item3">Improved secondary key card design to match the primary card for better visual consistency</string>
+    <!-- Language Selection -->
+    <string name="hint_search_language">Search languages...</string>
+    <string name="msg_theme_updated">Theme updated</string>
+    <string name="msg_settings_restored">Settings restored</string>
+    <string name="msg_requesting_root">Requesting root access...</string>
+    <string name="msg_root_denied">Root access denied - some logs may be limited</string>
+    <string name="msg_exporting_logs">Exporting logs...</string>
+    <string name="msg_export_failed_prefix">Failed to export logs: </string>
+    <string name="msg_backup_save_failed">Failed to save backup</string>
+    <string name="msg_backup_create_error_prefix">Error creating backup: </string>
+    <string name="msg_backup_read_failed">Failed to read backup file</string>
+    <string name="msg_no_restore_data">No restorable data found in backup</string>
+    <string name="msg_restore_failed_prefix">Restore failed: </string>
+    <string name="msg_select_model_toast">Please select a model</string>
+    <string name="msg_settings_not_available">Settings not available</string>
+    <string name="msg_config_saved_with">Configuration saved with </string>
+    <string name="msg_config_saved_warning">Configuration saved (model may not work)</string>
+    <string name="msg_config_saved">Configuration saved</string>
+    <string name="msg_symbol_empty">Symbol cannot be empty</string>
+    <string name="msg_symbol_not_allowed">This symbol is not allowed</string>
+    <string name="msg_pattern_create_failed">Could not create pattern</string>
+    <string name="msg_pattern_invalid">Invalid pattern</string>
+    <string name="msg_trigger_status_format">Trigger "%1$s" %2$s</string>
+    <string name="msg_pattern_reset">Pattern reset to default</string>
+    <string name="msg_command_name_required">Command name is required</string>
+    <string name="msg_command_exists">Command already exists</string>
+    <string name="msg_command_builtin_conflict">Cannot use built-in command name</string>
+    <string name="msg_command_added">Command added</string>
+    <string name="msg_command_updated">Command updated</string>
+    <string name="msg_inline_ask_updated">Inline Ask command updated</string>
+    <string name="msg_command_deleted">Command deleted</string>
+    <string name="msg_open_url_failed">Could not open URL</string>
+    <string name="msg_enter_api_key">Please enter an API key</string>
+    <string name="msg_gemini_key_saved">Gemini API key saved</string>
+    <string name="msg_all_providers_added">All providers already added</string>
+    <string name="msg_enter_trigger">Please enter a trigger</string>
+    <string name="msg_cat_caught_toast">Meow! You caught me! 🐱</string>
+    <string name="msg_pattern_create_symbol_failed">Could not create pattern for this symbol</string>
+    <string name="msg_pattern_generated_invalid">Invalid pattern generated</string>
+    <string name="msg_symbol_already_used">This symbol is already used by another pattern</string>
 </resources>

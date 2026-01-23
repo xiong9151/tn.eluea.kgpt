@@ -190,7 +190,7 @@ public class ApiKeysFragment extends Fragment implements AdditionalApiKeysAdapte
             Intent intent = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(model.getKeyUrl));
             startActivity(intent);
         } catch (Exception e) {
-            Toast.makeText(requireContext(), "Could not open URL", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_open_url_failed, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -198,12 +198,12 @@ public class ApiKeysFragment extends Fragment implements AdditionalApiKeysAdapte
         String key = etGeminiKey.getText() != null ? etGeminiKey.getText().toString().trim() : "";
 
         if (key.isEmpty()) {
-            Toast.makeText(requireContext(), "Please enter an API key", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_enter_api_key, Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (!SPManager.isReady()) {
-            Toast.makeText(requireContext(), "Settings not available", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_settings_not_available, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -213,7 +213,7 @@ public class ApiKeysFragment extends Fragment implements AdditionalApiKeysAdapte
         // Send broadcast to sync with Xposed module
         sendConfigBroadcast();
 
-        Toast.makeText(requireContext(), "Gemini API key saved", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), R.string.msg_gemini_key_saved, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -266,7 +266,7 @@ public class ApiKeysFragment extends Fragment implements AdditionalApiKeysAdapte
         }
 
         if (availableModels.isEmpty()) {
-            Toast.makeText(requireContext(), "All providers already added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_all_providers_added, Toast.LENGTH_SHORT).show();
             return;
         }
 

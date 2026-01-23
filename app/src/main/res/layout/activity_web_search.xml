@@ -100,7 +100,7 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:padding="8dp"
                     android:src="@drawable/ic_open_in_new_filled"
-                    android:contentDescription="Open in browser"
+                    android:contentDescription="@string/open_in_browser"
                     app:tint="?attr/colorOnSurfaceVariant" />
 
                 <!-- Close button -->
@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:hint="Enter URL"
+                    android:hint="@string/hint_enter_url"
                     android:imeOptions="actionGo"
                     android:inputType="textUri"
                     android:maxLines="1"

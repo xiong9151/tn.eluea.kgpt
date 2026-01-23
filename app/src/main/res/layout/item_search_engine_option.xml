@@ -18,7 +18,8 @@
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingHorizontal="16dp"
-    android:paddingVertical="14dp">
+    android:paddingVertical="14dp"
+    android:layoutDirection="locale">
 
     <TextView
         android:id="@+id/tv_option_name"

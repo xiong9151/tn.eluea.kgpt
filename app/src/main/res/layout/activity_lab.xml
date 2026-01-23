@@ -48,7 +48,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="KGPT Lab"
+                    android:text="@string/kgpt_lab"
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -61,7 +61,7 @@
                     android:backgroundTint="?attr/colorSecondaryContainer"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="4dp"
-                    android:text="EXPERIMENTAL"
+                    android:text="@string/experimental_badge"
                     android:textColor="?attr/colorOnSecondaryContainer"
                     android:textSize="10sp"
                     android:textStyle="bold" />
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="8dp"
-            android:text="Experimental features that are still in development. Use with caution."
+            android:text="@string/lab_warning"
             android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="13sp" />
 
@@ -135,7 +135,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="App Triggers"
+                                android:text="@string/title_app_triggers"
                                 android:textColor="?attr/colorOnSurface"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -144,7 +144,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Open apps by typing trigger words"
+                                android:text="@string/desc_open_apps"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="13sp" />
                         </LinearLayout>
@@ -209,7 +209,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="AI Text Actions"
+                                    android:text="@string/title_ai_text_actions"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
@@ -222,7 +222,7 @@
                                     android:backgroundTint="?attr/colorTertiaryContainer"
                                     android:paddingHorizontal="8dp"
                                     android:paddingVertical="2dp"
-                                    android:text="NEW"
+                                    android:text="@string/new_badge"
                                     android:textColor="?attr/colorOnTertiaryContainer"
                                     android:textSize="9sp"
                                     android:textStyle="bold" />
@@ -232,7 +232,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Quick AI actions on selected text"
+                                android:text="@string/desc_text_actions"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="13sp" />
                         </LinearLayout>
@@ -252,7 +252,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:gravity="center"
-                    android:text="More features coming soon..."
+                    android:text="@string/coming_soon"
                     android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="13sp" />
 

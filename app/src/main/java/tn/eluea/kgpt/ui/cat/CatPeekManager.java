@@ -49,7 +49,9 @@ import tn.eluea.kgpt.ui.view.SparkleView;
 public class CatPeekManager {
 
     private static final String GITHUB_REPO_URL = "https://github.com/Eluea/KGPT/";
-    private static final long PEEK_INTERVAL_MS = 8 * 1000; // 8 seconds (for testing, change to 3 * 60 * 1000 for production)
+    private static final long PEEK_INTERVAL_MS = 8 * 1000; // 8 seconds (for testing, change to 3 * 60 * 1000 for
+                                                           // production)
+    private static final long INITIAL_DELAY_MS = 3000; // 3 seconds initial delay
     private static final long PEEK_DURATION_MS = 3000; // 3 seconds visible
     private static final long ANIMATION_DURATION_MS = 400;
 
@@ -91,8 +93,8 @@ public class CatPeekManager {
     public void start() {
         if (!isRunning) {
             isRunning = true;
-            // First appearance after the interval
-            handler.postDelayed(peekRunnable, PEEK_INTERVAL_MS);
+            // First appearance after the initial delay
+            handler.postDelayed(peekRunnable, INITIAL_DELAY_MS);
         }
     }
 
@@ -111,13 +113,14 @@ public class CatPeekManager {
      * Show the cat with animation (slide up from behind card)
      */
     private void showCat() {
-        if (catView == null || isCatVisible) return;
+        if (catView == null || isCatVisible)
+            return;
 
         isCatVisible = true;
-        
+
         // Cat starts hidden behind card (positive Y = down), animates up (negative Y)
         float peekDistance = catView.getContext().getResources().getDisplayMetrics().density * 12f;
-        
+
         catView.setVisibility(View.VISIBLE);
         catView.setAlpha(1f);
         catView.setTranslationY(peekDistance); // Start behind card edge
@@ -146,7 +149,8 @@ public class CatPeekManager {
      * Hide the cat with animation (slide down behind card)
      */
     private void hideCat() {
-        if (catView == null || !isCatVisible) return;
+        if (catView == null || !isCatVisible)
+            return;
 
         float peekDistance = catView.getContext().getResources().getDisplayMetrics().density * 12f;
 
@@ -173,7 +177,7 @@ public class CatPeekManager {
      */
     private void onCatCaught() {
         Log.d("CatPeek", "Cat caught! Showing bottom sheet...");
-        
+
         // Hide cat immediately
         handler.removeCallbacksAndMessages(null);
         if (catView != null) {
@@ -186,7 +190,7 @@ public class CatPeekManager {
             showCaughtBottomSheet();
         } catch (Exception e) {
             Log.e("CatPeek", "Error showing bottom sheet", e);
-            Toast.makeText(context, "Meow! You caught me! 🐱", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, R.string.msg_cat_caught_toast, Toast.LENGTH_SHORT).show();
         }
 
         // Restart timer
@@ -218,14 +222,14 @@ public class CatPeekManager {
             Log.e("CatPeek", "Activity is null or finishing");
             return;
         }
-        
+
         Log.d("CatPeek", "Creating bottom sheet...");
-        
+
         View sheetView = LayoutInflater.from(activity)
                 .inflate(R.layout.bottom_sheet_cat_caught, null);
-        
+
         BottomSheetHelper.applyTheme(activity, sheetView);
-        
+
         FloatingBottomSheet dialog = new FloatingBottomSheet(activity);
         dialog.setContentView(sheetView);
 

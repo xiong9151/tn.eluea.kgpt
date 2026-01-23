@@ -66,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
     private static final String PREF_WINTER_MODE = "winter_mode";
 
     @Override
+    protected void attachBaseContext(android.content.Context newBase) {
+        super.attachBaseContext(tn.eluea.kgpt.util.LocaleHelper.onAttach(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Theme is handled globally by KGPTApplication and MaterialYouManager
         super.onCreate(savedInstanceState);

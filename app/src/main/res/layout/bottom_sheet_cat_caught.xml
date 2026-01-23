@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Meow! You caught me!"
+        android:text="@string/cat_caught_title"
         android:textColor="?attr/colorOnSurface"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -62,7 +62,7 @@
         android:gravity="center"
         android:lineSpacingExtra="4dp"
         android:paddingHorizontal="16dp"
-        android:text="Hey there! I'm the KGPT cat.\n\nIf you're enjoying the app, would you mind giving us a star on GitHub?\nIt really helps!"
+        android:text="@string/cat_caught_msg"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="14sp" />
 
@@ -86,7 +86,7 @@
             android:id="@+id/btn_star_github"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Star on GitHub"
+            android:text="@string/cat_action_star"
             android:textAllCaps="false"
             android:textSize="16sp"
             app:backgroundTint="?attr/colorPrimary"
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:padding="8dp"
-        android:text="Maybe later"
+        android:text="@string/cat_action_later"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="14sp" />
 

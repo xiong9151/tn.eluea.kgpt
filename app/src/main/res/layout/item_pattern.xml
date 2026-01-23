@@ -27,6 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_toStartOf="@id/iv_arrow"
             android:layout_marginEnd="12dp"
+            android:gravity="start"
             android:orientation="vertical">
 
             <!-- First row: Pattern name + Trigger chip -->

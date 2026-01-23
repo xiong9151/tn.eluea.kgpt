@@ -14,7 +14,10 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_bottom_sheet_floating"
     android:backgroundTint="?attr/colorSurfaceContainer"
+
     android:orientation="vertical"
+    android:layoutDirection="locale"
+    android:textDirection="locale"
     android:paddingHorizontal="24dp"
     android:paddingTop="16dp"
     android:paddingBottom="24dp">

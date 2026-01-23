@@ -12,6 +12,8 @@
     android:id="@+id/bottom_sheet_container"
     android:layout_width="match_parent"
     android:layout_height="450dp"
+    android:layoutDirection="locale"
+    android:textDirection="locale"
     android:background="@drawable/bg_bottom_sheet_floating"
     android:backgroundTint="?attr/colorSurfaceContainer"
     android:orientation="vertical"
@@ -51,7 +53,7 @@
             android:background="@drawable/bg_version_chip"
             android:paddingHorizontal="10dp"
             android:paddingVertical="4dp"
-            android:text="v3.0.1-beta"
+            android:text="@string/version_v4_1_0"
             android:textColor="?attr/colorTertiary"
             android:textSize="12sp"
             android:textStyle="bold" />

@@ -129,19 +129,19 @@ public class InvocationCommandsFragment extends Fragment {
             String systemMessage = etSystemMessage.getText().toString().trim();
 
             if (commandName.isEmpty()) {
-                Toast.makeText(requireContext(), "Command name is required", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_command_name_required, Toast.LENGTH_SHORT).show();
                 return;
             }
 
             for (GenerativeAICommand cmd : commands) {
                 if (cmd.getCommandPrefix().equalsIgnoreCase(commandName)) {
-                    Toast.makeText(requireContext(), "Command already exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), R.string.msg_command_exists, Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
 
             if (InlineAskCommand.isInlineAskCommand(commandName) || commandName.equalsIgnoreCase("s")) {
-                Toast.makeText(requireContext(), "Cannot use built-in command name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_command_builtin_conflict, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -150,7 +150,7 @@ public class InvocationCommandsFragment extends Fragment {
             saveCommands();
             commandsAdapter.updateCommands(commands);
             dialog.dismiss();
-            Toast.makeText(requireContext(), "Command added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_command_added, Toast.LENGTH_SHORT).show();
         });
 
         BottomSheetHelper.applyBlur(dialog);
@@ -194,19 +194,19 @@ public class InvocationCommandsFragment extends Fragment {
             String systemMessage = etSystemMessage.getText().toString().trim();
 
             if (commandName.isEmpty()) {
-                Toast.makeText(requireContext(), "Command name is required", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_command_name_required, Toast.LENGTH_SHORT).show();
                 return;
             }
 
             for (int i = 0; i < commands.size(); i++) {
                 if (i != position && commands.get(i).getCommandPrefix().equalsIgnoreCase(commandName)) {
-                    Toast.makeText(requireContext(), "Command already exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), R.string.msg_command_exists, Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
 
             if (InlineAskCommand.isInlineAskCommand(commandName) || commandName.equalsIgnoreCase("s")) {
-                Toast.makeText(requireContext(), "Cannot use built-in command name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_command_builtin_conflict, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -214,7 +214,7 @@ public class InvocationCommandsFragment extends Fragment {
             saveCommands();
             commandsAdapter.updateCommands(commands);
             dialog.dismiss();
-            Toast.makeText(requireContext(), "Command updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_command_updated, Toast.LENGTH_SHORT).show();
         });
 
         BottomSheetHelper.applyBlur(dialog);
@@ -253,19 +253,19 @@ public class InvocationCommandsFragment extends Fragment {
             String commandName = etCommandName.getText().toString().trim();
 
             if (commandName.isEmpty()) {
-                Toast.makeText(requireContext(), "Command name is required", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_command_name_required, Toast.LENGTH_SHORT).show();
                 return;
             }
 
             for (GenerativeAICommand cmd : commands) {
                 if (cmd.getCommandPrefix().equalsIgnoreCase(commandName)) {
-                    Toast.makeText(requireContext(), "Command already exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), R.string.msg_command_exists, Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
 
             if (commandName.equalsIgnoreCase("s")) {
-                Toast.makeText(requireContext(), "Cannot use built-in command name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_command_builtin_conflict, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -277,7 +277,7 @@ public class InvocationCommandsFragment extends Fragment {
             commandsAdapter.notifyDataSetChanged();
             syncConfig();
             dialog.dismiss();
-            Toast.makeText(requireContext(), "Inline Ask command updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_inline_ask_updated, Toast.LENGTH_SHORT).show();
         });
 
         BottomSheetHelper.applyBlur(dialog);
@@ -304,7 +304,7 @@ public class InvocationCommandsFragment extends Fragment {
             saveCommands();
             commandsAdapter.updateCommands(commands);
             dialog.dismiss();
-            Toast.makeText(requireContext(), "Command deleted", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_command_deleted, Toast.LENGTH_SHORT).show();
         });
 
         dialog.show();

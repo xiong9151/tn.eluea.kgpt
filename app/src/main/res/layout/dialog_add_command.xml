@@ -20,7 +20,7 @@
         android:id="@+id/tv_dialog_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add new command"
+        android:text="@string/title_add_command"
         android:textAppearance="?attr/textAppearanceHeadlineSmall"
         android:textColor="?attr/colorOnSurface"
         android:textStyle="bold" />
@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Create a custom command to trigger AI"
+        android:text="@string/desc_add_command"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="14sp" />
 
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:hint="Command Name"
+        android:hint="@string/hint_command_name"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
@@ -60,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="System Message (Optional)"
+        android:hint="@string/hint_system_message"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Usage: text /command + AI trigger symbol\ne.g. Hello world /short$"
+        android:text="@string/help_command_usage"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="12sp" />
 
@@ -98,7 +98,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="Delete"
+            android:text="@string/delete"
             android:textAllCaps="false"
             android:visibility="gone"
             style="@style/Widget.Material3.Button.TonalButton"
@@ -112,7 +112,7 @@
             android:layout_height="48dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:textAllCaps="false"
             style="@style/Widget.Material3.Button.TonalButton"
             app:cornerRadius="12dp" />
@@ -123,7 +123,7 @@
             android:layout_height="48dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:text="Save"
+            android:text="@string/save"
             android:textAllCaps="false"
             app:backgroundTint="?attr/colorPrimary"
             app:cornerRadius="12dp" />

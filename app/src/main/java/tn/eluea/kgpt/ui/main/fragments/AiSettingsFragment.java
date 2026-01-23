@@ -72,11 +72,11 @@ public class AiSettingsFragment extends Fragment {
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position) {
                 case 0:
-                    tab.setText("Model");
+                    tab.setText(R.string.tab_model);
                     tab.setIcon(R.drawable.ic_model_default);
                     break;
                 case 1:
-                    tab.setText("API Keys");
+                    tab.setText(R.string.tab_api_keys);
                     tab.setIcon(R.drawable.ic_key_filled);
                     break;
             }

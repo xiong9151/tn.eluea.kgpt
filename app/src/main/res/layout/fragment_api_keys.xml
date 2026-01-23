@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Manage your API keys"
+            android:text="@string/api_keys_description"
             android:textColor="?attr/colorOnSurface"
             android:alpha="0.6"
             android:textSize="14sp" />
@@ -83,7 +83,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Gemini API Key"
+                                android:text="@string/gemini_api_title"
                                 android:textColor="?attr/colorOnSurface"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -102,7 +102,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingHorizontal="6dp"
                                     android:paddingVertical="2dp"
-                                    android:text="Free API"
+                                    android:text="@string/free_api_badge"
                                     android:textColor="?attr/colorOnPrimaryContainer"
                                     android:textSize="10sp"
                                     android:textStyle="bold" />
@@ -113,7 +113,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="Primary key for AI features"
+                            android:text="@string/gemini_api_description"
                             android:textColor="?attr/colorOnSurface"
                             android:alpha="0.5"
                             android:textSize="12sp" />
@@ -135,7 +135,7 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/bg_input_field"
                     android:backgroundTint="?attr/colorSurfaceContainerHigh"
-                    android:hint="Enter your Gemini API key"
+                    android:hint="@string/gemini_api_key_hint"
                     android:inputType="textPassword"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
@@ -155,7 +155,7 @@
                         android:layout_height="48dp"
                         android:layout_weight="1"
                         android:layout_marginEnd="6dp"
-                        android:text="Save Key"
+                        android:text="@string/save_key"
                         android:textAllCaps="false"
                         android:textColor="?attr/colorOnPrimary"
                         android:textSize="14sp"
@@ -168,7 +168,7 @@
                         android:layout_height="48dp"
                         android:layout_weight="1"
                         android:layout_marginStart="6dp"
-                        android:text="Get Key"
+                        android:text="@string/get_key"
                         android:textAllCaps="false"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="14sp"
@@ -191,7 +191,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Additional Keys"
+                android:text="@string/additional_keys_title"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -201,7 +201,7 @@
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+ Add Key"
+                android:text="@string/add_key_button"
                 android:textAllCaps="false"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="14sp" />
@@ -211,7 +211,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Add keys for other AI providers"
+            android:text="@string/add_key_desc"
             android:textColor="?attr/colorOnSurface"
             android:alpha="0.5"
             android:textSize="13sp" />
@@ -266,7 +266,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Privacy Notice"
+                        android:text="@string/privacy_notice_title"
                         android:textColor="?attr/colorOnSecondaryContainer"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -275,7 +275,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="API keys are processed locally on your device and never shared."
+                        android:text="@string/privacy_notice_desc"
                         android:textColor="?attr/colorOnSecondaryContainer"
                         android:textSize="14sp" />
                 </LinearLayout>

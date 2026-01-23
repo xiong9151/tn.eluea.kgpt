@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) 2025 Amr Aldeeb @Eluea
   ~ GitHub: https://github.com/Eluea
@@ -11,18 +10,28 @@
     <!-- Outer glow -->
     <item>
         <shape android:shape="oval">
-            <solid android:color="#20F39C12" />
+            <solid android:color="#2000D26A" />
             <size android:width="80dp" android:height="80dp" />
         </shape>
     </item>
-    <!-- Inner circle -->
+    <!-- Middle circle - bright green -->
     <item
         android:left="12dp"
         android:top="12dp"
         android:right="12dp"
         android:bottom="12dp">
         <shape android:shape="oval">
-            <solid android:color="#F39C12" />
+            <solid android:color="@color/terminal_green" />
+        </shape>
+    </item>
+    <!-- Inner circle - dark green -->
+    <item
+        android:left="24dp"
+        android:top="24dp"
+        android:right="24dp"
+        android:bottom="24dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/terminal_green_dark" />
         </shape>
     </item>
 </layer-list>

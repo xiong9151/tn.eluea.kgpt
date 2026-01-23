@@ -29,19 +29,20 @@
         android:backgroundTint="@color/divider_color" />
 
     <!-- Warning Icon -->
+    <!-- Warning Icon -->
     <FrameLayout
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:background="@drawable/bg_icon_glow_warning"
-        android:backgroundTint="?attr/colorErrorContainer">
+        android:background="@drawable/bg_icon_glow_primary"
+        android:backgroundTint="?attr/colorPrimaryContainer">
 
         <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_warning_filled"
-            app:tint="?attr/colorError" />
+            app:tint="?attr/colorOnPrimaryContainer" />
     </FrameLayout>
 
     <!-- Title -->

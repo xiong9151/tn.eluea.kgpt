@@ -207,25 +207,25 @@ public class InvocationPatternsFragment extends Fragment {
             boolean isEnabled = switchEnabled.isChecked();
 
             if (symbol.isEmpty()) {
-                Toast.makeText(requireContext(), "Symbol cannot be empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_symbol_empty, Toast.LENGTH_SHORT).show();
                 return;
             }
 
             if (List.of("]", "[", "-", " ", "\n", "\t").contains(symbol)) {
-                Toast.makeText(requireContext(), "This symbol is not allowed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_symbol_not_allowed, Toast.LENGTH_SHORT).show();
                 return;
             }
 
             String newRegex = PatternType.symbolToRegex(symbol, pattern.getType().groupCount);
             if (newRegex == null) {
-                Toast.makeText(requireContext(), "Could not create pattern", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_pattern_create_failed, Toast.LENGTH_SHORT).show();
                 return;
             }
 
             try {
                 java.util.regex.Pattern.compile(newRegex);
             } catch (Exception e) {
-                Toast.makeText(requireContext(), "Invalid pattern", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_pattern_invalid, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -237,7 +237,8 @@ public class InvocationPatternsFragment extends Fragment {
             dialog.dismiss();
 
             String statusMsg = isEnabled ? "enabled" : "disabled";
-            Toast.makeText(requireContext(), "Trigger \"" + symbol + "\" " + statusMsg, Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.msg_trigger_status_format, symbol, statusMsg),
+                    Toast.LENGTH_SHORT).show();
         });
 
         BottomSheetHelper.applyBlur(dialog);
@@ -289,7 +290,7 @@ public class InvocationPatternsFragment extends Fragment {
             savePatterns();
             patternsAdapter.updatePatterns(patterns);
             dialog.dismiss();
-            Toast.makeText(requireContext(), "Pattern reset to default", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_pattern_reset, Toast.LENGTH_SHORT).show();
         });
 
         dialog.show();

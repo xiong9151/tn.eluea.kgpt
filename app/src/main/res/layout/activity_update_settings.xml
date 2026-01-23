@@ -52,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Update Settings"
+                    android:text="@string/title_update_settings"
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -101,7 +101,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="KGPT"
+                                android:text="@string/app_name"
                                 android:textSize="18sp"
                                 android:textStyle="bold"
                                 android:textColor="?attr/colorOnPrimary" />
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="Automatic Updates"
+                android:text="@string/title_auto_updates"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textColor="?attr/colorOnSurface" />
 
@@ -173,14 +173,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Auto Updates"
+                                android:text="@string/switch_auto_updates"
                                 android:textAppearance="?attr/textAppearanceBodyLarge"
                                 android:textColor="?attr/colorOnSurface" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Check automatically"
+                                android:text="@string/desc_auto_updates"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -225,7 +225,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Check Interval"
+                                android:text="@string/title_check_interval"
                                 android:textAppearance="?attr/textAppearanceBodyLarge"
                                 android:textColor="?attr/colorOnSurface" />
 
@@ -233,7 +233,7 @@
                                 android:id="@+id/tv_update_interval"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Every 24 hours"
+                                android:text="@string/interval_24h"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -279,7 +279,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Download Path"
+                                android:text="@string/title_download_path"
                                 android:textAppearance="?attr/textAppearanceBodyLarge"
                                 android:textColor="?attr/colorOnSurface" />
 
@@ -287,7 +287,7 @@
                                 android:id="@+id/tv_download_path"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Default (Downloads)"
+                                android:text="@string/path_default_downloads"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="12sp"
                                 android:maxLines="1"

@@ -71,8 +71,8 @@
     <!-- Suppress InlinedApi warnings - we handle API compatibility -->
     <issue id="InlinedApi" severity="ignore" />
     
-    <!-- Suppress hardcoded text warnings -->
-    <issue id="HardcodedText" severity="ignore" />
+    <!-- HardcodedText check enabled for translation support -->
+    <!-- <issue id="HardcodedText" severity="ignore" /> -->
     
     <!-- Suppress content description warnings -->
     <issue id="ContentDescription" severity="ignore" />

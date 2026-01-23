@@ -90,7 +90,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="#"
+            android:text="@string/hash_symbol"
             android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -102,7 +102,7 @@
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
             android:fontFamily="sans-serif-medium"
-            android:hint="FF5733"
+            android:hint="@string/default_hex_code"
             android:inputType="textCapCharacters|textNoSuggestions"
             android:maxLength="8"
             android:textColor="?attr/colorOnSurface"

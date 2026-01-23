@@ -140,20 +140,20 @@ public class PatternEditDialogBox extends DialogBox {
             boolean isEnabled = switchEnabled.isChecked();
 
             if (symbol.isEmpty()) {
-                Toast.makeText(getContext(), "Symbol cannot be empty", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), R.string.msg_symbol_empty, Toast.LENGTH_LONG).show();
                 return;
             }
 
             // Forbidden symbols
             if (List.of("]", "[", "-", " ", "\n", "\t").contains(symbol)) {
-                Toast.makeText(getContext(), "This symbol is not allowed", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), R.string.msg_symbol_not_allowed, Toast.LENGTH_LONG).show();
                 return;
             }
 
             // Convert symbol to regex
             String newRegex = PatternType.symbolToRegex(symbol, pattern.getType().groupCount);
             if (newRegex == null) {
-                Toast.makeText(getContext(), "Could not create pattern for this symbol", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), R.string.msg_pattern_create_symbol_failed, Toast.LENGTH_LONG).show();
                 return;
             }
 
@@ -161,7 +161,7 @@ public class PatternEditDialogBox extends DialogBox {
             try {
                 Pattern.compile(newRegex);
             } catch (Exception e) {
-                Toast.makeText(getContext(), "Invalid pattern generated", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), R.string.msg_pattern_generated_invalid, Toast.LENGTH_LONG).show();
                 return;
             }
 
@@ -169,7 +169,7 @@ public class PatternEditDialogBox extends DialogBox {
             long similarCount = getConfig().patterns.stream()
                     .filter((c) -> c.getPattern().pattern().equals(newRegex)).count();
             if (similarCount >= 1 && !newRegex.equals(pattern.getPattern().pattern())) {
-                Toast.makeText(getContext(), "This symbol is already used by another pattern", Toast.LENGTH_LONG)
+                Toast.makeText(getContext(), R.string.msg_symbol_already_used, Toast.LENGTH_LONG)
                         .show();
                 return;
             }
@@ -192,7 +192,8 @@ public class PatternEditDialogBox extends DialogBox {
             getContext().sendBroadcast(broadcastIntent);
 
             String statusMsg = isEnabled ? "enabled" : "disabled";
-            Toast.makeText(getContext(), "Trigger \"" + symbol + "\" " + statusMsg, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), getContext().getString(R.string.msg_trigger_status_format, symbol, statusMsg),
+                    Toast.LENGTH_SHORT).show();
 
             // Go back to pattern list instead of closing
             sheet.dismiss();

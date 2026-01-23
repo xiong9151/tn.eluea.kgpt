@@ -189,7 +189,7 @@ public class BlurControlActivity extends AppCompatActivity {
             manualColor = Color.TRANSPARENT;
             selectedColor = Color.TRANSPARENT;
             loadSettings();
-            Toast.makeText(this, "Settings restored", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.msg_settings_restored, Toast.LENGTH_SHORT).show();
         });
     }
 

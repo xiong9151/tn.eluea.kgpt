@@ -44,7 +44,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="App Triggers"
+                android:text="@string/title_app_triggers"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -57,7 +57,7 @@
                 android:backgroundTint="?attr/colorTertiaryContainer"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="4dp"
-                android:text="LAB"
+                android:text="@string/experimental_badge"
                 android:textColor="?attr/colorOnTertiaryContainer"
                 android:textSize="10sp"
                 android:textStyle="bold" />
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="8dp"
-        android:text="Open apps quickly by typing their trigger word"
+        android:text="@string/desc_open_apps"
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="13sp" />
 
@@ -128,7 +128,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Enable App Triggers"
+                            android:text="@string/btn_enable_app_triggers"
                             android:textColor="?attr/colorOnSurface"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -137,7 +137,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Type trigger word to launch apps"
+                            android:text="@string/desc_enable_app_triggers"
                             android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -183,7 +183,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="How to use"
+                            android:text="@string/how_to_use"
                             android:textColor="?attr/colorOnSecondaryContainer"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -192,7 +192,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="Type the trigger word to open app automatically • Tap app card to edit"
+                            android:text="@string/guide_triggers_usage"
                             android:textColor="?attr/colorOnSecondaryContainer"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -206,7 +206,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
                 android:gravity="center"
-                android:text="No app triggers added yet.\nTap the button above to add one."
+                android:text="@string/msg_no_triggers"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="14sp" />
 

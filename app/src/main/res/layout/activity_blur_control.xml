@@ -155,14 +155,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Material You Blur"
+                                android:text="@string/material_you_blur"
                                 android:textColor="?attr/colorOnSurface"
                                 android:textSize="16sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Automatically use dynamic app colors"
+                                android:text="@string/use_dynamic_app_colors"
                                 android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -294,7 +294,7 @@
                         android:layout_marginTop="16dp"
                         android:insetTop="0dp"
                         android:insetBottom="0dp"
-                        android:text="Reset Settings"
+                        android:text="@string/reset_settings"
                         app:backgroundTint="?attr/colorSurfaceContainer"
                         android:textColor="?attr/colorPrimary"
                         app:cornerRadius="16dp" />
@@ -334,7 +334,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Performance Tip"
+                                android:text="@string/performance_tip"
                                 android:textColor="?attr/colorOnSecondaryContainer"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -343,7 +343,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Disable this feature on old or low-end devices for better performance."
+                                android:text="@string/performance_tip_desc"
                                 android:textColor="?attr/colorOnSecondaryContainer"
                                 android:textSize="12sp" />
                         </LinearLayout>

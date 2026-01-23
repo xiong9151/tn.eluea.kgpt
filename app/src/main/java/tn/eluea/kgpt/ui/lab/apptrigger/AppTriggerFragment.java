@@ -68,9 +68,10 @@ public class AppTriggerFragment extends Fragment implements AppTriggerAdapter.On
 
         // Update Dock Action to "Add App Trigger"
         if (getActivity() instanceof MainActivity) {
-            ((MainActivity) getActivity()).setDockAction("Add App Trigger", R.drawable.ic_add, v -> {
-                showAppSelectionBottomSheet();
-            });
+            ((MainActivity) getActivity()).setDockAction(getString(R.string.dock_add_app_trigger), R.drawable.ic_add,
+                    v -> {
+                        showAppSelectionBottomSheet();
+                    });
         }
     }
 
@@ -280,7 +281,7 @@ public class AppTriggerFragment extends Fragment implements AppTriggerAdapter.On
         btnSave.setOnClickListener(v -> {
             String trigger = etTrigger.getText().toString().trim();
             if (trigger.isEmpty()) {
-                Toast.makeText(requireContext(), "Please enter a trigger", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), R.string.msg_enter_trigger, Toast.LENGTH_SHORT).show();
                 return;
             }
 

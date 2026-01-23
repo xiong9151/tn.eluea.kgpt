@@ -161,9 +161,8 @@ public class UpdateStatusBottomSheet {
                 iconContainer.setBackgroundTintList(android.content.res.ColorStateList.valueOf(colorPrimaryContainer));
 
                 ivStatus.setImageResource(R.drawable.ic_shield_tick_filled);
-                // Use primary color for the icon to make it pop inside the container
-                ivStatus.setColorFilter(com.google.android.material.color.MaterialColors.getColor(
-                        context, androidx.appcompat.R.attr.colorPrimary, 0));
+                // Use OnPrimaryContainer for best contrast
+                ivStatus.setColorFilter(colorOnPrimaryContainer);
 
                 tvTitle.setText(R.string.up_to_date_title);
                 tvMessage.setText(context.getString(R.string.up_to_date_desc, BuildConfig.VERSION_NAME));

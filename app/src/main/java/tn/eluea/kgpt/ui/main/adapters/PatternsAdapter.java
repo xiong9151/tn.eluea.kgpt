@@ -41,13 +41,14 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
 
     private static final String PREF_AMOLED = "amoled_mode";
     private static final String PREF_THEME = "theme_mode";
-    
+
     private List<ParsePattern> patterns;
     private OnPatternClickListener listener;
     private boolean isAmoledMode = false;
 
     public interface OnPatternClickListener {
         void onPatternClick(ParsePattern pattern, int position);
+
         void onPatternDelete(ParsePattern pattern, int position);
     }
 
@@ -64,7 +65,7 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
         SharedPreferences prefs = context.getSharedPreferences("keyboard_gpt_ui", Context.MODE_PRIVATE);
         boolean isDarkMode = prefs.getBoolean(PREF_THEME, false);
         isAmoledMode = isDarkMode && prefs.getBoolean(PREF_AMOLED, false);
-        
+
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_pattern, parent, false);
         return new PatternViewHolder(view);
@@ -103,23 +104,25 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
         }
 
         void bind(ParsePattern pattern, int position) {
-            // Show enabled/disabled status in title
-            String title = pattern.getType().title;
+            Context context = itemView.getContext();
+
+            // Get localized title
+            String title = getLocalizedTitle(context, pattern.getType());
             if (!pattern.isEnabled()) {
-                title += " (Disabled)";
+                title += " (" + context.getString(R.string.status_disabled) + ")";
             }
             tvPatternName.setText(title);
-            
+
             // Show user-friendly symbol in chip (without "Trigger:" prefix)
             String displaySymbol = getDisplaySymbol(pattern);
             tvPatternRegex.setText(displaySymbol);
-            
+
             // Show description
             if (tvPatternDescription != null) {
-                tvPatternDescription.setText(pattern.getType().description);
+                tvPatternDescription.setText(getLocalizedDescription(context, pattern.getType()));
                 tvPatternDescription.setVisibility(View.VISIBLE);
             }
-            
+
             // Show custom example for each pattern type
             if (tvPatternExample != null) {
                 String example = getExampleForPattern(pattern);
@@ -135,7 +138,7 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
             if (ivArrow != null) {
                 ivArrow.setVisibility(pattern.getType().editable ? View.VISIBLE : View.INVISIBLE);
             }
-            
+
             // Set alpha based on enabled state
             itemView.setAlpha(pattern.isEnabled() ? 1.0f : 0.5f);
 
@@ -145,22 +148,22 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
                 }
             });
         }
-        
+
         /**
          * Extract and display user-friendly symbol from pattern (without quotes)
          */
         private String getDisplaySymbol(ParsePattern pattern) {
             String regex = pattern.getPattern().pattern();
             String symbol = PatternType.regexToSymbol(regex);
-            
+
             if (symbol != null && !symbol.isEmpty()) {
                 return symbol;
             }
-            
+
             // Fallback to default symbol
             return pattern.getType().defaultSymbol;
         }
-        
+
         /**
          * Get custom example for each pattern type
          */
@@ -169,7 +172,7 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
             if (symbol == null) {
                 symbol = pattern.getType().defaultSymbol;
             }
-            
+
             switch (pattern.getType()) {
                 case CommandAI:
                     return "Write a poem about nature" + symbol;
@@ -189,6 +192,52 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
                     return symbol;
                 default:
                     return "your text here" + symbol;
+            }
+        }
+
+        private String getLocalizedTitle(Context context, PatternType type) {
+            switch (type) {
+                case Settings:
+                    return context.getString(R.string.pattern_settings);
+                case CommandAI:
+                    return context.getString(R.string.pattern_ai_trigger);
+                case CommandCustom:
+                    return context.getString(R.string.pattern_custom_command);
+                case FormatItalic:
+                    return context.getString(R.string.pattern_italic);
+                case FormatBold:
+                    return context.getString(R.string.pattern_bold);
+                case FormatCrossout:
+                    return context.getString(R.string.pattern_crossout);
+                case FormatUnderline:
+                    return context.getString(R.string.pattern_underline);
+                case WebSearch:
+                    return context.getString(R.string.pattern_web_search);
+                default:
+                    return type.title;
+            }
+        }
+
+        private String getLocalizedDescription(Context context, PatternType type) {
+            switch (type) {
+                case Settings:
+                    return context.getString(R.string.pattern_desc_settings);
+                case CommandAI:
+                    return context.getString(R.string.pattern_desc_ai_trigger);
+                case CommandCustom:
+                    return context.getString(R.string.pattern_desc_custom_command);
+                case FormatItalic:
+                    return context.getString(R.string.pattern_desc_italic);
+                case FormatBold:
+                    return context.getString(R.string.pattern_desc_bold);
+                case FormatCrossout:
+                    return context.getString(R.string.pattern_desc_crossout);
+                case FormatUnderline:
+                    return context.getString(R.string.pattern_desc_underline);
+                case WebSearch:
+                    return context.getString(R.string.pattern_desc_web_search);
+                default:
+                    return type.description;
             }
         }
     }

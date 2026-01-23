@@ -88,10 +88,10 @@ public class AiInvocationFragment extends Fragment {
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             if (position == 0) {
-                tab.setText("Commands");
+                tab.setText(R.string.tab_commands);
                 tab.setIcon(R.drawable.ic_command_filled);
             } else {
-                tab.setText("Triggers");
+                tab.setText(R.string.tab_triggers);
                 tab.setIcon(R.drawable.ic_keyboard_filled);
             }
         }).attach();
@@ -110,13 +110,13 @@ public class AiInvocationFragment extends Fragment {
         MainActivity activity = (MainActivity) requireActivity();
 
         if (position == 0) {
-            activity.setDockAction("Add Command", R.drawable.ic_add, v -> {
+            activity.setDockAction(getString(R.string.dock_add_command), R.drawable.ic_add, v -> {
                 if (commandsFragment != null && commandsFragment.isAdded()) {
                     commandsFragment.showAddCommandDialog();
                 }
             });
         } else {
-            activity.setDockAction("How to Use", R.drawable.ic_info_circle_filled, v -> {
+            activity.setDockAction(getString(R.string.dock_how_to_use), R.drawable.ic_info_circle_filled, v -> {
                 if (patternsFragment != null && patternsFragment.isAdded()) {
                     patternsFragment.showHowToUse();
                 }

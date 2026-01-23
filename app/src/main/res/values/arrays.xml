@@ -33,4 +33,24 @@
         <!-- FlorisBoard -->
         <item>dev.patrickgold.florisboard</item>
     </string-array>
+    
+    <string-array name="languages_list">
+        <item>العربية (Arabic)</item>
+        <item>English</item>
+        <item>Français (French)</item>
+        <item>Español (Spanish)</item>
+        <item>Deutsch (German)</item>
+        <item>Italiano (Italian)</item>
+        <item>Русский (Russian)</item>
+        <item>Türkçe (Turkish)</item>
+        <item>中文 (Chinese)</item>
+        <item>日本語 (Japanese)</item>
+        <item>한국어 (Korean)</item>
+        <item>हिन्दी (Hindi)</item>
+        <item>Português (Portuguese)</item>
+        <item>Bahasa Indonesia (Indonesian)</item>
+        <item>বাংলা (Bengali)</item>
+        <item>Tiếng Việt (Vietnamese)</item>
+        <item>ไทย (Thai)</item>
+    </string-array>
 </resources>

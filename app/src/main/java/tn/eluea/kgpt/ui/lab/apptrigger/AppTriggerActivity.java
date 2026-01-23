@@ -94,7 +94,7 @@ public class AppTriggerActivity extends AppCompatActivity implements AppTriggerA
         // Initialize dock action
         View dockContainer = findViewById(R.id.dock_action_container);
         TextView dockText = findViewById(R.id.dock_action_text);
-        dockText.setText("Add App Trigger");
+        dockText.setText(R.string.dock_add_app_trigger);
         dockContainer.setOnClickListener(v -> showAppSelectionBottomSheet());
     }
 
@@ -275,7 +275,7 @@ public class AppTriggerActivity extends AppCompatActivity implements AppTriggerA
         btnSave.setOnClickListener(v -> {
             String trigger = etTrigger.getText().toString().trim();
             if (trigger.isEmpty()) {
-                Toast.makeText(this, "Please enter a trigger", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.msg_enter_trigger, Toast.LENGTH_SHORT).show();
                 return;
             }
 

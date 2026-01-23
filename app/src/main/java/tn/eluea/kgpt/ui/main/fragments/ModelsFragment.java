@@ -387,12 +387,12 @@ public class ModelsFragment extends Fragment implements ModelsAdapter.OnModelSel
 
     private void saveConfiguration() {
         if (selectedModel == null) {
-            Toast.makeText(requireContext(), "Please select a model", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_select_model_toast, Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (!SPManager.isReady()) {
-            Toast.makeText(requireContext(), "Settings not available", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), R.string.msg_settings_not_available, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -423,13 +423,14 @@ public class ModelsFragment extends Fragment implements ModelsAdapter.OnModelSel
                         etSubModel.setText(suggested);
                         sp.setSubModel(selectedModel, suggested);
                         sendConfigBroadcast();
-                        Toast.makeText(requireContext(), "Configuration saved with " + suggested, Toast.LENGTH_SHORT)
+                        Toast.makeText(requireContext(), getString(R.string.msg_config_saved_with) + suggested,
+                                Toast.LENGTH_SHORT)
                                 .show();
                     })
                     .setNegativeButton("Use Anyway", (dialog, which) -> {
                         sp.setSubModel(selectedModel, finalSubModel);
                         sendConfigBroadcast();
-                        Toast.makeText(requireContext(), "Configuration saved (model may not work)", Toast.LENGTH_SHORT)
+                        Toast.makeText(requireContext(), R.string.msg_config_saved_warning, Toast.LENGTH_SHORT)
                                 .show();
                     })
                     .setNeutralButton("Cancel", null)
@@ -442,7 +443,7 @@ public class ModelsFragment extends Fragment implements ModelsAdapter.OnModelSel
         // Send broadcast to Xposed module to sync settings
         sendConfigBroadcast();
 
-        Toast.makeText(requireContext(), "Configuration saved", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), R.string.msg_config_saved, Toast.LENGTH_SHORT).show();
     }
 
     /**

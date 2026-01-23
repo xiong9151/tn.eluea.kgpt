@@ -13,6 +13,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layoutDirection="locale"
+    android:textDirection="locale"
     android:paddingHorizontal="24dp"
     android:paddingTop="16dp"
     android:paddingBottom="24dp">
@@ -90,8 +92,7 @@
     <!-- Scrollable Options -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxHeight="300dp"
+        android:layout_height="350dp"
         android:fillViewport="true">
 
         <LinearLayout
