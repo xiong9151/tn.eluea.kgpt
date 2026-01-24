@@ -225,7 +225,8 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
                 case CommandAI:
                     return context.getString(R.string.pattern_desc_ai_trigger, symbol);
                 case CommandCustom:
-                    return context.getString(R.string.pattern_desc_custom_command, symbol);
+                    // Don't pass symbol to avoid String.format crash due to "%command%" in string
+                    return context.getString(R.string.pattern_desc_custom_command);
                 case FormatItalic:
                     return context.getString(R.string.pattern_desc_italic, symbol);
                 case FormatBold:

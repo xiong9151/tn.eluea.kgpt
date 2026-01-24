@@ -441,7 +441,7 @@
     <string name="pattern_web_search">Веб Поиск</string>
     <string name="pattern_desc_settings">Триггер настроек</string>
     <string name="pattern_desc_ai_trigger">Введите текст, добавьте $ в конце</string>
-    <string name="pattern_desc_custom_command">Введите текст, добавьте %команда%</string>
+    <string name="pattern_desc_custom_command" formatted="false">Введите текст, добавьте %команда%</string>
     <string name="pattern_desc_italic">Введите текст, добавьте |</string>
     <string name="pattern_desc_bold">Введите текст, добавьте @</string>
     <string name="pattern_desc_crossout">Введите текст, добавьте ~</string>
@@ -590,4 +590,19 @@
     <string name="field_max_tokens">Макс. токенов</string>
     <string name="field_temperature">Температура</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="changelog_4_0_8_item1">Исправлен вылет приложения при смене языка и входе в раздел Вызова ИИ</string>
+    <string name="changelog_4_0_8_item2">Улучшен дизайн уведомления в списке изменений</string>
+    <string name="changelog_4_0_8_item3">Добавлена поддержка моделей GLM от ZhipuAI</string>
+    <string name="changelog_4_0_8_item4">Исправлена проблема с отсутствующим пробелом при использовании команд форматирования текста</string>
+    <string name="changelog_4_0_8_item5">Исправлена проблема с исчезновением текста при использовании незарегистрированного триггера или отсутствии ответа от ИИ</string>
+    <string name="changelog_note_4_0_8">Пожалуйста, наберитесь терпения, так как разработчику было сообщено о других проблемах, но они будут решаться пакетами обновлений, так как это проект одного человека. Спасибо за понимание.</string>
+    <string name="msg_ai_no_response_error">Ответ не получен. ИИ вернул пустой контент.\nПодсказка: возможно, вы используете незарегистрированный триггер/команду.</string>
 </resources>

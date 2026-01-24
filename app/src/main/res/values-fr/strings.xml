@@ -453,7 +453,7 @@
     <!-- Pattern Descriptions -->
     <string name="pattern_desc_settings">Déclencheur de paramètres</string>
     <string name="pattern_desc_ai_trigger">Tapez du texte puis ajoutez $ à la fin</string>
-    <string name="pattern_desc_custom_command">Tapez du texte puis ajoutez %commande%</string>
+    <string name="pattern_desc_custom_command" formatted="false">Tapez du texte puis ajoutez %commande%</string>
     <string name="pattern_desc_italic">Tapez du texte puis ajoutez |</string>
     <string name="pattern_desc_bold">Tapez du texte puis ajoutez @</string>
     <string name="pattern_desc_crossout">Tapez du texte puis ajoutez ~</string>
@@ -615,4 +615,19 @@
     <string name="field_max_tokens">Tokens maximum</string>
     <string name="field_temperature">Température</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="changelog_4_0_8_item1">Correction du plantage de l\'application lors du changement de langue et tentative d\'accès à la section Invocation IA</string>
+    <string name="changelog_4_0_8_item2">Amélioration de la conception de l\'alerte dans le journal des modifications</string>
+    <string name="changelog_4_0_8_item3">Ajout de la prise en charge des modèles GLM fournis par ZhipuAI</string>
+    <string name="changelog_4_0_8_item4">Correction du problème d\'espace manquant lors de l\'utilisation de commandes de formatage de texte</string>
+    <string name="changelog_4_0_8_item5">Correction du problème de disparition du texte lors de l\'utilisation d\'un déclencheur non enregistré ou d\'une absence de réponse de l\'IA</string>
+    <string name="changelog_note_4_0_8">Veuillez faire preuve de patience car davantage de problèmes ont été signalés au développeur, mais ils seront résolus par lots mises à jour car il s\'agit d\'un projet d\'une seule personne. Merci de votre compréhension.</string>
+    <string name="msg_ai_no_response_error">Aucune réponse reçue. L\'IA a renvoyé un contenu vide.\nIndice : Vous utilisez peut-être un déclencheur/commande non enregistré.</string>
 </resources>

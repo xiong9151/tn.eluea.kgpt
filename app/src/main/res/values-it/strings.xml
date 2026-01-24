@@ -63,7 +63,7 @@
     <string name="themed_icon_title">Icona a Tema</string>
     <string name="themed_icon_desc">Icona adattiva (Material You)</string>
     <string name="about_home_title">Informazioni Home</string>
-    <string name="about_home_description">Benvenuto in KGPT!\n\n\u2022 Stato: Mostra se il modulo Xposed è attivo.\n\n\u2022 Modello: Mostra l\'IA attiva.\n\n\u2022 Invocazione: Configura i trigger.\n\n\u2022 Guida: Consigli d\'uso.</string>
+    <string name="about_home_description">Benvenuto in KGPT!\n\n\u2022 Stato: Mostra se il modulo Xposed è attivo.\n\n\u2022 Modello: Mostra l\u0027IA attiva.\n\n\u2022 Invocazione: Configura i trigger.\n\n\u2022 Guida: Consigli d\u0027uso.</string>
     <string name="built_in_indicator">  \u2022  Integrato</string>
     <string name="ask_command_description">Mantiene il tuo testo e aggiunge la risposta IA</string>
     <string name="ask_command_example">Es: Ciao /ask come stai? \u2192 Ciao! Bene.</string>
@@ -94,7 +94,7 @@
     <string name="dialog_subtitle_add_custom_action">Crea la tua azione IA</string>
     <string name="label_action_name">Nome</string>
     <string name="label_system_prompt">Prompt di Sistema</string>
-    <string name="helper_system_prompt">Istruzioni per l\'IA</string>
+    <string name="helper_system_prompt">Istruzioni per l\u0027IA</string>
     <string name="cancel">Annulla</string>
     <string name="add">Aggiungi</string>
     <string name="delete">Elimina</string>
@@ -122,9 +122,9 @@
     <string name="starting_download">Avvio...</string>
     <string name="download_title">Download</string>
     <string name="download_complete">Completato</string>
-    <string name="ready_to_install">Pronto all\'installazione!</string>
+    <string name="ready_to_install">Pronto all\u0027installazione!</string>
     <string name="up_to_date_title">Aggiornato</string>
-    <string name="up_to_date_desc">Stai usando l\'ultima versione (v%1$s).</string>
+    <string name="up_to_date_desc">Stai usando l\u0027ultima versione (v%1$s).</string>
     <string name="check_failed">Controllo fallito</string>
     <string name="check_failed_desc">Impossibile cercare aggiornamenti.\n\n%1$s</string>
     <string name="no_internet">Nessuna connessione</string>
@@ -148,9 +148,9 @@
     <string name="guide_step_2">Scegli modello IA</string>
     <string name="guide_step_3">Inserisci chiave API</string>
     <string name="guide_step_4">Scrivi testo + simbolo ($)</string>
-    <string name="guide_step_5">IA risponde all\'istante</string>
+    <string name="guide_step_5">IA risponde all\u0027istante</string>
     <string name="example">Esempio</string>
-    <string name="guide_example_text">Capitale d\'Italia?$</string>
+    <string name="guide_example_text">Capitale d\u0027Italia?$</string>
     <string name="backup_settings_title">Impostazioni Backup</string>
     <string name="restore_settings_title">Ripristina Impostazioni</string>
     <string name="backup_settings_desc">Cosa salvare?</string>
@@ -185,7 +185,7 @@
     <string name="info_chip">Info</string>
     <string name="info_default_desc">Dettagli funzione.</string>
     <string name="restart_required_title">Riavvio richiesto</string>
-    <string name="restart_required_desc">Riavvia l\'app per applicare.</string>
+    <string name="restart_required_desc">Riavvia l\u0027app per applicare.</string>
     <string name="delete_title">Elimina</string>
     <string name="delete_message">Sei sicuro di voler eliminare?</string>
     <string name="item_name_placeholder">Nome</string>
@@ -214,7 +214,7 @@
     <string name="quick_guide_title">Guida Rapida</string>
     <string name="quick_guide_subtitle">Testo + Simbolo</string>
     <string name="guide_ai_trigger_title">Attiva IA</string>
-    <string name="guide_ai_trigger_example">Cos\'è questo?$</string>
+    <string name="guide_ai_trigger_example">Cos\u0027è questo?$</string>
     <string name="guide_inline_ask_title">/ask (In linea)</string>
     <string name="guide_inline_ask_example">/ask Ore?$</string>
     <string name="guide_commands_title">Comandi</string>
@@ -257,8 +257,8 @@
     <string name="hint_trigger_symbol">Simbolo</string>
     <string name="label_preview">Anteprima</string>
     <string name="hint_trigger_word">Parola chiave</string>
-    <string name="helper_trigger_word">Digita per aprire l\'app</string>
-    <string name="example_trigger_word">Es: \'chrome\'</string>
+    <string name="helper_trigger_word">Digita per aprire l\u0027app</string>
+    <string name="example_trigger_word">Es: \u0027chrome\u0027</string>
     <string name="msg_no_items">Nessun elemento</string>
     <string name="title_add_trigger_symbol">Aggiungi Simbolo</string>
     <string name="desc_add_trigger_symbol">1-3 caratteri</string>
@@ -282,7 +282,7 @@
     <string name="btn_enable_app_triggers">Abilita Trigger</string>
     <string name="desc_enable_app_triggers">Parola -> Apri App</string>
     <string name="msg_no_triggers">Nessun trigger.</string>
-    <string name="guide_triggers_usage">• Parola apre l\'app\n• Tocca per modificare</string>
+    <string name="guide_triggers_usage">• Parola apre l\u0027app\n• Tocca per modificare</string>
     <string name="material_you_blur">Material You Blur</string>
     <string name="use_dynamic_app_colors">Colori Dinamici</string>
     <string name="reset_settings">Ripristina</string>
@@ -441,7 +441,7 @@
     <string name="pattern_web_search">Ricerca Web</string>
     <string name="pattern_desc_settings">Trigger impostazioni</string>
     <string name="pattern_desc_ai_trigger">Digita e aggiungi $ alla fine</string>
-    <string name="pattern_desc_custom_command">Digita e aggiungi %comando%</string>
+    <string name="pattern_desc_custom_command" formatted="false">Digita e aggiungi %comando%</string>
     <string name="pattern_desc_italic">Digita e aggiungi |</string>
     <string name="pattern_desc_bold">Digita e aggiungi @</string>
     <string name="pattern_desc_crossout">Digita e aggiungi ~</string>
@@ -554,7 +554,7 @@
     <string name="no_patterns">Nessun pattern</string>
     <string name="dialog_title_edit_pattern">Modifica %1$s</string>
     <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 Apre impostazioni</string>
-    <string name="example_ai_responds">\u0022Ciao, come stai?%1$s\u0022 \u2192 L\'AI risponde</string>
+    <string name="example_ai_responds">\u0022Ciao, come stai?%1$s\u0022 \u2192 L\u0027AI risponde</string>
     <string name="example_translates">\u0022Ciao%1$straduci%1$s\u0022 \u2192 Traduce</string>
     <string name="example_format_italic">\u0022testo%1$s\u0022 \u2192 testo corsivo</string>
     <string name="example_format_bold">\u0022testo%1$s\u0022 \u2192 testo grassetto</string>
@@ -571,11 +571,38 @@
     <string name="title_underline">Sottolineato</string>
     <string name="title_web_search">Ricerca web</string>
     <string name="btn_reset_pattern">Reimposta pattern</string>
-    <string name="msg_reset_pattern_confirm">Reimpostare \'%1$s\' al simbolo predefinito \"%2$s\"?</string>
+    <string name="msg_reset_pattern_confirm">Reimpostare \u0027%1$s\u0027 al simbolo predefinito \"%2$s\"?</string>
     <string name="field_api_key">Chiave API</string>
     <string name="field_sub_model">Sotto-modello</string>
     <string name="field_base_url">URL base</string>
     <string name="field_max_tokens">Token massimi</string>
     <string name="field_temperature">Temperatura</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="setting_update_interval">Update Check Interval</string>
+    <string name="setting_desc_download_path">Custom path for downloading updates.</string>
+    <string name="setting_desc_check_updates">Automatically check for new versions.</string>
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="setting_desc_wallpaper_colors">Extract colors from device wallpaper (Android 12+).</string>
+    <string name="setting_download_path">Download Path</string>
+    <string name="setting_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="setting_check_updates">Check for Updates</string>
+    <string name="setting_desc_update_interval">How often to check for updates (in hours).</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="setting_desc_seed_color">Custom color to generate theme.</string>
+    <string name="setting_seed_color">Seed Color</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="setting_desc_single_tone">Use a single color tone for the theme.</string>
+    <string name="setting_single_tone">Use Single Tone</string>
+    <string name="changelog_4_0_8_item1">Risolto il crash dell\u0027app durante il cambio della lingua e il tentativo di accedere alla sezione Invocazione AI</string>
+    <string name="changelog_4_0_8_item2">Migliorato il design dell\u0027avviso nel registro delle modifiche in-app</string>
+    <string name="changelog_4_0_8_item3">Aggiunto il supporto per i modelli GLM forniti da ZhipuAI</string>
+    <string name="changelog_4_0_8_item4">Risolto il problema dello spazio mancante quando si utilizzano i comandi di formattazione del testo</string>
+    <string name="changelog_4_0_8_item5">Risolto il problema della scomparsa del testo quando si utilizza un trigger non registrato o non si riceve risposta dall\u0027IA</string>
+    <string name="changelog_note_4_0_8">Si prega di pazientare poiché sono stati segnalati ulteriori problemi allo sviluppatore, ma verranno risolti in lotti di aggiornamenti poiché si tratta di un progetto di una sola persona. Grazie per la vostra comprensione.</string>
+    <string name="msg_ai_no_response_error">Nessuna risposta ricevuta. L\u0027IA ha restituito un contenuto vuoto.\nSuggerimento: potresti utilizzare un trigger/comando non registrato.</string>
 </resources>

@@ -441,7 +441,7 @@
     <string name="pattern_web_search">Cari Web</string>
     <string name="pattern_desc_settings">Pemicu Pengaturan</string>
     <string name="pattern_desc_ai_trigger">Ketik teks dan tambah $ di akhir</string>
-    <string name="pattern_desc_custom_command">Ketik teks dan tambah %command%</string>
+    <string name="pattern_desc_custom_command" formatted="false">Ketik teks dan tambah %command%</string>
     <string name="pattern_desc_italic">Ketik teks dan tambah |</string>
     <string name="pattern_desc_bold">Ketik teks dan tambah @</string>
     <string name="pattern_desc_crossout">Ketik teks dan tambah ~</string>
@@ -578,4 +578,31 @@
     <string name="field_max_tokens">Token maksimum</string>
     <string name="field_temperature">Suhu</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="setting_update_interval">Update Check Interval</string>
+    <string name="setting_desc_download_path">Custom path for downloading updates.</string>
+    <string name="setting_desc_check_updates">Automatically check for new versions.</string>
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="setting_desc_wallpaper_colors">Extract colors from device wallpaper (Android 12+).</string>
+    <string name="setting_download_path">Download Path</string>
+    <string name="setting_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="setting_check_updates">Check for Updates</string>
+    <string name="setting_desc_update_interval">How often to check for updates (in hours).</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="setting_desc_seed_color">Custom color to generate theme.</string>
+    <string name="setting_seed_color">Seed Color</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="setting_desc_single_tone">Use a single color tone for the theme.</string>
+    <string name="setting_single_tone">Use Single Tone</string>
+    <string name="changelog_4_0_8_item1">Memperbaiki kerusakan aplikasi saat mengubah bahasa dan mencoba masuk ke bagian Pemanggilan AI</string>
+    <string name="changelog_4_0_8_item2">Meningkatkan desain tampilan peringatan di log perubahan dalam aplikasi</string>
+    <string name="changelog_4_0_8_item3">Menambahkan dukungan untuk model GLM yang disediakan oleh ZhipuAI</string>
+    <string name="changelog_4_0_8_item4">Memperbaiki masalah spasi yang hilang saat menggunakan perintah pemformatan teks</string>
+    <string name="changelog_4_0_8_item5">Memperbaiki masalah teks menghilang saat menggunakan pemicu yang tidak terdaftar atau tidak menerima respons dari AI</string>
+    <string name="changelog_note_4_0_8">Harap bersabar karena lebih banyak masalah telah dilaporkan ke pengembang, tetapi masalah tersebut akan diselesaikan dalam kumpulan pembaruan karena ini adalah proyek satu orang. Terima kasih atas pengertian Anda.</string>
+    <string name="msg_ai_no_response_error">Tidak ada respons diterima. AI mengembalikan konten kosong.\nPetunjuk: Anda mungkin menggunakan pemicu/perintah yang tidak terdaftar.</string>
 </resources>

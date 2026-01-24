@@ -27,6 +27,8 @@ public enum LanguageModel {
                         "https://chutes.ai"),
         Perplexity("Perplexity", "sonar-pro", "https://api.perplexity.ai", false,
                         "https://www.perplexity.ai/settings/api"),
+        GLM("ZhipuAI", "glm-4", "https://open.bigmodel.cn/api/paas/v4", false,
+                        "https://open.bigmodel.cn/usercenter/apikeys"),
                         ;
 
         public final String label;

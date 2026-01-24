@@ -581,7 +581,7 @@
     <!-- Pattern Descriptions -->
     <string name="pattern_desc_settings">مشغل الإعدادات</string>
     <string name="pattern_desc_ai_trigger">اكتب النص ثم أضف $ في النهاية</string>
-    <string name="pattern_desc_custom_command">اكتب النص ثم أضف %الأمر%</string>
+    <string name="pattern_desc_custom_command" formatted="false">اكتب النص ثم أضف %الأمر%</string>
     <string name="pattern_desc_italic">اكتب النص ثم أضف |</string>
     <string name="pattern_desc_bold">اكتب النص ثم أضف @</string>
     <string name="pattern_desc_crossout">اكتب النص ثم أضف ~</string>
@@ -631,6 +631,13 @@
     <string name="changelog_1_0_0_item7">تم إضافة موديل جديد Perplexity ودعم Perplexity API</string>
     <string name="changelog_1_0_0_item8">تم إلغاء التقييد باستخدام علامة \"/\" فيما يخص استخدام الأوامر</string>
     <string name="changelog_1_0_0_note">برجاء التحلي بالصبر حيث تم إعلام المطور بالمزيد من المشكلات ولكن سيتم حلها على دفعات من التحديثات حيث أنه شخص واحد فقط يقف وراء تطوير كل هذا. شكراً لتفهمكم.</string>
+
+    <string name="changelog_4_0_8_item1">تم اصلاح تحطم التطبيق عند تغيير اللغة ومحاولة دخول قسم AI Invocation</string>
+    <string name="changelog_4_0_8_item2">تم تحسين تصميم ظهور التنبيه فى سجل التغيرات داخل التطبيق</string>
+    <string name="changelog_4_0_8_item3">تم اضافة الدعم لاستخدام مودلات GLM المقدمة من ZhipuAI</string>
+    <string name="changelog_4_0_8_item4">تم اصلاح مشكلة عدم وجود مسافة عند استخدام اوامر تشكيل النص</string>
+    <string name="changelog_4_0_8_item5">تم إصلاح مشكلة اختفاء النص عند استخدام تريجر غير مسجل أو عند عدم تلقي رد من الذكاء الاصطناعي</string>
+    <string name="changelog_note_4_0_8">برجاء التحلي بالصبر حيث تم إعلام المطور بالمزيد من المشكلات ولكن سيتم حلها على دفعات من التحديثات حيث أنه شخص واحد فقط يقف وراء تطوير كل هذا. شكراً لتفهمكم.</string>
     
     <!-- Language Selection -->
     <string name="hint_search_language">بحث عن لغة...</string>
@@ -749,4 +756,22 @@
     <string name="msg_reset_pattern_confirm">إعادة تعيين \'%1$s\' إلى الرمز الافتراضي \"%2$s\"؟</string>
     <string name="msg_pattern_reset">تم إعادة تعيين النمط إلى الوضع الافتراضي</string>
 
+    <!-- Model Config Fields -->
+    <string name="field_api_key">مفتاح API</string>
+    <string name="field_top_p">Top P</string>
+    <string name="dialog_title_unknown_model">اسم نموذج غير معروف</string>
+    <string name="dialog_msg_unknown_model">النموذج "%1$s" غير موجود في قائمتنا المعتمدة.\nقد يكون جديداً أو غير صحيح.\n\nهل تقصد: %2$s؟</string>
+    <string name="btn_use_suggestion">استخدام المقترح</string>
+    <string name="btn_use_anyway">استخدام على أي حال</string>
+    
+    <!-- Missing Model Config Fields -->
+    <string name="field_sub_model">النموذج الفرعي</string>
+    <string name="field_base_url">رابط القاعدة</string>
+    <string name="field_max_tokens">الحد الأقصى للرموز</string>
+    <string name="field_temperature">درجة الإبداع</string>
+    
+    <!-- Missing Update Interval -->
+    <string name="interval_every_disabled">معطل</string>
+
+    <string name="msg_ai_no_response_error">لم يتم استلام أي رد. أعاد الذكاء الاصطناعي محتوى فارغًا.\nتلميح: ربما تستخدم تريجر/أمر غير مسجل.</string>
 </resources>

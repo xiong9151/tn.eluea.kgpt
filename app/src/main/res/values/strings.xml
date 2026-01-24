@@ -576,7 +576,7 @@
     <!-- Pattern Descriptions -->
     <string name="pattern_desc_settings">Settings trigger</string>
     <string name="pattern_desc_ai_trigger">Type text then add %1$s at end</string>
-    <string name="pattern_desc_custom_command">Type text then add %1$scommand%1$s</string>
+    <string name="pattern_desc_custom_command" formatted="false">Type text then add %1$scommand%1$s</string>
     <string name="pattern_desc_italic">Type text then add %1$s</string>
     <string name="pattern_desc_bold">Type text then add %1$s</string>
     <string name="pattern_desc_crossout">Type text then add %1$s</string>
@@ -626,6 +626,14 @@
     <string name="changelog_1_0_0_item7">Added new Perplexity model and Perplexity API support</string>
     <string name="changelog_1_0_0_item8">Removed "/" restriction for using commands</string>
     <string name="changelog_1_0_0_note">Please be patient as more issues have been reported to the developer, but they will be resolved in batches of updates as this is a one-person project. Thank you for your understanding.</string>
+
+    <string name="changelog_4_0_8_item1">Fixed app crash when changing language and attempting to enter AI Invocation section</string>
+    <string name="changelog_4_0_8_item2">Improved design of the alert appearance in the in-app changelog</string>
+    <string name="changelog_4_0_8_item3">Added support for GLM models provided by ZhipuAI</string>
+    <string name="changelog_4_0_8_item4">Fixed missing space issue when using text formatting commands</string>
+    <string name="changelog_4_0_8_item5">Fixed the issue where text disappears when using an unregistered trigger or receiving no response from AI</string>
+    <string name="changelog_note_4_0_8">Please be patient as more issues have been reported to the developer, but they will be resolved in batches of updates as this is a one-person project. Thank you for your understanding.</string>
+    <string name="msg_ai_no_response_error">No response received. The AI returned empty content.\nHint: You might be using an unregistered trigger/command.</string>
     
     <!-- Language Selection -->
     <string name="hint_search_language">Search languages...</string>
@@ -725,4 +733,31 @@
     <string name="title_web_search">Web Search</string>
     <string name="btn_reset_pattern">Reset Pattern</string>
     <string name="msg_reset_pattern_confirm">Reset \'%1$s\' to default symbol \"%2$s\"?</string>
+    
+    <!-- Missing Pattern Strings -->
+    <string name="format_edit_pattern_title">Edit %1$s</string>
+    <string name="error_symbol_empty">Symbol cannot be empty</string>
+    <string name="error_symbol_not_allowed">This symbol is not allowed</string>
+    <string name="error_pattern_creation_failed">Could not create pattern for this symbol</string>
+    <string name="error_pattern_invalid">Invalid pattern generated</string>
+    <string name="error_pattern_duplicate">This symbol is already used by another pattern</string>
+    <string name="msg_trigger_enabled">Trigger "%1$s" enabled</string>
+    <string name="msg_trigger_disabled">Trigger "%1$s" disabled</string>
+    <string name="example_preview_settings">"%1$s" → Opens settings</string>
+    <string name="example_preview_ai">"Hello%1$s" → AI responds</string>
+    <string name="example_preview_custom">"Hello%1$stranslate%1$s" → Translates</string>
+    <string name="example_preview_italic">"text%1$s" → italic</string>
+    <string name="example_preview_bold">"text%1$s" → bold</string>
+    <string name="example_preview_crossout">"text%1$s" → strikethrough</string>
+    <string name="example_preview_underline">"text%1$s" → underlined</string>
+    <string name="example_preview_default">Type text, then add "%1$s" at the end</string>
+    
+    <!-- Missing Model Config Fields -->
+    <string name="field_sub_model">Sub-model</string>
+    <string name="field_base_url">Base URL</string>
+    <string name="field_max_tokens">Max tokens</string>
+    <string name="field_temperature">Temperature</string>
+    
+    <!-- Missing Update Interval -->
+    <string name="interval_every_disabled">Disabled</string>
 </resources>

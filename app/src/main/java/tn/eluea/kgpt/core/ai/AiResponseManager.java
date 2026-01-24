@@ -28,6 +28,9 @@ public class AiResponseManager implements GenerativeAIListener {
     private boolean isTextActionMode = false;
     private String pendingSelectedText = null;
 
+    // Store original prompt to restore it in case of failure
+    private String lastPrompt = null;
+
     // Use method to get string to support locale changes and resources
     private String getGeneratingContentString() {
         Context ctx = UiInteractor.getInstance().getContext();
@@ -71,6 +74,8 @@ public class AiResponseManager implements GenerativeAIListener {
         if (prompt == null || prompt.trim().isEmpty()) {
             return;
         }
+
+        this.lastPrompt = prompt;
 
         if (mAIController.needModelClient()) {
             if (UiInteractor.getInstance().showChoseModelDialog()) {
@@ -201,7 +206,49 @@ public class AiResponseManager implements GenerativeAIListener {
     @Override
     public void onAIComplete() {
         IMSController.getInstance().endInputLock();
-        clearGeneratingContent();
+
+        // If content was just prepared but never received any chunks (onAINext never
+        // called)
+        // or received empty chunks, we need to handle it.
+        // The check 'justPrepared' is true if onAIPrepare was called but onAINext
+        // wasn't (or didn't reset it)
+        // However, onAINext resets justPrepared to false.
+
+        if (justPrepared) {
+            // We received NO content chunks at all
+            clearGeneratingContent();
+
+            String noResponseError = "No response from AI";
+            Context ctx = UiInteractor.getInstance().getContext();
+            if (ctx != null) {
+                try {
+                    noResponseError = ctx.getString(R.string.msg_ai_no_response_error);
+                } catch (Exception e) {
+                    // Fallback
+                }
+            }
+
+            String displayError = "[Error: " + noResponseError + "]";
+
+            // Restore original text
+            String textToRestore = "";
+            if (isTextActionMode && pendingSelectedText != null) {
+                textToRestore = pendingSelectedText;
+            } else if (lastPrompt != null) {
+                textToRestore = lastPrompt;
+            }
+
+            if (!textToRestore.isEmpty()) {
+                displayError = textToRestore + "\n\n" + displayError;
+            }
+
+            IMSController.getInstance().flush();
+            IMSController.getInstance().commit(displayError);
+        } else {
+            // Normal completion with content
+            clearGeneratingContent();
+        }
+
         IMSController.getInstance().startNotifyInput();
 
         // Reset text action mode

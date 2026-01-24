@@ -441,7 +441,7 @@
     <string name="pattern_web_search">Websuche</string>
     <string name="pattern_desc_settings">Einstellungen-Auslöser</string>
     <string name="pattern_desc_ai_trigger">Text schreiben, $ am Ende</string>
-    <string name="pattern_desc_custom_command">Text schreiben, %befehl%</string>
+    <string name="pattern_desc_custom_command" formatted="false">Text schreiben, %befehl%</string>
     <string name="pattern_desc_italic">Text schreiben, | am Ende</string>
     <string name="pattern_desc_bold">Text schreiben, @ am Ende</string>
     <string name="pattern_desc_crossout">Text schreiben, ~ am Ende</string>
@@ -590,4 +590,19 @@
     <string name="field_max_tokens">Max. Tokens</string>
     <string name="field_temperature">Temperatur</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="changelog_4_0_8_item1">Absturz beim Ändern der Sprache und Betreten des KI-Aufruf-Bereichs behoben</string>
+    <string name="changelog_4_0_8_item2">Design der Warnmeldung im Änderungsprotokoll verbessert</string>
+    <string name="changelog_4_0_8_item3">Unterstützung für GLM-Modelle von ZhipuAI hinzugefügt</string>
+    <string name="changelog_4_0_8_item4">Problem mit fehlendem Leerzeichen bei Textformatierungsbefehlen behoben</string>
+    <string name="changelog_4_0_8_item5">Problem behoben, bei dem Text verschwindet, wenn ein nicht registrierter Auslöser verwendet wird oder keine Antwort von der KI kommt</string>
+    <string name="changelog_note_4_0_8">Bitte haben Sie Geduld, da weitere Probleme gemeldet wurden. Diese werden in Update-Chargen behoben, da es sich um ein Ein-Personen-Projekt handelt. Danke für Ihr Verständnis.</string>
+    <string name="msg_ai_no_response_error">Keine Antwort erhalten. Die KI hat leeren Inhalt zurückgegeben.\nHinweis: Sie verwenden möglicherweise einen nicht registrierten Auslöser/Befehl.</string>
 </resources>

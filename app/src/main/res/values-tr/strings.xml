@@ -441,7 +441,7 @@
     <string name="pattern_web_search">Web Araması</string>
     <string name="pattern_desc_settings">Ayarlar tetikleyicisi</string>
     <string name="pattern_desc_ai_trigger">Metin yaz, sonuna $ ekle</string>
-    <string name="pattern_desc_custom_command">Metin yaz, %komut% ekle</string>
+    <string name="pattern_desc_custom_command" formatted="false">Metin yaz, %komut% ekle</string>
     <string name="pattern_desc_italic">Metin yaz, sonuna | ekle</string>
     <string name="pattern_desc_bold">Metin yaz, sonuna @ ekle</string>
     <string name="pattern_desc_crossout">Metin yaz, sonuna ~ ekle</string>
@@ -589,4 +589,19 @@
     <string name="field_max_tokens">Maks. token</string>
     <string name="field_temperature">Sıcaklık</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="changelog_4_0_8_item1">Dil değiştirirken ve AI Çağırma bölümüne girmeye çalışırken oluşan çökme düzeltildi</string>
+    <string name="changelog_4_0_8_item2">Değişiklik günlüğündeki uyarı görünümünün tasarımı iyileştirildi</string>
+    <string name="changelog_4_0_8_item3">ZhipuAI tarafından sağlanan GLM modelleri için destek eklendi</string>
+    <string name="changelog_4_0_8_item4">Metin biçimlendirme komutları kullanılırken oluşan eksik boşluk sorunu düzeltildi</string>
+    <string name="changelog_4_0_8_item5">Kayıtsız bir tetikleyici kullanıldığında veya yapay zekadan yanıt alınamadığında metnin kaybolması sorunu düzeltildi</string>
+    <string name="changelog_note_4_0_8">Geliştiriciye daha fazla sorun bildirildiğinden lütfen sabırlı olun, bu tek kişilik bir proje olduğu için güncellemeler gruplar halinde gelecektir. Anlayışınız için teşekkürler.</string>
+    <string name="msg_ai_no_response_error">Yanıt alınamadı. Yapay zeka boş içerik döndürdü.\nİpucu: Kayıtsız bir tetikleyici/komut kullanıyor olabilirsiniz.</string>
 </resources>

@@ -441,7 +441,7 @@
     <string name="pattern_web_search">ウェブ検索</string>
     <string name="pattern_desc_settings">設定トリガー</string>
     <string name="pattern_desc_ai_trigger">テキストを入力して最後に$を追加</string>
-    <string name="pattern_desc_custom_command">テキストを入力して%コマンド%を追加</string>
+    <string name="pattern_desc_custom_command" formatted="false">テキストを入力して%コマンド%を追加</string>
     <string name="pattern_desc_italic">テキストを入力して|を追加</string>
     <string name="pattern_desc_bold">テキストを入力して@を追加</string>
     <string name="pattern_desc_crossout">テキストを入力して~を追加</string>
@@ -578,4 +578,31 @@
     <string name="field_max_tokens">最大トークン</string>
     <string name="field_temperature">温度</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="setting_update_interval">Update Check Interval</string>
+    <string name="setting_desc_download_path">Custom path for downloading updates.</string>
+    <string name="setting_desc_check_updates">Automatically check for new versions.</string>
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="setting_desc_wallpaper_colors">Extract colors from device wallpaper (Android 12+).</string>
+    <string name="setting_download_path">Download Path</string>
+    <string name="setting_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="setting_check_updates">Check for Updates</string>
+    <string name="setting_desc_update_interval">How often to check for updates (in hours).</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="setting_desc_seed_color">Custom color to generate theme.</string>
+    <string name="setting_seed_color">Seed Color</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="setting_desc_single_tone">Use a single color tone for the theme.</string>
+    <string name="setting_single_tone">Use Single Tone</string>
+    <string name="changelog_4_0_8_item1">言語を変更してAI呼び出しセクションに入ろうとしたときのアプリのクラッシュを修正しました</string>
+    <string name="changelog_4_0_8_item2">アプリ内の変更履歴における警告表示のデザインを改善しました</string>
+    <string name="changelog_4_0_8_item3">ZhipuAIが提供するGLMモデルのサポートを追加しました</string>
+    <string name="changelog_4_0_8_item4">テキスト書式設定コマンドを使用する際のスペース欠落の問題を修正しました</string>
+    <string name="changelog_4_0_8_item5">未登録のトリガーを使用した場合やAIからの応答がない場合にテキストが消える問題を修正しました</string>
+    <string name="changelog_note_4_0_8">開発者には多くの問題が報告されていますが、個人のプロジェクトであるため、更新のバッチで解決されます。ご理解のほどよろしくお願いいたします。</string>
+    <string name="msg_ai_no_response_error">応答がありません。AIは空のコンテンツを返しました。\nヒント：未登録のトリガー/コマンドを使用している可能性があります。</string>
 </resources>

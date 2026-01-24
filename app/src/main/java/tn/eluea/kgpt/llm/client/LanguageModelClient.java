@@ -96,6 +96,8 @@ public abstract class LanguageModelClient {
                 return new ChutesClient();
             case Perplexity:
                 return new PerplexityClient();
+            case GLM:
+                return new GLMClient();
             case ChatGPT:
             default:
                 return new ChatGPTClient();

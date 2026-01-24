@@ -441,7 +441,7 @@
     <string name="pattern_web_search">वेब खोज</string>
     <string name="pattern_desc_settings">सेटिंग्स ट्रिगर</string>
     <string name="pattern_desc_ai_trigger">टेक्स्ट टाइप करें और अंत में $ जोड़ें</string>
-    <string name="pattern_desc_custom_command">टेक्स्ट टाइप करें और %command% जोड़ें</string>
+    <string name="pattern_desc_custom_command" formatted="false">टेक्स्ट टाइप करें और %1$scommand%1$s जोड़ें</string>
     <string name="pattern_desc_italic">टेक्स्ट टाइप करें और | जोड़ें</string>
     <string name="pattern_desc_bold">टेक्स्ट टाइप करें और @ जोड़ें</string>
     <string name="pattern_desc_crossout">टेक्स्ट टाइप करें और ~ जोड़ें</string>
@@ -578,4 +578,31 @@
     <string name="field_max_tokens">अधिकतम टोकन</string>
     <string name="field_temperature">तापमान</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="setting_update_interval">Update Check Interval</string>
+    <string name="setting_desc_download_path">Custom path for downloading updates.</string>
+    <string name="setting_desc_check_updates">Automatically check for new versions.</string>
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="setting_desc_wallpaper_colors">Extract colors from device wallpaper (Android 12+).</string>
+    <string name="setting_download_path">Download Path</string>
+    <string name="setting_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="setting_check_updates">Check for Updates</string>
+    <string name="setting_desc_update_interval">How often to check for updates (in hours).</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="setting_desc_seed_color">Custom color to generate theme.</string>
+    <string name="setting_seed_color">Seed Color</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="setting_desc_single_tone">Use a single color tone for the theme.</string>
+    <string name="setting_single_tone">Use Single Tone</string>
+    <string name="changelog_4_0_8_item1">भाषा बदलते समय और AI आह्वान अनुभाग में प्रवेश करने का प्रयास करते समय ऐप क्रैश को ठीक किया गया</string>
+    <string name="changelog_4_0_8_item2">इन-ऐप चेंजलॉग में चेतावनी उपस्थिति के डिज़ाइन में सुधार किया गया</string>
+    <string name="changelog_4_0_8_item3">ZhipuAI द्वारा प्रदान किए गए GLM मॉडल के लिए समर्थन जोड़ा गया</string>
+    <string name="changelog_4_0_8_item4">टेक्स्ट फ़ॉर्मेटिंग कमांड का उपयोग करते समय गायब स्पेस की समस्या को ठीक किया गया</string>
+    <string name="changelog_4_0_8_item5">अनрегистриड ट्रिगर का उपयोग करने या AI से कोई प्रतिक्रिया न मिलने पर टेक्स्ट गायब होने की समस्या को ठीक किया गया</string>
+    <string name="changelog_note_4_0_8">कृपया धैर्य रखें क्योंकि डेवलपर को अधिक समस्याओं की सूचना दी गई है, लेकिन उन्हें अपडेट के बैचों में हल किया जाएगा क्योंकि यह एक-व्यक्ति परियोजना है। आपकी समझ के लिए धन्यवाद।</string>
+    <string name="msg_ai_no_response_error">कोई प्रतिक्रिया प्राप्त नहीं हुई। AI ने खाली सामग्री लौटाई।\nसंकेत: आप एक अनрегистриड ट्रिगर/कमांड का उपयोग कर रहे होंगे।</string>
 </resources>

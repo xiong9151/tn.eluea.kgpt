@@ -580,7 +580,7 @@
     <string name="pattern_web_search">Tafuta Wavuti</string>
     <string name="pattern_desc_settings">Kichochezi cha Mipangilio</string>
     <string name="pattern_desc_ai_trigger">Andika maandishi na ongeza $ mwishoni</string>
-    <string name="pattern_desc_custom_command">Andika maandishi na ongeza %command%</string>
+    <string name="pattern_desc_custom_command" formatted="false">Andika maandishi na ongeza %command%</string>
     <string name="pattern_desc_italic">Andika maandishi na ongeza |</string>
     <string name="pattern_desc_bold">Andika maandishi na ongeza @</string>
     <string name="pattern_desc_crossout">Andika maandishi na ongeza ~</string>
@@ -678,4 +678,72 @@
     <string name="hint_trigger_symbol">Ingiza ishara</string>
     <string name="btn_reset_pattern">Weka Upya Muundo</string>
     <string name="msg_reset_pattern_confirm">Una uhakika unataka kuweka upya \'%1$s\' kuwa ishara chaguo-msingi \"%2$s\"?</string>
+
+    <!-- Model Config Fields (Added to prevent crash) -->
+    <string name="field_api_key">API Key</string>
+    <string name="field_top_p">Top P</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="field_sub_model">Sub-model</string>
+    <string name="field_base_url">Base URL</string>
+    <string name="field_max_tokens">Max tokens</string>
+    <string name="field_temperature">Temperature</string>
+    <string name="interval_every_disabled">Disabled</string>
+
+
+    <!-- Auto-added Missing Keys -->
+    <string name="setting_update_interval">Update Check Interval</string>
+    <string name="setting_desc_download_path">Custom path for downloading updates.</string>
+    <string name="setting_desc_check_updates">Automatically check for new versions.</string>
+    <string name="settings_option_choose_model">Choose &amp; Configure Model</string>
+    <string name="setting_desc_external_internet">Recommended to keep on unless chat completion is not working.</string>
+    <string name="setting_desc_enable_logging">Disable for performance. You won\'t be able to report errors.</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 Opens settings</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="setting_desc_wallpaper_colors">Extract colors from device wallpaper (Android 12+).</string>
+    <string name="dialog_title_trigger_symbols">Trigger Symbols</string>
+    <string name="dialog_title_edit_pattern">Edit %1$s</string>
+    <string name="setting_download_path">Download Path</string>
+    <string name="example_default">Type text, then add \u0022%1$s\u0022 at the end</string>
+    <string name="title_custom_command">Custom command</string>
+    <string name="setting_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="title_settings_trigger">Settings</string>
+    <string name="setting_check_updates">Check for Updates</string>
+    <string name="setting_desc_update_interval">How often to check for updates (in hours).</string>
+    <string name="title_italic">Italic</string>
+    <string name="dialog_title_commands_list">Commands List</string>
+    <string name="example_format_crossout">\u0022text%1$s\u0022 \u2192 strikethrough</string>
+    <string name="setting_external_internet">Use external internet service</string>
+    <string name="example_format_italic">\u0022text%1$s\u0022 \u2192 italic text</string>
+    <string name="example_translates">\u0022Hello%1$stranslate%1$s\u0022 \u2192 Translates</string>
+    <string name="example_ai_responds">\u0022Hello, how are you?%1$s\u0022 \u2192 AI responds</string>
+    <string name="setting_material_you">Enable Material You</string>
+    <string name="title_crossout">Crossout</string>
+    <string name="pattern_subtitle_trigger">Trigger: %1$s</string>
+    <string name="example_format_bold">\u0022text%1$s\u0022 \u2192 bold text</string>
+    <string name="title_ai_trigger">AI Trigger</string>
+    <string name="title_bold">Bold</string>
+    <string name="settings_option_patterns_list">Patterns List</string>
+    <string name="setting_desc_search_engine">Default search engine for web searches.</string>
+    <string name="example_format_underline">\u0022text%1$s\u0022 \u2192 underlined</string>
+    <string name="setting_desc_seed_color">Custom color to generate theme.</string>
+    <string name="title_web_search">Web Search</string>
+    <string name="setting_search_engine">Search Engine</string>
+    <string name="setting_seed_color">Seed Color</string>
+    <string name="title_underline">Underline</string>
+    <string name="dialog_title_config_model">%1$s Config</string>
+    <string name="setting_enable_logging">Enable logging</string>
+    <string name="setting_desc_material_you">Use dynamic colors based on wallpaper or custom color.</string>
+    <string name="no_patterns">No patterns</string>
+    <string name="setting_desc_single_tone">Use a single color tone for the theme.</string>
+    <string name="setting_single_tone">Use Single Tone</string>
+    <string name="changelog_4_0_8_item1">Imekarabatiwa kuanguka kwa programu wakati wa kubadilisha lugha na kujaribu kuingia kwenye sehemu ya Ualikaji wa AI</string>
+    <string name="changelog_4_0_8_item2">Imeboreshwa muundo wa kuonekana kwa tahadhari katika kumbukumbu ya mabadiliko ndani ya programu</string>
+    <string name="changelog_4_0_8_item3">Imeongezwa msaada kwa mifano ya GLM iliyotolewa na ZhipuAI</string>
+    <string name="changelog_4_0_8_item4">Imekarabatiwa tatizo la nafasi inayokosekana wakati wa kutumia amri za uumbizaji wa maandishi</string>
+    <string name="changelog_4_0_8_item5">Imerekebisha tatizo la maandishi kupotea unapotumia kichochezi kisichosajiliwa au kutopokea majibu kutoka kwa AI</string>
+    <string name="changelog_note_4_0_8">Tafadhali kuwa na subira kwani matatizo zaidi yameripotiwa kwa msanidi programu, lakini yatatuliwa kwa makundi ya sasisho kwani huu ni mradi wa mtu mmoja. Asante kwa uelewa wako.</string>
+    <string name="msg_ai_no_response_error">Hakuna jibu lililopokelewa. AI ilirudisha maudhui tupu.\nDokezo: Huenda unatumia kichochezi/amri isiyosajiliwa.</string>
 </resources>

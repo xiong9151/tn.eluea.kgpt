@@ -172,6 +172,19 @@ public class ModelsFragment extends Fragment implements ModelsAdapter.OnModelSel
         });
         VALID_MODELS.put(LanguageModel.Perplexity, new java.util.HashSet<>(java.util.Arrays.asList(
                 "sonar-pro", "sonar", "sonar-reasoning-pro", "sonar-reasoning", "r1-1776")));
+
+        // GLM (ZhipuAI) models
+        SUB_MODEL_PRESETS.put(LanguageModel.GLM, new String[] {
+                "glm-4",
+                "glm-4-plus",
+                "glm-4-flash",
+                "glm-4-air",
+                "glm-3-turbo"
+        });
+        VALID_MODELS.put(LanguageModel.GLM, new java.util.HashSet<>(java.util.Arrays.asList(
+                "glm-4", "glm-4-plus", "glm-4-air", "glm-4-airx", "glm-4-long",
+                "glm-4-flashx", "glm-4-flash", "glm-4-9b",
+                "glm-4-0520", "glm-3-turbo")));
     }
 
     /**

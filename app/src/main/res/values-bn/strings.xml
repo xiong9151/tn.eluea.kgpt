@@ -579,7 +579,7 @@
     <string name="pattern_web_search">ওয়েব সার্চ</string>
     <string name="pattern_desc_settings">সেটিংস ট্রিগার</string>
     <string name="pattern_desc_ai_trigger">টেক্সট লিখুন এবং শেষে $ যোগ করুন</string>
-    <string name="pattern_desc_custom_command">টেক্সট লিখুন এবং %command% যোগ করুন</string>
+    <string name="pattern_desc_custom_command" formatted="false">টেক্সট লিখুন এবং %command% যোগ করুন</string>
     <string name="pattern_desc_italic">টেক্সট লিখুন এবং | যোগ করুন</string>
     <string name="pattern_desc_bold">টেক্সট লিখুন এবং @ যোগ করুন</string>
     <string name="pattern_desc_crossout">টেক্সট লিখুন এবং ~ যোগ করুন</string>
@@ -679,4 +679,71 @@
     <string name="msg_reset_pattern_confirm">আপনি কি নিশ্চিত যে আপনি \'%1$s\' কে ডিফল্ট প্রতীক \"%2$s\"-এ রিসেট করতে চান?</string>
     <string name="msg_pattern_reset">প্যাটার্ন ডিফল্টভাবে রিসেট করা হয়েছে</string>
     <string name="no_commands">এখনও কোনো কমান্ড নেই</string>
+
+    <!-- Model Config Fields (Added to prevent crash) -->
+    <string name="field_api_key">API Key</string>
+    <string name="field_top_p">Top P</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="field_sub_model">Sub-model</string>
+    <string name="field_base_url">Base URL</string>
+    <string name="field_max_tokens">Max tokens</string>
+    <string name="field_temperature">Temperature</string>
+    <string name="interval_every_disabled">Disabled</string>
+
+
+    <!-- Auto-added Missing Keys -->
+    <string name="setting_update_interval">Update Check Interval</string>
+    <string name="setting_desc_download_path">Custom path for downloading updates.</string>
+    <string name="setting_desc_check_updates">Automatically check for new versions.</string>
+    <string name="settings_option_choose_model">Choose &amp; Configure Model</string>
+    <string name="setting_desc_external_internet">Recommended to keep on unless chat completion is not working.</string>
+    <string name="setting_desc_enable_logging">Disable for performance. You won\'t be able to report errors.</string>
+    <string name="example_opens_settings">\u0022%1$s\u0022 \u2192 Opens settings</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="setting_desc_wallpaper_colors">Extract colors from device wallpaper (Android 12+).</string>
+    <string name="dialog_title_trigger_symbols">Trigger Symbols</string>
+    <string name="setting_download_path">Download Path</string>
+    <string name="example_default">Type text, then add \u0022%1$s\u0022 at the end</string>
+    <string name="title_custom_command">Custom command</string>
+    <string name="setting_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="title_settings_trigger">Settings</string>
+    <string name="setting_check_updates">Check for Updates</string>
+    <string name="setting_desc_update_interval">How often to check for updates (in hours).</string>
+    <string name="title_italic">Italic</string>
+    <string name="dialog_title_commands_list">Commands List</string>
+    <string name="example_format_crossout">\u0022text%1$s\u0022 \u2192 strikethrough</string>
+    <string name="setting_external_internet">Use external internet service</string>
+    <string name="example_format_italic">\u0022text%1$s\u0022 \u2192 italic text</string>
+    <string name="example_translates">\u0022Hello%1$stranslate%1$s\u0022 \u2192 Translates</string>
+    <string name="example_ai_responds">\u0022Hello, how are you?%1$s\u0022 \u2192 AI responds</string>
+    <string name="setting_material_you">Enable Material You</string>
+    <string name="title_crossout">Crossout</string>
+    <string name="pattern_subtitle_trigger">Trigger: %1$s</string>
+    <string name="example_format_bold">\u0022text%1$s\u0022 \u2192 bold text</string>
+    <string name="title_ai_trigger">AI Trigger</string>
+    <string name="title_bold">Bold</string>
+    <string name="settings_option_patterns_list">Patterns List</string>
+    <string name="setting_desc_search_engine">Default search engine for web searches.</string>
+    <string name="example_format_underline">\u0022text%1$s\u0022 \u2192 underlined</string>
+    <string name="setting_desc_seed_color">Custom color to generate theme.</string>
+    <string name="title_web_search">Web Search</string>
+    <string name="setting_search_engine">Search Engine</string>
+    <string name="setting_seed_color">Seed Color</string>
+    <string name="title_underline">Underline</string>
+    <string name="dialog_title_config_model">%1$s Config</string>
+    <string name="setting_enable_logging">Enable logging</string>
+    <string name="setting_desc_material_you">Use dynamic colors based on wallpaper or custom color.</string>
+    <string name="no_patterns">No patterns</string>
+    <string name="setting_desc_single_tone">Use a single color tone for the theme.</string>
+    <string name="setting_single_tone">Use Single Tone</string>
+    <string name="changelog_4_0_8_item1">ভাষা পরিবর্তন এবং AI আমন্ত্রণ বিভাগে প্রবেশ করার সময় অ্যাপ ক্র্যাশ ঠিক করা হয়েছে</string>
+    <string name="changelog_4_0_8_item2">ইন-অ্যাপ চেঞ্জলগে সতর্কতা উপস্থিতির ডিজাইন উন্নত করা হয়েছে</string>
+    <string name="changelog_4_0_8_item3">ZhipuAI দ্বারা প্রদত্ত GLM মডেলগুলির জন্য সমর্থন যোগ করা হয়েছে</string>
+    <string name="changelog_4_0_8_item4">টেক্সট ফরম্যাটিং কমান্ড ব্যবহার করার সময় অনুপস্থিত স্পেস সমস্যা ঠিক করা হয়েছে</string>
+    <string name="changelog_4_0_8_item5">অনিবন্ধিত ট্রিগার ব্যবহার করলে বা AI থেকে কোনো সাড়া না পেলে টেক্সট অদৃশ্য হয়ে যাওয়ার সমস্যাটি সমাধান করা হয়েছে</string>
+    <string name="changelog_note_4_0_8">অনুগ্রহ করে ধৈর্য ধরুন কারণ বিকাশকারীকে আরও সমস্যা রিপোর্ট করা হয়েছে, তবে এটি একটি এক-ব্যক্তির প্রকল্প হওয়ায় আপডেটগুলির ব্যাচে সমাধান করা হবে। বোঝার জন্য আপনাকে ধন্যবাদ।</string>
+    <string name="msg_ai_no_response_error">কোনো সাড়া পাওয়া যায়নি। AI খালি কন্টেন্ট ফেরত দিয়েছে।\nইঙ্গিত: আপনি সম্ভবত একটি অনিবন্ধিত ট্রিগার/কमांड ব্যবহার করছেন।</string>
 </resources>

@@ -453,7 +453,7 @@
     <!-- Pattern Descriptions -->
     <string name="pattern_desc_settings">Disparador de ajustes</string>
     <string name="pattern_desc_ai_trigger">Escribe texto y añade $ al final</string>
-    <string name="pattern_desc_custom_command">Escribe texto y añade %comando%</string>
+    <string name="pattern_desc_custom_command" formatted="false">Escribe texto y añade %comando%</string>
     <string name="pattern_desc_italic">Escribe texto y añade |</string>
     <string name="pattern_desc_bold">Escribe texto y añade @</string>
     <string name="pattern_desc_crossout">Escribe texto y añade ~</string>
@@ -609,4 +609,19 @@
     <string name="field_max_tokens">Tokens máximos</string>
     <string name="field_temperature">Temperatura</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="changelog_4_0_8_item1">Se corrigió el bloqueo al cambiar el idioma e ingresar a la sección de Invocación de IA</string>
+    <string name="changelog_4_0_8_item2">Se mejoró el diseño de la alerta en el registro de cambios</string>
+    <string name="changelog_4_0_8_item3">Se agregó soporte para modelos GLM de ZhipuAI</string>
+    <string name="changelog_4_0_8_item4">Se corrigió el problema de falta de espacio en comandos de formato de texto</string>
+    <string name="changelog_4_0_8_item5">Solucionado el problema de desaparición del texto al usar un activador no registrado o al no recibir respuesta de la IA</string>
+    <string name="changelog_note_4_0_8">Tenga paciencia, ya que se han informado más problemas, pero se resolverán en lotes de actualizaciones al ser un proyecto de una sola persona. Gracias por su comprensión.</string>
+    <string name="msg_ai_no_response_error">No se recibió respuesta. La IA devolvió contenido vacío.\nPista: Es posible que esté utilizando un activador/comando no registrado.</string>
 </resources>

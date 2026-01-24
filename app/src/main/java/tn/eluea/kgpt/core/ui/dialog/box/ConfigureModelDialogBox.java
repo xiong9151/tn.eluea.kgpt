@@ -158,6 +158,15 @@ public class ConfigureModelDialogBox extends DialogBox {
                                 "mistralai/Mistral-Small-24B-Instruct-2501",
                                 "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
                 });
+
+                // GLM (ZhipuAI) models
+                VALID_MODELS.put(LanguageModel.GLM, new HashSet<>(Arrays.asList(
+                                "glm-4", "glm-4-plus", "glm-4-air", "glm-4-airx", "glm-4-long",
+                                "glm-4-flashx", "glm-4-flash", "glm-4-9b",
+                                "glm-4-0520", "glm-3-turbo")));
+                MODEL_PRESETS.put(LanguageModel.GLM, new String[] {
+                                "glm-4", "glm-4-plus", "glm-4-flash", "glm-4-air", "glm-3-turbo"
+                });
         }
 
         public ConfigureModelDialogBox(DialogBoxManager dialogManager, Activity parent,
@@ -195,8 +204,24 @@ public class ConfigureModelDialogBox extends DialogBox {
 
         @Override
         protected Dialog build() {
+                // FORCE populate GLM presets to ensure they exist
+                VALID_MODELS.put(LanguageModel.GLM, new HashSet<>(Arrays.asList(
+                                "glm-4", "glm-4-plus", "glm-4-air", "glm-4-airx", "glm-4-long",
+                                "glm-4-flashx", "glm-4-flash", "glm-4-9b",
+                                "glm-4-0520", "glm-3-turbo")));
+                MODEL_PRESETS.put(LanguageModel.GLM, new String[] {
+                                "glm-4", "glm-4-plus", "glm-4-flash", "glm-4-air", "glm-3-turbo"
+                });
+
                 safeguardModelData();
                 Context context = getContext();
+                if (context != null) {
+                        // Debug toast to see if presets are recognized
+                        String[] presetsLines = MODEL_PRESETS.get(LanguageModel.GLM);
+                        int count = presetsLines != null ? presetsLines.length : 0;
+                        // android.widget.Toast.makeText(context, "Debug: GLM Presets count = " + count,
+                        // android.widget.Toast.LENGTH_SHORT).show();
+                }
                 if (context != null) {
                         android.widget.Toast
                                         .makeText(context, "Config Dialog Opened: " + getConfig().selectedModel.name(),

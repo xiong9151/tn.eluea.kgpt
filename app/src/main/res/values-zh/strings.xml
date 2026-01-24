@@ -440,7 +440,7 @@
     <string name="pattern_web_search">网页搜索</string>
     <string name="pattern_desc_settings">设置触发器</string>
     <string name="pattern_desc_ai_trigger">输入文本后在末尾添加$</string>
-    <string name="pattern_desc_custom_command">输入文本后添加%命令%</string>
+    <string name="pattern_desc_custom_command" formatted="false">输入文本后添加%命令%</string>
     <string name="pattern_desc_italic">输入文本后添加|</string>
     <string name="pattern_desc_bold">输入文本后添加@</string>
     <string name="pattern_desc_crossout">输入文本后添加~</string>
@@ -589,4 +589,20 @@
     <string name="field_temperature">温度</string>
     <string name="field_top_p">Top P</string>
     <string name="no_commands">无命令</string>
+
+
+    <!-- Auto-added Missing Keys -->
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="changelog_4_0_8_item1">修复了切换语言并进入AI调用部分时的崩溃问题</string>
+    <string name="changelog_4_0_8_item2">改进了更新日志中警报卡片的设计</string>
+    <string name="changelog_4_0_8_item3">添加了对ZhipuAI提供的GLM模型的支持</string>
+    <string name="changelog_4_0_8_item4">修复了使用文本格式化命令时缺少空格的问题</string>
+    <string name="changelog_4_0_8_item5">修复了使用未注册的触发器或 AI 无响应时文本消失的问题</string>
+    <string name="changelog_note_4_0_8">请耐心等待，因为已向开发人员报告了更多问题，但由于这是一个单人项目，这些问题将在批量更新中得到解决。 感谢您的理解。</string>
+    <string name="msg_ai_no_response_error">未收到响应。AI 返回了空内容。\n提示：您可能使用的是未注册的触发器/命令。</string>
 </resources>

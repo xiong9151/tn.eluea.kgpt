@@ -150,6 +150,18 @@ public class TextParser implements ConfigChangeListener {
             }
 
             if (lastAskIndex >= 0) {
+                // Check if the match starts with whitespace and preserve it
+                String matchText = textBeforeCursor.substring(lastAskIndex, lastContentStart);
+                int leadingSpaceCount = 0;
+                while (leadingSpaceCount < matchText.length()
+                        && Character.isWhitespace(matchText.charAt(leadingSpaceCount))) {
+                    leadingSpaceCount++;
+                }
+
+                if (leadingSpaceCount > 0) {
+                    lastAskIndex += leadingSpaceCount;
+                }
+
                 String scopedText = textBeforeCursor.substring(lastContentStart);
 
                 // Check if this scoped text matches any directive

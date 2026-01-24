@@ -441,7 +441,7 @@
     <string name="pattern_web_search">웹 검색</string>
     <string name="pattern_desc_settings">설정 트리거</string>
     <string name="pattern_desc_ai_trigger">텍스트 입력 후 끝에 $를 추가</string>
-    <string name="pattern_desc_custom_command">텍스트 입력 후 %명령어%를 추가</string>
+    <string name="pattern_desc_custom_command" formatted="false">텍스트 입력 후 %명령어%를 추가</string>
     <string name="pattern_desc_italic">텍스트 입력 후 |를 추가</string>
     <string name="pattern_desc_bold">텍스트 입력 후 @를 추가</string>
     <string name="pattern_desc_crossout">텍스트 입력 후 ~를 추가</string>
@@ -578,4 +578,31 @@
     <string name="field_max_tokens">최대 토큰</string>
     <string name="field_temperature">온도</string>
     <string name="field_top_p">Top P</string>
+
+    <!-- Auto-added Missing Keys -->
+    <string name="setting_update_interval">Update Check Interval</string>
+    <string name="setting_desc_download_path">Custom path for downloading updates.</string>
+    <string name="setting_desc_check_updates">Automatically check for new versions.</string>
+    <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_search_language">Search languages...</string>
+    <string name="btn_use_suggestion">Use Suggestion</string>
+    <string name="setting_desc_wallpaper_colors">Extract colors from device wallpaper (Android 12+).</string>
+    <string name="setting_download_path">Download Path</string>
+    <string name="setting_wallpaper_colors">Use Wallpaper Colors</string>
+    <string name="setting_check_updates">Check for Updates</string>
+    <string name="setting_desc_update_interval">How often to check for updates (in hours).</string>
+    <string name="dialog_title_unknown_model">Unknown Model Name</string>
+    <string name="btn_use_anyway">Use Anyway</string>
+    <string name="setting_desc_seed_color">Custom color to generate theme.</string>
+    <string name="setting_seed_color">Seed Color</string>
+    <string name="dialog_msg_unknown_model">The model "%1$s" is not in our verified list.\nIt might be new or incorrect.\n\nDid you mean: %2$s?</string>
+    <string name="setting_desc_single_tone">Use a single color tone for the theme.</string>
+    <string name="setting_single_tone">Use Single Tone</string>
+    <string name="changelog_4_0_8_item1">언어를 변경하고 AI 호출 섹션에 진입하려고 할 때 앱이 충돌하는 문제를 수정했습니다</string>
+    <string name="changelog_4_0_8_item2">인앱 변경 로그의 경고 모양 디자인을 개선했습니다</string>
+    <string name="changelog_4_0_8_item3">ZhipuAI에서 제공하는 GLM 모델 지원을 추가했습니다</string>
+    <string name="changelog_4_0_8_item4">텍스트 서식 명령을 사용할 때 공백이 누락되는 문제를 수정했습니다</string>
+    <string name="changelog_4_0_8_item5">등록되지 않은 트리거를 사용하거나 AI 응답이 없을 때 텍스트가 사라지는 문제를 수정했습니다</string>
+    <string name="changelog_note_4_0_8">더 많은 문제가 개발자에게 보고되었지만, 1인 프로젝트이므로 업데이트 배치로 해결될 예정이니 인내심을 갖고 기다려 주십시오. 이해해 주셔서 감사합니다.</string>
+    <string name="msg_ai_no_response_error">응답을 받지 못했습니다. AI가 빈 콘텐츠를 반환했습니다。\n힌트: 등록되지 않은 트리거/명령을 사용하고 있을 수 있습니다.</string>
 </resources>
