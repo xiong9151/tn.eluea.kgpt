@@ -19,8 +19,11 @@ import tn.eluea.kgpt.core.ui.dialog.box.DialogBox;
 import tn.eluea.kgpt.core.ui.dialog.box.OtherSettingsDialogBox;
 import tn.eluea.kgpt.core.ui.dialog.box.PatternEditDialogBox;
 import tn.eluea.kgpt.core.ui.dialog.box.PatternListDialogBox;
+import tn.eluea.kgpt.core.ui.dialog.box.RangeSelectionEditDialogBox;
 import tn.eluea.kgpt.core.ui.dialog.box.SettingsDialogBox;
 import tn.eluea.kgpt.core.ui.dialog.box.WebSearchDialogBox;
+import tn.eluea.kgpt.text.parse.ParsePattern;
+import tn.eluea.kgpt.text.parse.PatternType;
 
 public class DialogBoxManager {
     private final Activity mParent;
@@ -86,7 +89,18 @@ public class DialogBoxManager {
                 box = new PatternListDialogBox(this, mParent, mInputBundle, mConfig);
                 break;
             case EditPattern:
-                box = new PatternEditDialogBox(this, mParent, mInputBundle, mConfig);
+                // Check the pattern type to determine which dialog to use
+                final int patternIndex = mConfig.focusPatternIndex;
+                if (patternIndex >= 0 && patternIndex < mConfig.patterns.size()) {
+                    ParsePattern pattern = mConfig.patterns.get(patternIndex);
+                    if (pattern.getType() == PatternType.RangeSelection) {
+                        box = new RangeSelectionEditDialogBox(this, mParent, mInputBundle, mConfig);
+                    } else {
+                        box = new PatternEditDialogBox(this, mParent, mInputBundle, mConfig);
+                    }
+                } else {
+                    box = new PatternEditDialogBox(this, mParent, mInputBundle, mConfig);
+                }
                 break;
             case WebSearch:
                 box = new WebSearchDialogBox(this, mParent, mInputBundle, mConfig);

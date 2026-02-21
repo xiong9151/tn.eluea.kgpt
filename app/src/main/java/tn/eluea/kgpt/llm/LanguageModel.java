@@ -12,6 +12,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
 public enum LanguageModel {
+        CustomAPI("Custom API", "custom-model", "https://api.custom.com/v1", false, ""),
         Gemini("Gemini", "gemini-2.5-flash", "https://generativelanguage.googleapis.com/v1beta", true,
                         "https://aistudio.google.com/app/apikey"),
         ChatGPT("ChatGPT", "gpt-4o", "https://api.openai.com/v1", false, "https://platform.openai.com/api-keys"),

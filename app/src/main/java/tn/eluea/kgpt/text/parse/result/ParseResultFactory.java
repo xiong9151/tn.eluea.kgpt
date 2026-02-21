@@ -29,6 +29,8 @@ public interface ParseResultFactory {
                 return new FormatParseResultFactory(ConversionMethod.CROSSOUT);
             case FormatUnderline:
                 return new FormatParseResultFactory(ConversionMethod.UNDERLINE);
+            case RangeSelection:
+                return new RangeSelectionParseResultFactory();
             case Settings:
             default:
                 return new SettingsParseResultFactory();

@@ -24,7 +24,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.materialswitch.MaterialSwitch;
+import tn.eluea.kgpt.text.parse.PatternType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,6 @@ import tn.eluea.kgpt.R;
 import tn.eluea.kgpt.SPManager;
 import tn.eluea.kgpt.instruction.command.InlineAskCommand;
 import tn.eluea.kgpt.text.parse.ParsePattern;
-import tn.eluea.kgpt.text.parse.PatternType;
 import tn.eluea.kgpt.ui.main.BottomSheetHelper;
 import tn.eluea.kgpt.ui.main.FloatingBottomSheet;
 import tn.eluea.kgpt.ui.main.adapters.PatternsAdapter;
@@ -154,6 +154,12 @@ public class InvocationPatternsFragment extends Fragment {
     }
 
     private void showEditPatternDialog(ParsePattern pattern, int position) {
+        // For RangeSelection pattern type, use the specialized dialog
+        if (pattern.getType() == PatternType.RangeSelection) {
+            showRangeSelectionEditDialog(pattern, position);
+            return;
+        }
+        
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext(), R.style.AlertDialogTheme);
         View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_edit_pattern_symbol, null);
         builder.setView(dialogView);
@@ -302,6 +308,205 @@ public class InvocationPatternsFragment extends Fragment {
             SPManager.getInstance().setParsePatterns(patterns);
             syncConfig();
         }
+    }
+
+    private void showRangeSelectionEditDialog(ParsePattern pattern, int position) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext(), R.style.AlertDialogTheme);
+        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_range_selection_edit, null);
+        builder.setView(dialogView);
+
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        TextView tvPatternType = dialogView.findViewById(R.id.tv_title);
+        TextView tvDescription = dialogView.findViewById(R.id.tv_description);
+        TextInputEditText etStartSymbol = dialogView.findViewById(R.id.edit_start_symbol);
+        TextInputEditText etEndSymbol = dialogView.findViewById(R.id.edit_end_symbol);
+        TextView tvExample = dialogView.findViewById(R.id.tv_example);
+        com.google.android.material.materialswitch.MaterialSwitch switchEnabled = dialogView
+                .findViewById(R.id.switch_enabled);
+        MaterialButton btnReset = dialogView.findViewById(R.id.btn_reset);
+        MaterialButton btnCancel = dialogView.findViewById(R.id.btn_cancel);
+        MaterialButton btnSave = dialogView.findViewById(R.id.btn_save);
+
+        tvPatternType.setText(getString(pattern.getType().titleResId));
+        tvDescription.setText(getString(R.string.hint_range_selection_description));
+
+        switchEnabled.setChecked(pattern.isEnabled());
+
+        // Extract current symbols from regex
+        String[] symbols = extractSymbolsFromRegex(pattern.getPattern().pattern());
+        String currentStartSymbol = symbols[0];
+        String currentEndSymbol = symbols[1];
+        
+        if (currentStartSymbol == null || currentStartSymbol.isEmpty()) {
+            currentStartSymbol = "$";
+        }
+        if (currentEndSymbol == null || currentEndSymbol.isEmpty()) {
+            currentEndSymbol = "$";
+        }
+        
+        etStartSymbol.setText(currentStartSymbol);
+        etEndSymbol.setText(currentEndSymbol);
+
+        // Update example when symbols change
+        android.text.TextWatcher textWatcher = new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                updateRangeSelectionExample(tvExample, etStartSymbol.getText().toString(), 
+                             etEndSymbol.getText().toString());
+            }
+
+            @Override
+            public void afterTextChanged(android.text.Editable s) {
+            }
+        };
+        
+        etStartSymbol.addTextChangedListener(textWatcher);
+        etEndSymbol.addTextChangedListener(textWatcher);
+
+        btnReset.setOnClickListener(v -> {
+            etStartSymbol.setText("$");
+            etEndSymbol.setText("$");
+        });
+
+        btnCancel.setOnClickListener(v -> dialog.dismiss());
+
+        btnSave.setOnClickListener(v -> {
+            String startSymbol = etStartSymbol.getText().toString();
+            String endSymbol = etEndSymbol.getText().toString();
+            boolean isEnabled = switchEnabled.isChecked();
+
+            if (startSymbol.isEmpty()) {
+                Toast.makeText(requireContext(), R.string.msg_start_symbol_empty, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            
+            if (endSymbol.isEmpty()) {
+                Toast.makeText(requireContext(), R.string.msg_end_symbol_empty, Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Forbidden symbols
+            if (List.of("]", "[", "-", "\n", "\t").contains(startSymbol) || 
+                List.of("]", "[", "-", "\n", "\t").contains(endSymbol)) {
+                Toast.makeText(requireContext(), R.string.msg_symbol_not_allowed, Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Convert symbols to regex
+            String newRegex = PatternType.symbolsToRangeRegex(startSymbol, endSymbol);
+            if (newRegex == null) {
+                Toast.makeText(requireContext(), R.string.msg_pattern_create_symbol_failed, Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Validate regex
+            try {
+                java.util.regex.Pattern.compile(newRegex);
+            } catch (Exception e) {
+                Toast.makeText(requireContext(), R.string.msg_pattern_generated_invalid, Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Check for duplicates
+            long similarCount = patterns.stream()
+                    .filter((c) -> c.getPattern().pattern().equals(newRegex)).count();
+            if (similarCount >= 1 && !newRegex.equals(pattern.getPattern().pattern())) {
+                Toast.makeText(requireContext(), R.string.msg_symbol_already_used, Toast.LENGTH_SHORT)
+                        .show();
+                return;
+            }
+
+            // Create new pattern with enabled state
+            ParsePattern newPattern = new ParsePattern(pattern.getType(), newRegex, pattern.getExtras());
+            newPattern.setEnabled(isEnabled);
+
+            patterns.set(position, newPattern);
+            savePatterns();
+            patternsAdapter.updatePatterns(patterns);
+            dialog.dismiss();
+
+            String statusMsg = isEnabled ? "enabled" : "disabled";
+            Toast.makeText(requireContext(), getString(R.string.msg_trigger_status_format, 
+                    startSymbol + "..." + endSymbol, statusMsg),
+                    Toast.LENGTH_SHORT).show();
+        });
+
+        BottomSheetHelper.applyBlur(dialog);
+        dialog.show();
+    }
+    
+    private void updateRangeSelectionExample(TextView tvExample, String startSymbol, String endSymbol) {
+        if (startSymbol.isEmpty() || endSymbol.isEmpty()) {
+            tvExample.setText(R.string.hint_example);
+            return;
+        }
+        
+        if (startSymbol.equals(endSymbol)) {
+            // Same symbol case
+            tvExample.setText("\"" + startSymbol + "要发送的文本" + endSymbol + "\" → 发送选中的文本给AI");
+        } else {
+            // Different symbols case
+            tvExample.setText("\"" + startSymbol + "要发送的文本" + endSymbol + "\" → 发送选中的文本给AI");
+        }
+    }
+    
+    private String[] extractSymbolsFromRegex(String regex) {
+        String[] result = new String[]{"$", "$"};
+        
+        if (regex == null || regex.isEmpty()) {
+            return result;
+        }
+        
+        // Remove the ending $
+        if (regex.endsWith("$")) {
+            regex = regex.substring(0, regex.length() - 1);
+        }
+        
+        // Find the capturing group pattern (.+?)
+        int groupStart = regex.indexOf("(.+?)");
+        if (groupStart == -1) {
+            return result;
+        }
+        
+        String startSymbol = regex.substring(0, groupStart);
+        String endSymbol = regex.substring(groupStart + 5); // 5 is length of "(.+?)"
+        
+        // Unescape the symbols
+        startSymbol = unescapeRegex(startSymbol);
+        endSymbol = unescapeRegex(endSymbol);
+        
+        result[0] = startSymbol;
+        result[1] = endSymbol;
+        
+        return result;
+    }
+    
+    private String unescapeRegex(String escaped) {
+        if (escaped == null || escaped.isEmpty()) {
+            return escaped;
+        }
+        
+        // Replace escaped special characters
+        return escaped.replace("\\$", "$")
+                     .replace("\\.", ".")
+                     .replace("\\^", "^")
+                     .replace("\\*", "*")
+                     .replace("\\+", "+")
+                     .replace("\\?", "?")
+                     .replace("\\(", "(")
+                     .replace("\\)", ")")
+                     .replace("\\[", "[")
+                     .replace("\\]", "]")
+                     .replace("\\{", "{")
+                     .replace("\\}", "}")
+                     .replace("\\|", "|")
+                     .replace("\\\\", "\\");
     }
 
     private void syncConfig() {

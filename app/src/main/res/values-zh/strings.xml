@@ -611,4 +611,20 @@
     <string name="changelog_4_0_8_item5">修复了使用未注册的触发器或 AI 无响应时文本消失的问题</string>
     <string name="changelog_note_4_0_8">请耐心等待，因为已向开发人员报告了更多问题，但由于这是一个单人项目，这些问题将在批量更新中得到解决。 感谢您的理解。</string>
     <string name="msg_ai_no_response_error">未收到响应。AI 返回了空内容。\n提示：您可能使用的是未注册的触发器/命令。</string>
+    
+    <!-- Range Selection Pattern -->
+    <string name="title_range_selection">范围选择</string>
+    <string name="pattern_range_selection">范围选择</string>
+    <string name="pattern_desc_range_selection">在 %1$s 符号之间选择文本</string>
+    <string name="example_range_selection">\"%1$stext to send%1$s\" → 发送选中的文本给AI</string>
+    <string name="example_range_selection_different">\"[ask]要发送的文本[/ask]\" → 发送选中的文本给AI</string>
+    
+    <!-- Range Selection Dialog -->
+    <string name="hint_range_selection_description">定义开始和结束符号以选择要发送给AI处理的文本</string>
+    <string name="hint_start_symbol">开始符号</string>
+    <string name="hint_end_symbol">结束符号</string>
+    <string name="msg_start_symbol_empty">开始符号不能为空</string>
+    <string name="msg_end_symbol_empty">结束符号不能为空</string>
+    <string name="msg_symbols_identical">开始符号和结束符号相同</string>
+
 </resources>

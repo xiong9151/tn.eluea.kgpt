@@ -82,12 +82,16 @@ public class TextParser implements ConfigChangeListener {
             }
 
             // Track AI trigger symbol and enabled state
-            if (parsePattern.getType() == PatternType.CommandAI) {
+            // Both CommandAI and RangeSelection should be considered as AI triggers
+            if (parsePattern.getType() == PatternType.CommandAI || parsePattern.getType() == PatternType.RangeSelection) {
                 String symbol = PatternType.regexToSymbol(parsePattern.getPattern().pattern());
                 if (symbol != null && !symbol.isEmpty()) {
                     currentTriggerSymbol = symbol;
                 }
-                aiTriggerEnabled = parsePattern.isEnabled();
+                // Enable AI trigger if either CommandAI or RangeSelection is enabled
+                if ((parsePattern.getType() == PatternType.CommandAI || parsePattern.getType() == PatternType.RangeSelection) && parsePattern.isEnabled()) {
+                    aiTriggerEnabled = true;
+                }
             }
         }
     }

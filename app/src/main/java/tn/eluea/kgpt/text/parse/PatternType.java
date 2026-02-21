@@ -17,10 +17,11 @@ public enum PatternType {
     FormatBold(R.string.title_bold, 1, "([^@]+)@$", true, "@", R.string.example_format_bold),
     FormatCrossout(R.string.title_crossout, 1, "([^~]+)~$", true, "~", R.string.example_format_crossout),
     FormatUnderline(R.string.title_underline, 1, "([^_]+)_$", true, "_", R.string.example_format_underline),
-    WebSearch(R.string.title_web_search, 1, "(.+)\\?\\?$", true, "??", R.string.example_ai_responds); // Reusing generic
+    WebSearch(R.string.title_web_search, 1, "(.+)\\?\\?$", true, "??", R.string.example_ai_responds), // Reusing generic
                                                                                                       // example or
                                                                                                       // create new if
                                                                                                       // needed
+    RangeSelection(R.string.title_range_selection, 3, "\\$(.+)\\$$", true, "$", R.string.example_range_selection);
 
     public final int titleResId;
     public final int groupCount;
@@ -65,8 +66,25 @@ public enum PatternType {
             String literalSymbol = escapeLiteralForCharClass(symbol);
             return String.format("([^%s]+)%s(?:([^ %s]+))?%s$", literalSymbol, escapedSymbol, literalSymbol,
                     escapedSymbol);
+        } else if (groupCount == 3) {
+            // Pattern for range selection: symbol + text + symbol
+            // Use non-greedy matching to handle cases properly
+            return String.format("%s(.+?)%s$", escapedSymbol, escapedSymbol);
         }
         return null;
+    }
+    
+    /**
+     * Convert start and end symbols to regex pattern for range selection
+     */
+    public static String symbolsToRangeRegex(String startSymbol, String endSymbol) {
+        if (startSymbol == null || startSymbol.isEmpty() || endSymbol == null || endSymbol.isEmpty()) {
+            return null;
+        }
+        
+        String escapedStart = escapeRegex(startSymbol);
+        String escapedEnd = escapeRegex(endSymbol);
+        return String.format("%s(.+?)%s$", escapedStart, escapedEnd);
     }
 
     /**
@@ -77,6 +95,23 @@ public enum PatternType {
             return null;
         }
 
+        // Check if it's a range selection pattern with two different symbols
+        // Pattern like: startSymbol(.+?)endSymbol$
+        java.util.regex.Pattern rangePattern = java.util.regex.Pattern.compile("^(.+?)\\(\\.\\+\\?\\)(.+?)\\$$");
+        java.util.regex.Matcher rangeMatcher = rangePattern.matcher(regex);
+        if (rangeMatcher.find()) {
+            // For range selection, return the start symbol as the primary symbol
+            return unescapeRegex(rangeMatcher.group(1));
+        }
+        
+        // Check if it's a range selection pattern with same symbol (symbol at both ends)
+        // Pattern like: \$(.+?)\$$
+        java.util.regex.Pattern sameSymbolPattern = java.util.regex.Pattern.compile("^\\\\(.)(.+?)\\\\\\1\\$$");
+        java.util.regex.Matcher sameSymbolMatcher = sameSymbolPattern.matcher(regex);
+        if (sameSymbolMatcher.find()) {
+            return sameSymbolMatcher.group(1);
+        }
+        
         // For CommandCustom pattern: ([^%]+)%(?:([^ %]+))?%$ - extract the % symbol
         // Look for pattern like ([^X]+)X where X is the symbol
         java.util.regex.Pattern charClassPattern = java.util.regex.Pattern.compile("\\[\\^([^\\]]+)\\]");
@@ -144,6 +179,28 @@ public enum PatternType {
         }
 
         return symbol.length() > 0 ? symbol.toString() : null;
+    }
+    
+    private static String unescapeRegex(String escaped) {
+        if (escaped == null || escaped.isEmpty()) {
+            return escaped;
+        }
+        
+        // Replace escaped special characters
+        return escaped.replace("\\$", "$")
+                     .replace("\\.", ".")
+                     .replace("\\^", "^")
+                     .replace("\\*", "*")
+                     .replace("\\+", "+")
+                     .replace("\\?", "?")
+                     .replace("\\(", "(")
+                     .replace("\\)", ")")
+                     .replace("\\[", "[")
+                     .replace("\\]", "]")
+                     .replace("\\{", "{")
+                     .replace("\\}", "}")
+                     .replace("\\|", "|")
+                     .replace("\\\\", "\\");
     }
 
     private static String escapeRegex(String symbol) {

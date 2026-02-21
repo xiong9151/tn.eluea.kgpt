@@ -188,6 +188,8 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
                     return "underlined text" + symbol;
                 case WebSearch:
                     return "latest news about AI" + symbol;
+                case RangeSelection:
+                    return symbol + "text to send" + symbol;
                 case Settings:
                     return symbol;
                 default:
@@ -213,6 +215,8 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
                     return context.getString(R.string.pattern_underline);
                 case WebSearch:
                     return context.getString(R.string.pattern_web_search);
+                case RangeSelection:
+                    return context.getString(R.string.pattern_range_selection);
                 default:
                     return context.getString(type.titleResId);
             }
@@ -237,6 +241,8 @@ public class PatternsAdapter extends RecyclerView.Adapter<PatternsAdapter.Patter
                     return context.getString(R.string.pattern_desc_underline, symbol);
                 case WebSearch:
                     return context.getString(R.string.pattern_desc_web_search, symbol);
+                case RangeSelection:
+                    return context.getString(R.string.pattern_desc_range_selection, symbol);
                 default:
                     return context.getString(type.exampleResId, symbol);
             }

@@ -578,6 +578,7 @@
     <string name="pattern_crossout">Crossout</string>
     <string name="pattern_underline">Underline</string>
     <string name="pattern_web_search">Web Search</string>
+    <string name="pattern_range_selection">Range Selection</string>
     
     <!-- Pattern Descriptions -->
     <string name="pattern_desc_settings">Settings trigger</string>
@@ -588,6 +589,7 @@
     <string name="pattern_desc_crossout">Type text then add %1$s</string>
     <string name="pattern_desc_underline">Type text then add %1$s</string>
     <string name="pattern_desc_web_search">Type text then add %1$s to search</string>
+    <string name="pattern_desc_range_selection">Select text between %1$s symbols</string>
     
     <!-- Pattern Status -->
     <string name="status_disabled">Disabled</string>
@@ -726,6 +728,7 @@
     <string name="example_format_crossout">\u0022text%1$s\u0022 \u2192 strikethrough</string>
     <string name="example_format_underline">\u0022text%1$s\u0022 \u2192 underlined</string>
     <string name="example_default">Type text, then add \u0022%1$s\u0022 at the end</string>
+    <string name="example_range_selection">\u0022%1$stext to send%1$s\u0022 \u2192 Sends selected text to AI</string>
     <string name="pattern_subtitle_trigger">Trigger: %1$s</string>
     
     <!-- PatternType Titles -->
@@ -737,6 +740,7 @@
     <string name="title_crossout">Crossout</string>
     <string name="title_underline">Underline</string>
     <string name="title_web_search">Web Search</string>
+    <string name="title_range_selection">Range Selection</string>
     <string name="btn_reset_pattern">Reset Pattern</string>
     <string name="msg_reset_pattern_confirm">Reset \'%1$s\' to default symbol \"%2$s\"?</string>
     
@@ -766,4 +770,12 @@
     
     <!-- Missing Update Interval -->
     <string name="interval_every_disabled">Disabled</string>
+    <string name="hint_range_selection_description">Define start and end symbols to select text for AI processing</string>
+    <string name="hint_start_symbol">Start symbol</string>
+    <string name="hint_end_symbol">End symbol</string>
+    <string name="msg_start_symbol_empty">Start symbol cannot be empty</string>
+    <string name="msg_end_symbol_empty">End symbol cannot be empty</string>
+    <string name="msg_symbols_identical">Start and end symbols are identical</string>
+    <string name="example_range_selection_different">\u0022[ask]text to send[/ask]\u0022 \u2192 Sends selected text to AI</string>
+
 </resources>
