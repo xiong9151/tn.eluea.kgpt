@@ -186,6 +186,11 @@ public class ApiKeysFragment extends Fragment implements AdditionalApiKeysAdapte
     }
 
     private void openGetKeyUrl(LanguageModel model) {
+        if (model.getKeyUrl == null) {
+            // For Custom API, show a message instead of opening URL
+            Toast.makeText(requireContext(), R.string.custom_api_desc, Toast.LENGTH_LONG).show();
+            return;
+        }
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(model.getKeyUrl));
             startActivity(intent);

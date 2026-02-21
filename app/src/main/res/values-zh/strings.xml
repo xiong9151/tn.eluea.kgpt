@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">KGPT</string>
     <string name="nav_home">首页</string>
@@ -24,6 +24,12 @@
     <string name="max_tokens">最大 Tokens</string>
     <string name="temperature">温度 (Temperature)</string>
     <string name="save_config">保存配置</string>
+    
+    <!-- Custom API Strings -->
+    <string name="custom_api">自定义 API</string>
+    <string name="custom_api_desc">使用任何兼容 OpenAI 的 API 端点</string>
+    <string name="enter_base_url">输入基础 URL（例如：https://api.openai.com/v1）</string>
+    <string name="enter_model_name">输入模型名称</string>
     <string name="api_keys">API 密钥</string>
     <string name="manage_api_keys">管理 API 密钥</string>
     <string name="enter_api_key">输入 API 密钥</string>
@@ -274,8 +280,8 @@
     <string name="tag_stable">稳定</string>
     <string name="commands_patterns_desc">命令与模式</string>
     <string name="section_information">信息</string>
-    <string name="sub_model_desc">预设或自定义</string>
-    <string name="hint_custom_model">自定义模型</string>
+    <string name="sub_model_desc">选择预设或输入自定义模型名称</string>
+    <string name="hint_custom_model">输入自定义模型名称</string>
     <string name="title_app_triggers">App 触发器</string>
     <string name="lab_badge">实验室</string>
     <string name="app_triggers_intro">输入名称打开应用</string>

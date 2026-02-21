@@ -1,4 +1,4 @@
-﻿<!--
+<!--
   ~ Copyright (c) 2025 Amr Aldeeb @Eluea
   ~ GitHub: https://github.com/Eluea
   ~ Telegram: https://t.me/Eluea
@@ -37,6 +37,12 @@
     <string name="max_tokens">Max Tokens</string>
     <string name="temperature">Temperature</string>
     <string name="save_config">Save Configuration</string>
+    
+    <!-- Custom API Strings -->
+    <string name="custom_api">Custom API</string>
+    <string name="custom_api_desc">Use any OpenAI-compatible API endpoint</string>
+    <string name="enter_base_url">Enter Base URL (e.g., https://api.openai.com/v1)</string>
+    <string name="enter_model_name">Enter Model Name</string>
     
     <!-- API Keys Screen -->
     <string name="api_keys">API Keys</string>
@@ -375,8 +381,8 @@
     <string name="section_information">Information</string>
 
     <!-- Fragment Models -->
-    <string name="sub_model_desc">Select a preset or enter custom</string>
-    <string name="hint_custom_model">Or enter custom model name</string>
+    <string name="sub_model_desc">Select a preset or enter custom model name</string>
+    <string name="hint_custom_model">Enter custom model name</string>
     
 
 
