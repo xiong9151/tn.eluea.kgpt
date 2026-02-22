@@ -68,8 +68,9 @@ public enum PatternType {
                     escapedSymbol);
         } else if (groupCount == 3) {
             // Pattern for range selection: symbol + text + symbol
-            // Use non-greedy matching to handle cases properly
-            return String.format("%s(.+?)%s$", escapedSymbol, escapedSymbol);
+            // Use non-greedy matching with DOTALL mode only for the capture group
+            // The (?s) enables DOTALL mode so . matches newlines, but only for the captured text
+            return String.format("%s((?s).+?)%s$", escapedSymbol, escapedSymbol);
         }
         return null;
     }
@@ -84,7 +85,8 @@ public enum PatternType {
         
         String escapedStart = escapeRegex(startSymbol);
         String escapedEnd = escapeRegex(endSymbol);
-        return String.format("%s(.+?)%s$", escapedStart, escapedEnd);
+        // Enable DOTALL mode only for the capture group to match across lines
+        return String.format("%s((?s).+?)%s$", escapedStart, escapedEnd);
     }
 
     /**
@@ -96,8 +98,8 @@ public enum PatternType {
         }
 
         // Check if it's a range selection pattern with two different symbols
-        // Pattern like: startSymbol(.+?)endSymbol$
-        java.util.regex.Pattern rangePattern = java.util.regex.Pattern.compile("^(.+?)\\(\\.\\+\\?\\)(.+?)\\$$");
+        // Pattern like: startSymbol((?s).+?)endSymbol$
+        java.util.regex.Pattern rangePattern = java.util.regex.Pattern.compile("^(.+?)\\(\\(\\?s\\)\\.\\+\\?\\)(.+?)\\$$");
         java.util.regex.Matcher rangeMatcher = rangePattern.matcher(regex);
         if (rangeMatcher.find()) {
             // For range selection, return the start symbol as the primary symbol
@@ -105,8 +107,8 @@ public enum PatternType {
         }
         
         // Check if it's a range selection pattern with same symbol (symbol at both ends)
-        // Pattern like: \$(.+?)\$$
-        java.util.regex.Pattern sameSymbolPattern = java.util.regex.Pattern.compile("^\\\\(.)(.+?)\\\\\\1\\$$");
+        // Pattern like: \$((?s).+?)\$$
+        java.util.regex.Pattern sameSymbolPattern = java.util.regex.Pattern.compile("^\\\\(.)(\\(\\(\\?s\\)\\.\\+\\?\\))\\\\\\1\\$$");
         java.util.regex.Matcher sameSymbolMatcher = sameSymbolPattern.matcher(regex);
         if (sameSymbolMatcher.find()) {
             return sameSymbolMatcher.group(1);

@@ -42,12 +42,18 @@ public class TextParser implements ConfigChangeListener {
     private boolean textActionsEnabled = false;
     private AppTriggerManager appTriggerManager = null;
     private java.util.Set<String> availableCommands = new java.util.HashSet<>();
+    
+    // 新增：触发器监听器
+    private TriggerListener triggerListener;
 
     public TextParser() {
         UiInteractor.getInstance().registerConfigChangeListener(this);
         List<ParsePattern> parsePatterns = SPManager.getInstance().getParsePatterns();
         updatePatterns(parsePatterns);
         loadAvailableCommands();
+        
+        // 初始化触发器监听器
+        triggerListener = new TriggerListener();
     }
 
     private void loadAvailableCommands() {
@@ -94,11 +100,20 @@ public class TextParser implements ConfigChangeListener {
                 }
             }
         }
+        
+        // 更新触发器监听器
+        if (triggerListener != null) {
+            triggerListener.updateTriggers(parsePatterns);
+        }
     }
 
+    // 存储上一次的文本，用于检测触发器输入
+    private String lastText = "";
+    
     public ParseResult parse(String text, int cursor) {
         // Bounds check to prevent StringIndexOutOfBoundsException
         if (text == null || text.isEmpty()) {
+            lastText = text;
             return null;
         }
         cursor = Math.max(0, Math.min(cursor, text.length()));
@@ -109,32 +124,29 @@ public class TextParser implements ConfigChangeListener {
         android.util.Log.d("KGPT_AppTrigger", "parse() called with text: '" + textBeforeCursor + "'");
         AppTriggerParseResult appTriggerResult = checkAppTrigger(textBeforeCursor);
         if (appTriggerResult != null) {
-            android.util.Log.d("KGPT_AppTrigger",
-                    "Found trigger: " + appTriggerResult.trigger + " -> " + appTriggerResult.packageName);
+            lastText = text;
             return appTriggerResult;
         }
 
         // Check for text action commands (e.g., "text $rephrase")
         TextActionParseResult textActionResult = checkTextAction(textBeforeCursor);
         if (textActionResult != null) {
+            lastText = text;
             return textActionResult;
         }
 
-        // Only check inline ask if AI trigger is enabled
-        if (aiTriggerEnabled) {
-            // Check for inline commands first (any /command with preserved text)
-            // These handle their own text preservation
-            InlineCommandParseResult inlineCommandResult = InlineCommandParseResultFactory.parse(
-                    textBeforeCursor, currentTriggerSymbol, availableCommands);
-            if (inlineCommandResult != null) {
-                return inlineCommandResult;
+        // 使用触发器监听器进行智能匹配
+        if (triggerListener.isAiTriggerEnabled()) {
+            // 检查是否刚刚输入了触发器
+            if (triggerListener.shouldCheckForTrigger(lastText, text, cursor)) {
+                ParseResult triggerResult = triggerListener.parseOnTrigger(text, cursor);
+                if (triggerResult != null) {
+                    lastText = text;
+                    return triggerResult;
+                }
             }
-
-            // Check for /ask usage as a shield for ANY directive
-            // This fixes the issue where valid triggers (like @ for bold) would apply to
-            // the entire text
-            // because they matched the whole string pattern. /ask now properly delimits the
-            // scope.
+            
+            // 检查 /ask 命令（保持原有逻辑）
             String prefix = tn.eluea.kgpt.instruction.command.InlineAskCommand.getPrefix();
             // Regex: Whitespace OR start of line, optional slash, then 'ask', then
             // whitespace
@@ -175,6 +187,7 @@ public class TextParser implements ConfigChangeListener {
                     // Pass 'lastContentStart' as offset for the scoped text
                     ParseResult result = directive.parseWithStartOverride(scopedText, lastContentStart, lastAskIndex);
                     if (result != null) {
+                        lastText = text;
                         return result;
                     }
                 }
@@ -184,19 +197,14 @@ public class TextParser implements ConfigChangeListener {
             // match anything
             // This handles cases specific to the Factory implementation if any
             InlineAskParseResult inlineAskResult = InlineAskParseResultFactory.parse(
-                    textBeforeCursor, currentTriggerSymbol);
+                    textBeforeCursor, triggerListener.getCurrentTriggerSymbol());
             if (inlineAskResult != null) {
+                lastText = text;
                 return inlineAskResult;
             }
         }
 
-        for (ParseDirective directive : directives) {
-            ParseResult parseResult = directive.parse(textBeforeCursor);
-            if (parseResult != null) {
-                return parseResult;
-            }
-        }
-
+        lastText = text;
         return null;
     }
 
